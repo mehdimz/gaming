@@ -1,0 +1,12 @@
+extends ../layout
+block content
+	.row
+		.col-md-6
+			form(method="post", action="/cats/create")
+				.form-group
+					input.form-control(type="text", name="name")
+				button.btn.btn-secondary(type="submit") add
+		.col-md-6
+			ul.list-unstyled
+				each cat in cats
+					li= cat.name

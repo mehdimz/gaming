@@ -1,0 +1,60 @@
+include ./common/clip
+extends layout
+
+block content
+  include ./partials/categories
+
+  .container-fluid.m-t-3.slider
+    .row(style='background:#000;')
+      .col-xs-12.col-sm-12  
+  .container-fluid.category.p-t-1.p-b-1
+    .container
+      .row
+        .col-xs-6.col-sm-1
+          a.more-videos(href='#') بیشتر
+        .col-xs-6.col-sm-11
+          div
+            .category-box.pull-right
+              i.fa.fa-certificate
+            .category-title.pull-right
+              h1 ویدیوهای مورد علاقه شما
+              h6 بیشترین بازدید
+            .clear
+  .container.video-contents.m-t-2
+    .row
+      .col-xs-12.col-sm-12
+        .video-box.row
+          each item in clips
+            .col-xs-12.col-sm-4.col-md-4.col-lg-3.pull-right
+              +clip(item)
+  each cat in cats
+    .container-fluid.category.p-t-1.p-b-1
+      .container
+        .row
+          .col-xs-6.col-sm-1
+            a.more-videos(href='#') بیشتر
+          .col-xs-6.col-sm-11
+            div
+              .category-box.pull-right
+                img(src='/images/wow.jpg')
+              .category-title.pull-right
+                h1= cat.name
+                h6 2016
+              .clear
+    .container.video-contents.m-t-2
+      .row
+        .col-xs-12.col-sm-12
+          .video-box.row
+            each item in cat.clips
+              .col-xs-12.col-sm-4.col-md-4.col-lg-3.pull-right
+                +clip(item)
+  script(type='text/javascript', src='/javascripts/jquery-1.12.1.min.js')
+  script.
+    $(document).ready(function() {
+      $(".search-box input").focusin(function(){
+        $("i.fa-search").css('color','black');
+      });
+      $(".search-box input").focusout(function(){
+        $("i.fa-search").css('color','white');
+      });
+    });

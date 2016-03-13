@@ -1,0 +1,11 @@
+nav .login-button:hover .login-box {
+  display: block; }
+
+nav .login-button .login-box {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top: 1.8rem;
+  width: 30rem;
+  background: white; }
