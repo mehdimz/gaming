@@ -1,0 +1,15 @@
+mixin clip(item)
+  .image-box
+    a(href='#')
+      img.img-responsive(src="#{item.poster.four}")
+    span.duration 10:31
+  .info-box.m-t-1
+    p
+      a(href='#')= item.title
+        
+    ul
+      li= item.body
+      li
+        span= item.date
+        span •
+        span= item.viewCount

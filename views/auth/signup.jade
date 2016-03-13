@@ -1,0 +1,24 @@
+extends ../layout
+block content
+	.row
+		.col-md-5
+			form.form(action="/auth/signup", method="post")
+				.form-group
+					input.form-control(type="text", name="fullname", placeholder="fullname", required)
+				.form-group
+					input.form-control(type="email", name="email", placeholder="Email", required)
+				.form-group
+					input.form-control#password(type="password", name="password", placeholder="Password", required)
+					input.form-control#confirm_password(type="password", name="repeatpassword", placeholder="Repeat password", required)
+				.form-group
+					.row
+						.col-xs-3
+							label gender:
+						.col-xs-9
+							select.form-control(name="gender", required)
+								option(value="1") mard
+								option(value="2") zan
+				.form-group
+					input.form-control(type="number", name="age", placeholder="age", required)
+				button.btn.btn-secondary.btn-block(type="submit") sabte nam
+

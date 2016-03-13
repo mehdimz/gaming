@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+	h1 new
+	.row
+		.col-xs-12.col-md-6
+			form(method="post", action="/clips", name="test", enctype="multipart/form-data")
+				fieldset.form-group
+					input.form-control(placeholder="title", name="title", required)
+				fieldset.form-group
+					textarea.form-control(placeholder="body", name="body", required)
+				fieldset.form-group
+					select.form-control(name="_category")
+						each cat in cats
+							option(value="#{cat._id}")= cat.name
+				fieldset.form-group
+					label CLIP:
+					input(type="file", name="clip", required)
+				fieldset.form-group
+					label IMAGE:
+					input(type="file", name="image", required)
+				button.btn.btn-primary Submit
+				
+				
+
+	table.table.table-bordered.m-t-1
+		each clip in items
+			tr
+				td= clip.title
+				td= clip._category
+				td
+					a(href="/clips/delete/"+clip._id)
+						span.fa.fa-trash

@@ -1,0 +1,27 @@
+.container-fluid
+
+  nav.navbar.navbar-fixed-top.m-b-3
+    if error != ''
+      .alert.alert-danger
+        p= error   
+    .row
+      .col-xs-12.col-sm-1 لوگو
+      .col-xs-12.col-sm-7
+        .search-box.row
+          .col-xs-12.col-sm-12
+            input.col-xs-12.col-sm-7(type='text', placeholder='جستجو...')
+            i.fa.fa-search
+      .col-xs-12.col-sm-4
+        .register-login
+          ul
+            if !currentUser
+              li.login-button
+                a(href='#') ورود
+                .login-box
+                  include login-form
+              | /
+              li
+                a(href='/auth/signup') ثبت نام
+            else
+              li
+                span= currentUser.fullname
