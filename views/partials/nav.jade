@@ -1,18 +1,18 @@
 .container-fluid
 
-  nav.navbar.navbar-fixed-top.m-b-3
+  nav.navbar.navbar-fixed-top.m-b-3.p-b-0 
     if error != ''
       .alert.alert-danger
         p= error   
     .row
-      .col-xs-12.col-sm-1 لوگو
+      .col-xs-12.col-sm-1.logo لوگو
       .col-xs-12.col-sm-7
         .search-box.row
           .col-xs-12.col-sm-12
             input.col-xs-12.col-sm-7(type='text', placeholder='جستجو...')
             i.fa.fa-search
-      .col-xs-12.col-sm-4
-        .register-login
+      .col-xs-12.col-sm-4.register-login
+        div
           ul
             if !currentUser
               li.login-button
@@ -25,3 +25,14 @@
             else
               li
                 span= currentUser.fullname
+      .col-xs-12.col-sm-12.menu
+        ul
+          li.active
+            a(href='#') صفحه اصلی
+          li
+            a(href='#') بازی ها
+          li
+            a(href='#') منو 3
+          li
+            a(href='#') منو 4
+
