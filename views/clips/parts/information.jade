@@ -1,0 +1,46 @@
+.video-information
+  .row
+    .col-xs-12.col-sm-12.col-md-2.watched.hidden-sm-down
+      span= item.viewCount
+      span بازدید
+    .col-xs-12.col-sm-12.col-md-10.publisher
+      img(src='/images/profile-images/default.png')
+      ul.summery
+        li= item.title
+        li
+          a(href='#')= item._creator.fullname
+          |   •  
+          a(href='#')= item._category.name
+          |   •  
+          span انتشار در تاریخ 
+          span= moment(item.date).format('jD jMMMM jYYYY')	
+      p.description= item.body
+      ul.like-dislike-share-download
+        li#thumb-up(data-clip-id="#{item._id}")
+          span.count= item.thumbs.up
+          i.fa.fa-thumbs-up.like
+        li#thumb-down(data-clip-id="#{item._id}")
+          span.count= item.thumbs.down
+          i.fa.fa-thumbs-down.dislike
+        li.hidden-md-up
+          span.count= item.viewCount
+          i.fa.fa-eye
+        li
+          a(href='#')
+            i.fa.fa-share.share(data-toggle='modal', data-target='#myModal')
+        li
+          a(href='#{item.address}')
+            i.fa.fa-download
+      // Modal
+      #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(style='position:relative; z-index:9999999999;', role='document')
+          .modal-content
+            .modal-header
+              h6#myModalLabel.modal-title ویدیو خود را به اشتراک بگذارید
+            .modal-body
+              i.fa.fa-facebook
+              i.fa.fa-instagram
+              i.fa.fa-paper-plane
+              i.fa.fa-google-plus
+            .modal-footer
+              button.btn.btn-primary.pull-left(type='button', data-dismiss='modal') بستن

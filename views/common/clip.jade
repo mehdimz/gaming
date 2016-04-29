@@ -1,6 +1,6 @@
 mixin clip(item)
   .image-box
-    a(href='#')
+    a(href='/videos/#{item._id}')
       img.img-responsive(src="#{item.poster.four}")
     span.duration 10:31
   .info-box.m-t-1
@@ -10,6 +10,6 @@ mixin clip(item)
     ul
       li= item.body
       li
-        span= item.date
+        small= moment(item.date).format('jD jMMMM jYYYY')
         span •
-        span= item.viewCount
+        small= item.viewCount

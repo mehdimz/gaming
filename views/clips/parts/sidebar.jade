@@ -1,0 +1,18 @@
+.sidebar
+  header
+    .buttons
+      a(href='#') نظرات
+  section.comment-section
+    .type-comment
+      .type-section
+        form(method="post", action="/videos/#{item._id}/comments").clearfix
+          img(src='/images/profile-images/default.png')
+          textarea(name="comment", placeholder='نظر خود را بنویسید...', required)
+          button.btn.btn-sm.btn-primary.pull-xs-left(type="submit") ارسال نظر
+    for comment in item.comments
+      .comment-box
+        .row.m-r-0.m-l-0
+          .col-xs-10.col-sm-11.col-md-11.col-lg-10.submited-comments
+            span.name= comment._user.fullname
+            span.date= moment(comment.date).format('jD jMMMM jYYYY')
+            p.comment= comment.body

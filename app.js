@@ -44,6 +44,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(function(req, res, next) {
   if (req.user) res.locals.currentUser = req.user;
   res.locals.error = req.flash('error');
+  //add date format for views
+  var moment = require('moment-jalali');
+  moment.loadPersian();
+  app.locals.moment = moment;
+  
   next();
 });
 
