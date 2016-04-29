@@ -23,12 +23,13 @@
               li
                 a(href='/auth/signup') ثبت نام
             else
-              li
+              li.text-muted
+                span.fa.fa-user.fa-fw
                 span= currentUser.fullname
       .col-xs-12.col-sm-12.menu
         ul
           li.active
-            a(href='#') صفحه اصلی
+            a(href='/') صفحه اصلی
           li
             a(href='#') بازی ها
           li
