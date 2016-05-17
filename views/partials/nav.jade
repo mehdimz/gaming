@@ -1,39 +1,88 @@
-.container-fluid
-
-  nav.navbar.navbar-fixed-top.m-b-3.p-b-0 
-    if error != ''
-      .alert.alert-danger
-        p= error   
-    .row
-      .col-xs-12.col-sm-1.logo لوگو
-      .col-xs-12.col-sm-7
-        .search-box.row
-          .col-xs-12.col-sm-12
-            input.col-xs-12.col-sm-7(type='text', placeholder='جستجو...')
-            i.fa.fa-search
-      .col-xs-12.col-sm-4.register-login
-        div
-          ul
-            if !currentUser
-              li.login-button
-                a(href='#') ورود
-                .login-box
-                  include login-form
-              | /
+nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button', data-toggle='off-canvas', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/')
+        img(src='/images/logo.png', alt='')
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.dropdown.dropdown-hover
+          a.dropdown-toggle(href='/', data-toggle='dropdown', role='button', aria-expanded='false')
+            | خانه 
+            span.label Home
+        li.dropdown.dropdown-hover
+          a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
+            | بازی ها 
+            span.caret
+            span.label Games
+          .dropdown-menu
+            ul(role='menu')
               li
-                a(href='/auth/signup') ثبت نام
-            else
-              li.text-muted
-                span.fa.fa-user.fa-fw
-                span= currentUser.fullname
-      .col-xs-12.col-sm-12.menu
-        ul
-          li.active
-            a(href='/') صفحه اصلی
+                a(href='blog-1.html') PC
+              li
+                a(href='blog-2.html') Playstation
+              li
+                a(href='blog-3.html') Xbox
+              li
+                a(href='blog-3.html') Mobile
+            //
+        li.dropdown.dropdown-hover
+          a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
+            | تماس با ما 
+            span.label Contact
+      ul.nav.navbar-nav.navbar-right
+        if !currentUser
+          li.dropdown.dropdown-hover
+            a.dropdown-toggle.btn-xs(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+              | ثبت نام
+              span.caret
+              span.label Register
+            .dropdown-menu(style='width:222px;')
+              ul(role='menu')
+                li
+                  a(href='#') کاربر عادی
+                li
+                  a(href='#') کاربر ویژه
+                li.divider
+                li
+                  a(href='#')  تفاوت کاربر عادی با کاربر ویژه
+              //
           li
-            a(href='#') بازی ها
+            a.btn-xs(href='/auth/login')
+              | ورود
+              span.label Login
+        else
+          li.dropdown.dropdown-hover
+            a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
+              = currentUser.fullname  
+              //- span.badge.bg-default 2
+              span.caret
+              if currentUser.admin
+                span.label ادمین
+            .dropdown-menu
+              ul(role='menu')
+                if currentUser.admin
+                  li
+                    a(href='/clips/new') آپلود ویدیو
+                  li
+                    a(href='/cats/new') بازی
+                  li.divider
+                li
+                  a(href='user-profile.html')
+                    | پروفایل 
+                    span.badge.pull-right.bg-warning 13
+                li
+                  a(href='cart.html')
+                    | پیام ها
+                    span.badge.pull-right.bg-default 3
+                li.divider
+                li
+                  a(href='/auth/logout') خروج
           li
-            a(href='#') منو 3
-          li
-            a(href='#') منو 4
+            a.search-toggle(href='search.html')
+              i.fa.fa-search
 

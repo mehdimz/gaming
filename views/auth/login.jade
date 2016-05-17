@@ -1,0 +1,24 @@
+extends ../layout
+block content
+  section.content-wrap.full.youplay-login
+    .youplay-banner.banner-top
+      .image(style="background-image: url('/images/banner-bg.jpg')")
+      .info
+        div
+          .container.align-center
+            .youplay-form
+              h2 ورود اعضا
+              form(action='/auth/login', method="post")
+                .youplay-input
+                  input(type='email', name='email', placeholder='ایمیل')
+                .youplay-input
+                  input(type='password', name='password', placeholder='رمز عبور')
+                .youplay-checkbox
+                  .row
+                    .col-xs-6
+                      input#appearance(type='checkbox', name='appearance')
+                      label(for='appearance') مرا بخاطر بسپار
+                    .col-xs-6
+                      a.btn-default(data-toggle='modal', data-target='#myModal')
+                        label(for='forget-password') فراموشی رمز عبور
+                button.btn.btn-default.db ورود

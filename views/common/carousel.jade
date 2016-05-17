@@ -1,18 +1,11 @@
 mixin carousel(items, name)
-  .row.carousel-box
-    .col-xs-12.col-sm-12.col-md-12.col-lg-12.carousel
-      p.m-t-1= name
-      .owl-carousel
-        for itm in items
-          .item
-            a(href='#')
-              div
-                img.img-responsive(src='/images/wow1.jpg')
-                span.duration 10:30
-              p عنوان عنوان عنوان عنوان عنوان عنوان عنوان 
-            ul
-              li مهدی زنگنه
-              li
-                | 2 ماه پیش 
-                span •
-                |  100 بازدید
+  .youplay-carousel(data-autoplay='5000')
+    each item in items
+      a.angled-img(href='/cats/#{item._id}/#{item.name}')
+        .img
+          img(src='/images/cats/500/#{item._id}.jpg', alt='')
+        .over-info
+          div
+            div
+              h4= item.name
+              p.btn.btn-xs(href='#!') بازی نامه
