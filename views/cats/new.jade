@@ -1,12 +1,25 @@
 extends ../layout
 block content
-	.row
-		.col-md-6
-			form(method="post", action="/cats/create")
-				.form-group
-					input.form-control(type="text", name="name")
-				button.btn.btn-secondary(type="submit") add
-		.col-md-6
-			ul.list-unstyled
-				each cat in cats
-					li= cat.name
+  section.content-wrap.full.youplay-login
+    .youplay-banner.banner-top
+      .image(style="background-image: url('/images/banner-bg.jpg')")
+      .info
+        .container.align-center
+          .row
+            .col-md-6
+              form(method="post", action="/cats/create", enctype="multipart/form-data")
+                .form-group
+                  input.form-control(type="text", name="name")
+                .form-group.clearfix
+                  span.pull-left تصویر
+                  input.pull-left(type="file", name="image", required)                  
+
+                button.btn.btn-secondary(type="submit") Add +
+            .col-md-6
+              table.table.table-bordered
+                each cat in cats
+                  tr
+                    td= cat.name
+                    td
+                      a(href="/cats/#{cat._id}/delete")
+                        span.fa.fa-trash
