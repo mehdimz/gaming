@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  section.content-wrap.full.youplay-login
+    .youplay-banner.banner-top
+      .image(style="background-image: url('/images/banner-bg.jpg')")
+      .info
+        .container.align-center
+          .row
+            .col-md-6
+              form(method="post", action="/tags")
+                .form-group
+                  input.form-control(type="text", name="name")
+                button.btn.btn-secondary(type="submit") Add +
+            .col-md-6
+              table.table.table-bordered
+                each item in items
+                  tr
+                    td= item.name
+                    td
+                      a(href="/tags/#{item._id}/delete")
+                        span.fa.fa-trash
