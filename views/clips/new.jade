@@ -8,28 +8,7 @@ block content
         .row
           .col-xs-12.col-md-6
             h1.text-xs.center New Video Clip
-            form(method="post", action="/clips", enctype="multipart/form-data")
-              fieldset.form-group
-                input.form-control(placeholder="title", name="title", required)
-              fieldset.form-group
-                textarea.form-control(placeholder="body", name="body", required)
-              fieldset.form-group
-                select.form-control(name="_category")
-                  each cat in cats
-                    option(value="#{cat._id}")= cat.name
-              fieldset.form-group
-                .row
-                  .col-xs-4
-                    label CLIP:
-                  .col-xs-8
-                    input(type="file", name="clip", required)
-              fieldset.form-group
-                .row
-                  .col-xs-4
-                    label IMAGE:
-                  .col-xs-8
-                    input(type="file", name="image", required)
-              button.btn.btn-primary.btn-block Submit
+            include ./form
               
               
           .col-xs-12.col-md-6
@@ -38,6 +17,12 @@ block content
                 tr
                   td= clip.title
                   td= clip._category
+                  td
+                    a(href="/clips/#{clip._id}/tags")
+                      | +tags
+                  td
+                    a(href="/clips/#{clip._id}/edit")
+                      span.fa.fa-edit
                   td
                     a(href="/clips/delete/"+clip._id)
                       span.fa.fa-trash

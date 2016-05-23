@@ -1,0 +1,11 @@
+extends ../layout-normal
+block content
+	.row
+		.col-xs-12
+			form(method="post", action="/clips/#{item._id}/tags")
+				.row
+					each tag in tags
+						.col-xs-4
+							input(type="checkbox", value="#{tag._id}", name="tags", checked=(item._tags.indexOf(tag._id) > -1))
+							= tag.name
+				button.btn.btn-primary.btn-block(type="submit") submit

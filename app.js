@@ -9,6 +9,7 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
+var moment = require('moment-jalali');
 
 
 var app = express();
@@ -47,7 +48,6 @@ app.use(function(req, res, next) {
   if (req.user) res.locals.currentUser = req.user;
   res.locals.error = req.flash('error');
   //add date format for views
-  var moment = require('moment-jalali');
   moment.loadPersian();
   app.locals.moment = moment;
   
