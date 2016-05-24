@@ -1,0 +1,367 @@
+extends ../layout
+include ../common/genres-sidebar
+block content
+  section.content-wrap
+    // Banner
+    .youplay-banner.youplay-banner-parallax.banner-top
+      .image(style="background-image: url('/images/cats/1000/#{item._id}.jpg')")
+      .info
+        div
+          .container
+            h2= item.name
+    // /Banner
+    // Images With Text
+    //- .youplay-carousel.gallery-popup
+    //-   a.angled-img(href='#')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+    //-     i.fa.fa-play.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-4-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-4-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-5-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-5-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-2-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-2-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-3-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-3-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-6-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-6-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    //-   a.angled-img(href='assets/images/game-bloodborne-7-1920x1080.jpg')
+    //-     .img
+    //-       img(src='assets/images/game-bloodborne-7-500x375.jpg', alt='')
+    //-     i.fa.fa-search-plus.icon
+    // /Images With Text
+    .container.youplay-store
+      .col-md-9
+        // Post Info
+        article
+          // Description
+          h2.mt-0 درباره بازی
+          .description
+            p= item.about
+          // /Description
+          // criticism
+          h2.mt-0 نقد بازی
+          .description
+            p= item.critic
+          // /criticism
+          // Review Rating
+          .youplay-review-rating
+            .row
+              .col-md-4
+                .youplay-hexagon-rating(data-max='10', title='9.1 out of 10')
+                  span 9.1
+              .col-md-4
+                h3.mt-0 ویژگی های مثبت
+                ul
+                  each quality in item.properties.pros
+                    if quality
+                      li
+                        i.fa.fa-plus-circle
+                        span=  quality
+              .col-md-4
+                h3.mt-0 ویژگی های منفی
+                ul
+                  each quality in item.properties.cons
+                    if quality
+                      li
+                        i.fa.fa-minus-circle
+                        span= quality
+          // /Review Rating
+          // Post Share
+          .btn-group.social-list.social-likes(data-counters='no')
+            span.btn.btn-default.facebook(title='Share link on Facebook')
+            span.btn.btn-default.twitter(title='Share link on Twitter')
+            span.btn.btn-default.plusone(title='Share link on Google+')
+            span.btn.btn-default.pinterest(title='Share image on Pinterest', data-media='')
+            span.btn.btn-default.vkontakte(title='Share link on VK')
+          // /Post Share
+        // /Post Info
+        // Information
+        //
+          <div class="requirements-block">
+          <h2>System Requirements</h2>
+          <div>
+          <strong>OS:</strong> Windows 7
+          </div>
+          <div>
+          <strong>Processor:</strong> Dual core from Intel or AMD at 2.8 GHz
+          </div>
+          <div>
+          <strong>Memory:</strong> 4 GB RAM
+          </div>
+          <div>
+          <strong>Graphics:</strong> nVidia GeForce 8600/9600GT, ATI/AMD Radeon HD2600/3600
+          </div>
+          <div>
+          <strong>DirectX:</strong> Version 9.0c
+          </div>
+          <div>
+          <strong>Network:</strong> Broadband Internet connection
+          </div>
+          <div>
+          <strong>Hard Drive:</strong> 8 GB available space
+          </div>
+          <div>
+          <strong>Sound Card:</strong> DirectX Compatible
+          </div>
+          </div>
+        // /Information
+        // Reviews
+        .reviews-block.mb-0
+          h2
+            | نظرات 
+            small (3)
+          // Reviews List
+          ul.reviews-list
+            // Kristen Bradley review
+            li
+              article
+                .review-avatar.pull-left
+                  img(src='assets/images/avatar-user-1.png', alt='')
+                .review-cont.clearfix
+                  .rating.pull-right
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                  a.review-author.h4(href='#!') Kristen Bradley
+                  .date
+                    i.fa.fa-calendar
+                    |  April 3, 2015
+                  .review-text
+                    p
+                      | Quod satis pecuniae sempiternum. Ut sciat oportet motum. Nunquam invenies eum. Hic de tabula. Ego vivere, ut debui, et nunc fiant. Istuc quod opus non est. Lorem ipsum occurrebat pragmaticam semper ut, si quis ita velim tibi bene recognoscere. Quorum
+                      | duo te mihi videtur.
+                    p
+                      | Mauris a nunc occideritis me rectum. Videtur quod Ive facillimum, qui fecit vos. Potes me interficere, sine testibus et tunc manere in pauci weeks vel mensis vestigia Isai Pinkman et vos quoque illum occidere. Exercitium inutili option A. Videtur mihi
+                      | quod autem est.
+                  .pull-right.review-like
+                    a.text-success(href='#!')
+                      i.fa.fa-thumbs-up
+                      |  12
+                    a.text-danger(href='#!')
+                      i.fa.fa-thumbs-down
+                      |  1
+            // /Kristen Bradley review
+            // Clyde Fields review
+            li
+              article
+                .review-avatar.pull-left
+                  img(src='assets/images/avatar-user-4.png', alt='')
+                .review-cont.clearfix
+                  .rating.pull-right
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star
+                    i.fa.fa-star-o
+                  a.review-author.h4(href='#!') Clyde Fields
+                  .date
+                    i.fa.fa-calendar
+                    |  March 13, 2015
+                  .review-text
+                    p
+                      | Uno ictu cruentus ille utrimque - statuit American Mexicanus gubernationes contra CONEXUS, et amputavit auriculam eius generis copia methamphetamine ad Africum. Quo facto suo, si huius huc termini velit vitae ipsum. Praemia essent ... ingentibus.
+                    p
+                      | Sumus tam adultis. Non est enim tibi nescio fingunt. Confusio esse cupio. Scio te debeo meae. At etiam, ut caveant ab his eu. In tuo positum, idem fecissem. Constitutione, quam molesta est mihi tres menses nescio quid de contractu fines nostros. Scis
+                      | quare hoc facere. Lorem satis quaesitum.
+                    p
+                      | Loquélæ. Brevis oratio. Hodie particeps tua perdideris. Quid sui nominis - Emilio? Emilio gradiens ad carcerem. Tulitque omnem pecuniam tuam in DEA tuus Lab. Vos got nihil. Quadratum unum. Et ego agnosco rem, nisi te scire elit. Cogito ... maybe vos possem
+                      | socium ascendit.
+                  .pull-right.review-like
+                    a.text-success(href='#!')
+                      i.fa.fa-thumbs-up
+                      |  32
+                    a.text-danger(href='#!')
+                      i.fa.fa-thumbs-down
+                      |  9
+            // /Clyde Fields review
+            // Scott Sutton review
+            li
+              article
+                .review-avatar.pull-left
+                  img(src='assets/images/avatar.png', alt='')
+                .review-cont.clearfix
+                  .rating.pull-right
+                    i.fa.fa-star
+                    i.fa.fa-star-o
+                    i.fa.fa-star-o
+                    i.fa.fa-star-o
+                    i.fa.fa-star-o
+                  a.review-author.h4(href='#!') Scott Sutton
+                  .date
+                    i.fa.fa-calendar
+                    |  March 2, 2015
+                  .review-text
+                    | Perdet eam batch nostri.
+                  .pull-right.review-like
+                    a.text-success(href='#!')
+                      i.fa.fa-thumbs-up
+                      |  2
+                    a.text-danger(href='#!')
+                      i.fa.fa-thumbs-down
+                      |  59
+            // /Scott Sutton review
+          // /Reviews List
+          // Review Form
+          form.review-form.mb-0(action='#!')
+            .review-avatar.pull-left
+              img(src='assets/images/avatar.png', alt='')
+            .review-cont.clearfix
+              .youplay-input
+                input(type='text', name='username', placeholder='نام *', required='')
+              .youplay-input
+                input(type='email', name='email', placeholder='پست الکترونیکی *', required='')
+              .youplay-textarea
+                textarea(name='message', rows='5', placeholder='نظر شما... *', required='')
+              .youplay-rating.pull-right
+                input#review-rate-5(type='radio', name='review-rate', value='5')
+                label(for='review-rate-5')
+                  i.fa.fa-star
+                input#review-rate-4(type='radio', name='review-rate', value='4')
+                label(for='review-rate-4')
+                  i.fa.fa-star
+                input#review-rate-3(type='radio', name='review-rate', value='3')
+                label(for='review-rate-3')
+                  i.fa.fa-star
+                input#review-rate-2(type='radio', name='review-rate', value='2')
+                label(for='review-rate-2')
+                  i.fa.fa-star
+                input#review-rate-1(type='radio', name='review-rate', value='1')
+                label(for='review-rate-1')
+                  i.fa.fa-star
+              .clearfix
+              button.btn.btn-default.pull-right ارسال نظر
+          // /Review Form
+        // /Reviews
+      // Right Side
+      .col-md-3
+        // Side Categories
+        +genres-sidebar(genres)
+        // /Side Categories
+        // Side Popular News
+        .side-block.right-side
+          h4.block-title بازی نامه ها
+          .block-content.p-0
+            // Single News Block
+            .row.youplay-side-news
+              .col-xs-3.col-md-4
+                a.angled-img(href='blog-post-1.html')
+                  .img
+                    img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .col-xs-9.col-md-8
+                h4.ellipsis
+                  a(href='blog-post-1.html', title='Bloodborne - First Try!') تلاش در بازی Blood borne
+                span.date
+                  i.fa.fa-calendar
+                  |  امروز
+            // /Single News Block
+            // Single News Block
+            .row.youplay-side-news
+              .col-xs-3.col-md-4
+                a.angled-img(href='#!')
+                  .img
+                    img(src='assets/images/game-middle-eart-shadow-of-mordor-500x375.jpg', alt='')
+              .col-xs-9.col-md-8
+                h4.ellipsis
+                  a(href='#!', title='Whats New in Middle-earth') hearthstone و هیجان
+                span.date
+                  i.fa.fa-calendar
+                  |  12 فروردین 1394
+            // /Single News Block
+            // Single News Block
+            .row.youplay-side-news
+              .col-xs-3.col-md-4
+                a.angled-img(href='#!')
+                  .img
+                    img(src='assets/images/game-diablo-iii-500x375.jpg', alt='')
+              .col-xs-9.col-md-8
+                h4.ellipsis
+                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
+                span.date
+                  i.fa.fa-calendar
+                  |  January 18, 2015
+            // /Single News Block
+            // Single News Block
+            .row.youplay-side-news
+              .col-xs-3.col-md-4
+                a.angled-img(href='#!')
+                  .img
+                    img(src='assets/images/game-diablo-iii-500x375.jpg', alt='')
+              .col-xs-9.col-md-8
+                h4.ellipsis
+                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
+                span.date
+                  i.fa.fa-calendar
+                  |  January 18, 2015
+            // /Single News Block
+        // /Side Popular News
+      // /Right Side
+    // Related
+    h2.container Related
+    br
+    .youplay-carousel
+      a.angled-img(href='#!')
+        .img
+          img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+        .over-info
+          div
+            div
+              h4 Kingdoms of Amalur: Reckoning
+              .rating
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star-half-o
+      a.angled-img(href='#!')
+        .img
+          img(src='assets/images/game-the-witcher-500x375.jpg', alt='')
+        .over-info
+          div
+            div
+              h4 The Witcher: Rise of the White Wolf
+              .rating
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star-half-o
+      a.angled-img(href='#!')
+        .img
+          img(src='assets/images/game-diablo-iii-500x375.jpg', alt='')
+        .over-info
+          div
+            div
+              h4 Diablo III: Reaper of Souls
+              .rating
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star-half-o
+      a.angled-img(href='#!')
+        .img
+          img(src='assets/images/game-dragons-dogma-500x375.jpg', alt='')
+        .over-info
+          div
+            div
+              h4 Dragons Dogma
+              .rating
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star
+                i.fa.fa-star-half-o

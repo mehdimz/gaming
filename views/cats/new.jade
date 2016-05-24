@@ -6,20 +6,20 @@ block content
       .info
         .container.align-center
           .row
-            .col-md-6
-              form(method="post", action="/cats/create", enctype="multipart/form-data")
-                .form-group
-                  input.form-control(type="text", name="name")
-                .form-group.clearfix
-                  span.pull-left تصویر
-                  input.pull-left(type="file", name="image", required)                  
-
-                button.btn.btn-secondary(type="submit") Add +
-            .col-md-6
+            .col-md-9
+              h1.text-center بازی
+              include form
+            .col-md-3
               table.table.table-bordered
                 each cat in cats
                   tr
                     td= cat.name
                     td
+                      a(href="/cats/#{cat._id}/properties")
+                        span.fa.fa-plus
+                    td
                       a(href="/cats/#{cat._id}/delete")
                         span.fa.fa-trash
+                    td
+                      a(href="/cats/#{cat._id}/edit")
+                        span.fa.fa-edit

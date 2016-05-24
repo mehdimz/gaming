@@ -1,0 +1,16 @@
+=item
+form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipart/form-data")
+  .form-group
+    input.form-control(type="text", name="name", value=(item?item.name:''))
+  .form-group
+    textarea.form-control(name="about", placeholder="درباره بازی")
+      = item ? item.about : '' 
+  .form-group
+    textarea.form-control(name="critic", placeholder="نقد بازی")
+      = item ? item.critic : '' 
+
+  .form-group.clearfix
+    span.pull-left تصویر
+    input.pull-left(type="file", name="image", required=(item ? false : 'required'))                  
+
+  button.btn.btn-secondary(type="submit", class=(item ? 'btn-info':'')) ثبت +

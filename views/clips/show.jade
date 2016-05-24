@@ -1,4 +1,6 @@
 extends ../layout
+include ../common/sideblock-videos
+include ../common/genres-sidebar
 block content
   section.content-wrap
     // Banner
@@ -37,7 +39,7 @@ block content
               .item
                 i.fa.fa-user.meta-icon
                 span انتشار کننده 
-                a(href='#!')= currentUser.fullname
+                a(href='#!')= item._creator.fullname
               .item
                 i.fa.fa-calendar.meta-icon
                 span تاریخ انتشار 
@@ -131,131 +133,12 @@ block content
         // /Post Comments
       // Right Side
       .col-md-3
-        // Side Search
-        // Side Categories
-        .side-block.right-side
-          h4.block-title سبک بازی ها
-          ul.block-content
-            li
-              a(href='#!') همه بازی ها
-            each genre in genres
-              li
-                a(href='#!')= genre.name
-        // /Side Categories
-        // Side similar videos
-        .side-block.right-side
-          h4.block-title ویدیوهای مشابه
-          .block-content.p-0
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='blog-post-1.html')
-                  .img
-                    img(src='/images/game-bloodborne-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='blog-post-1.html', title='Bloodborne - First Try!') تلاش در بازی Blood borne
-                span.date
-                  i.fa.fa-calendar
-                  |  امروز
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-middle-eart-shadow-of-mordor-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title='Whats New in Middle-earth') hearthstone و هیجان
-                span.date
-                  i.fa.fa-calendar
-                  |  12 فروردین 1394
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
-            // /Single video Block
-        // /Side similar videos
-        // Side most viewed
-        .side-block.right-side
-          h4.block-title پر بازدیدترین ها
-          .block-content.p-0
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='blog-post-1.html')
-                  .img
-                    img(src='/images/game-bloodborne-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='blog-post-1.html', title='Bloodborne - First Try!') تلاش در بازی Blood borne
-                span.date
-                  i.fa.fa-calendar
-                  |  امروز
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-middle-eart-shadow-of-mordor-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title='Whats New in Middle-earth') hearthstone و هیجان
-                span.date
-                  i.fa.fa-calendar
-                  |  12 فروردین 1394
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
-            // /Single video Block
-            // Single video Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
-            // /Single video Block
-        // /Side most viewed
+        +genres-sidebar(genres)
+
+                
+        +sideblock-videos(' ویدیوهای مشابه', populars)
+        +sideblock-videos('پر بازدیدترین ها', populars)
+
         // Side Popular News
         .side-block.right-side
           h4.block-title نقد بازی
