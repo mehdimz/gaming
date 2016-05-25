@@ -44,12 +44,12 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
             .dropdown-menu(style='width:222px;')
               ul(role='menu')
                 li
-                  a(href='#') کاربر عادی
-                li
-                  a(href='#') کاربر ویژه
-                li.divider
-                li
-                  a(href='#')  تفاوت کاربر عادی با کاربر ویژه
+                  a(href='/auth/signup') کاربر عادی
+                //- li
+                //-   a(href='#') کاربر ویژه
+                //- li.divider
+                //- li
+                //-   a(href='#')  تفاوت کاربر عادی با کاربر ویژه
               //
           li
             a.btn-xs(href='/auth/login')
@@ -74,19 +74,19 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                     a(href='/genres/') سبک
                   li
                     a(href='/tags/') تگ
-                  li.divider
-                li
-                  a(href='user-profile.html')
-                    | پروفایل 
-                    span.badge.pull-right.bg-warning 13
-                li
-                  a(href='cart.html')
-                    | پیام ها
-                    span.badge.pull-right.bg-default 3
-                li.divider
+                //- li.divider
+                //- li
+                //-   a(href='user-profile.html')
+                //-     | پروفایل 
+                //-     span.badge.pull-right.bg-warning 13
+                //- li
+                //-   a(href='cart.html')
+                //-     | پیام ها
+                //-     span.badge.pull-right.bg-default 3
+                //- li.divider
                 li
                   a(href='/auth/logout') خروج
           li
-            a.search-toggle(href='search.html')
+            a.search-toggle(href='/search')
               i.fa.fa-search
 
