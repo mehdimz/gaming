@@ -1,0 +1,278 @@
+include ../common/genres-sidebar
+include ../common/slider
+
+extends ../layout
+block content
+  section.content-wrap
+    +slider(data.cats)
+    .container.youplay-store.store-grid
+      // Games List
+      .col-md-9.isotope
+        // Sort Categories
+        ul.pagination.isotope-options
+          li.active(data-filter='all')
+            span همه
+          li(data-filter='free')
+            span PC
+          li(data-filter='popular')
+            span Playstation
+          li(data-filter='specials')
+            span Xbox
+          li(data-filter='upcoming')
+            span Mobile
+        // /Sort Categories
+        .isotope-list.row.vertical-gutter
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .bottom-info
+                h4 Bloodborne
+                .row
+                  .col-xs-6
+                    .category
+                      | Action
+                  .col-xs-6
+                    .platform
+                      | PC
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular,specials')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-dark-souls-ii-500x375.jpg', alt='')
+              .bottom-info
+                h4 Dark Souls II
+                .row
+                  .col-xs-6
+                    .category
+                      | Adventure
+                  .col-xs-6
+                    .platform
+                      | Xbox
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+              .bottom-info
+                h4 Kingdoms of Amalur
+                .row
+                  .col-xs-6
+                    .platform
+                      | Playstation
+                  .col-xs-6
+                    .category
+                      | Puzzle
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .bottom-info
+                h4 Bloodborne
+                .row
+                  .col-xs-6
+                    .category
+                      | Action
+                  .col-xs-6
+                    .platform
+                      | PC
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular,specials')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-dark-souls-ii-500x375.jpg', alt='')
+              .bottom-info
+                h4 Dark Souls II
+                .row
+                  .col-xs-6
+                    .category
+                      | Adventure
+                  .col-xs-6
+                    .platform
+                      | Xbox
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+              .bottom-info
+                h4 Kingdoms of Amalur
+                .row
+                  .col-xs-6
+                    .platform
+                      | Playstation
+                  .col-xs-6
+                    .category
+                      | Puzzle
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .bottom-info
+                h4 Bloodborne
+                .row
+                  .col-xs-6
+                    .category
+                      | Action
+                  .col-xs-6
+                    .platform
+                      | PC
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular,specials')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-dark-souls-ii-500x375.jpg', alt='')
+              .bottom-info
+                h4 Dark Souls II
+                .row
+                  .col-xs-6
+                    .category
+                      | Adventure
+                  .col-xs-6
+                    .platform
+                      | Xbox
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+              .bottom-info
+                h4 Kingdoms of Amalur
+                .row
+                  .col-xs-6
+                    .platform
+                      | Playstation
+                  .col-xs-6
+                    .category
+                      | Puzzle
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .bottom-info
+                h4 Bloodborne
+                .row
+                  .col-xs-6
+                    .category
+                      | Action
+                  .col-xs-6
+                    .platform
+                      | PC
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular,specials')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-dark-souls-ii-500x375.jpg', alt='')
+              .bottom-info
+                h4 Dark Souls II
+                .row
+                  .col-xs-6
+                    .category
+                      | Adventure
+                  .col-xs-6
+                    .platform
+                      | Xbox
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+              .bottom-info
+                h4 Kingdoms of Amalur
+                .row
+                  .col-xs-6
+                    .platform
+                      | Playstation
+                  .col-xs-6
+                    .category
+                      | Puzzle
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+              .bottom-info
+                h4 Bloodborne
+                .row
+                  .col-xs-6
+                    .category
+                      | Action
+                  .col-xs-6
+                    .platform
+                      | PC
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular,specials')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-dark-souls-ii-500x375.jpg', alt='')
+              .bottom-info
+                h4 Dark Souls II
+                .row
+                  .col-xs-6
+                    .category
+                      | Adventure
+                  .col-xs-6
+                    .platform
+                      | Xbox
+          // /Single Product Block
+          // Single Product Block
+          .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
+            a.angled-img(href='#!')
+              .img.img-offset
+                img(src='assets/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
+              .bottom-info
+                h4 Kingdoms of Amalur
+                .row
+                  .col-xs-6
+                    .platform
+                      | Playstation
+                  .col-xs-6
+                    .category
+                      | Puzzle
+          // /Single Product Block
+        nav
+          ul.pager
+            li
+              a(href='#') بعدی
+            li
+              a(href='#') قبلی
+      // /Games List
+      // Right Side
+      .col-md-3
+        // Side Categories
+        +genres-sidebar(data.genres)
+
+        //- .side-block.right-side
+        //-   h4.block-title دیگر بازی ها
+        //-   .block-content.p-0
+        //-     .row.youplay-side-news
+        //-       .col-xs-3.col-md-4
+        //-         a.angled-img(href='store-product-1.html')
+        //-           .img
+        //-             img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
+        //-       .col-xs-9.col-md-8
+        //-         h4.ellipsis
+        //-           a(href='store-product-1.html', title='Bloodborne') Bloodborne
+        //-         span.category Action
+     
+block addscript
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js')
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.revolution.min.js')
+  script(type='text/javascript', src='/plugins/isotope/isotope.pkgd.min.js')
