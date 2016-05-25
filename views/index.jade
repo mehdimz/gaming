@@ -1,11 +1,11 @@
 include ./common/carousel
 include ./common/video-carousel
+include ./common/slider
 extends layout
 
 block content
   section.content-wrap
-    include ./common/slider
-  
+    +slider(cats)   
     +carousel(cats)
 
     h2.container.h1
