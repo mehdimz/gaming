@@ -1,4 +1,4 @@
-include ../common/genres-sidebar
+include ../common/platforms-sidebar
 include ../common/slider
 
 extends ../layout
@@ -12,13 +12,18 @@ block content
         ul.pagination.isotope-options
           li.active(data-filter='all')
             span همه
-          each platform in platforms
-            li(data-filter='#{platform.name}')
-              span= platform.name
+          li(data-filter='free')
+            span PC
+          li(data-filter='popular')
+            span Playstation
+          li(data-filter='specials')
+            span Xbox
+          li(data-filter='upcoming')
+            span Mobile
         // /Sort Categories
         .isotope-list.row.vertical-gutter
           each item in data.cats 
-            .item.col-lg-4.col-md-6.col-xs-12(data-filters='#{item._platforms.map(function(x){return x.name}).join()}')
+            .item.col-lg-4.col-md-6.col-xs-12(data-filters='popular')
               a.angled-img(href='#!')
                 .img.img-offset
                   img(src='/images/cats/500/#{item._id}.jpg', alt='')
@@ -27,22 +32,22 @@ block content
                   .row
                     .col-xs-6
                       .category
-                        span= item._genre.name
+                        span= item._platform.name
                     .col-xs-6
                       .platform
                         | PC
           
-        //- nav
-        //-   ul.pager
-        //-     li
-        //-       a(href='#') بعدی
-        //-     li
-        //-       a(href='#') قبلی
+        nav
+          ul.pager
+            li
+              a(href='#') بعدی
+            li
+              a(href='#') قبلی
       // /Games List
       // Right Side
       .col-md-3
         // Side Categories
-        +genres-sidebar(data.genres)
+        +platforms-sidebar(data.platforms)
 
         //- .side-block.right-side
         //-   h4.block-title دیگر بازی ها

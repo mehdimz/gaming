@@ -1,0 +1,11 @@
+extends ../layout-normal
+block content
+	.row
+		.col-xs-12
+			form(method="post", action="/cats/#{item._id}/platforms")
+				.row
+					each platform in platforms
+						.col-xs-4
+							input(type="checkbox", value="#{platform._id}", name="platforms", checked=(item._platforms.indexOf(platform._id) > -1))
+							= platform.name
+				button.btn.btn-primary.btn-block(type="submit") submit

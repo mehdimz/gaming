@@ -6,4 +6,4 @@ mixin genres-sidebar(genres)
         a(href='#!') همه بازی ها
       each genre in genres
         li
-          a(href='/genre/view/#{genre.name}')= genre.name
+          a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name

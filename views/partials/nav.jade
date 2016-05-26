@@ -21,15 +21,9 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
             span.label Games
           .dropdown-menu
             ul(role='menu')
-              li
-                a(href='blog-1.html') PC
-              li
-                a(href='blog-2.html') Playstation
-              li
-                a(href='blog-3.html') Xbox
-              li
-                a(href='blog-3.html') Mobile
-            //
+              each platform in platforms
+                li
+                  a(href='#')= platform.name
         li.dropdown.dropdown-hover
           a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
             | تماس با ما 
@@ -71,9 +65,11 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                   li
                     a(href='/cats/new') بازی
                   li
-                    a(href='/genres/') سبک
+                    a(href='/platforms') پلت فرم
                   li
-                    a(href='/tags/') تگ
+                    a(href='/genres') سبک
+                  li
+                    a(href='/tags') تگ
                 //- li.divider
                 //- li
                 //-   a(href='user-profile.html')
@@ -86,7 +82,7 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                 //- li.divider
                 li
                   a(href='/auth/logout') خروج
-          li
-            a.search-toggle(href='/search')
-              i.fa.fa-search
+        li
+          a.search-toggle(href='/search')
+            i.fa.fa-search
 

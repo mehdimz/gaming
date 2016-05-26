@@ -1,2 +1,7 @@
-
-@import 'my-style'
+@import './vendor/bootstrap.min';
+@import './vendor/font-awesome.min';
+@import './vendor/owl.carousel';
+@import './vendor/settings';
+@import './vendor/youplay.min';
+@import './vendor/youplay-rtl';
+@import 'my-style';
