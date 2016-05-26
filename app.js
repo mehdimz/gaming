@@ -10,6 +10,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
 var moment = require('moment-jalali');
+var Platform = require('./lib/back/models/platform');
 
 
 var app = express();
@@ -50,8 +51,10 @@ app.use(function(req, res, next) {
   //add date format for views
   moment.loadPersian();
   app.locals.moment = moment;
-  
-  next();
+  Platform.find({}, function(err, items) {
+    app.locals.platforms = items;
+    next();
+  });
 });
 
 app.use('/', require('./lib/back'));

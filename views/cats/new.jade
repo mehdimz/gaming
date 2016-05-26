@@ -6,14 +6,16 @@ block content
       .info
         .container.align-center
           .row
-            .col-md-9
+            .col-md-8
               h1.text-center بازی
               include form
-            .col-md-3
+            .col-md-4
               table.table.table-bordered
                 each cat in cats
                   tr
                     td= cat.name
+                    td
+                      a(href="/cats/#{cat._id}/platforms") +platforms
                     td
                       a(href="/cats/#{cat._id}/properties")
                         span.fa.fa-plus
