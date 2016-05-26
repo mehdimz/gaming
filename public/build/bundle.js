@@ -45,10 +45,9 @@ require('./js/plugins/jarallax.js');
 require('./js/plugins/smoothscroll.js');
 require('./js/plugins/owl.carousel.min.js');
 require('./js/plugins/jquery.countdown.min.js');
-
 require('./js/plugins/youplay.min.js');
 // init youplay
-if(typeof youplay !== 'undefined') {
+if (typeof youplay !== 'undefined') {
   youplay.init({
     smoothscroll: false
   });
@@ -60,6 +59,8 @@ $('.countdown').each(function() {
     );
   });
 });
+
+
 },{"./amir/thumbs":1,"./js/plugins/bootstrap.min.js":3,"./js/plugins/jarallax.js":4,"./js/plugins/jquery.countdown.min.js":5,"./js/plugins/jquery.hexagonprogress.min.js":6,"./js/plugins/owl.carousel.min.js":7,"./js/plugins/shapes-polyfill.min.js":8,"./js/plugins/skrollr.min.js":9,"./js/plugins/smoothscroll.js":10,"./js/plugins/youplay.min.js":11}],3:[function(require,module,exports){
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
