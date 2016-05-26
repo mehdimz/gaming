@@ -19,7 +19,43 @@ html
 
     include ./partials/nav
     block content 
-
+    // Footer
+    footer.youplay-footer-parallax
+      .wrapper(style="background-image: url('/images/footer-bg.jpg')")
+        // Social Buttons
+        .social
+          .container
+            h3
+              | با  
+              strong bazivision
+              |  در شبکه های اجتماعی همراه شوید
+            .row.icons
+              .col-xs-6.col-sm-3
+              .col-xs-6.col-sm-3
+                a(href='#!')
+                  i.fa.fa-instagram
+                  span ارتباط در اینستاگرام
+              .col-xs-6.col-sm-3
+                a(href='#!')
+                  i.fa.fa-paper-plane
+                  span ارتباط در تلگرام
+              .col-xs-6.col-sm-3
+        // /Social Buttons
+        // Copyright
+        .copyright
+          .container
+            | تمامی حقوق برای سایت 
+            strong bazivision
+            |  محفوظ است
+        // /Copyright
+    // /Footer
+    // /Main Content
+    // Search Block
+    .search-block
+      a.search-toggle.glyphicon.glyphicon-remove(href='#!')
+      form(action='search.html')
+        .youplay-input
+          input(type='text', name='search', placeholder='Search...')
 
     
     script(src="/plugins/jquery/jquery.min.js")
