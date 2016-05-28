@@ -45,93 +45,27 @@ block content
     h2.container.h1 نقد بازی ها
     section.youplay-news.container
       // Single News Block
-      .news-one.row.vertical-gutter
-        .col-md-4
-          a.angled-img(href='blog-post-1.html')
-            .img
-              img(src='/images/game-bloodborne-500x375.jpg', alt='')
-            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9.1 out of 10')
-              span 9.1
-        .col-md-8
-          .clearfix
-            h3.h2.pull-left.m-0
-              a(href='blog-post-1.html') نقد بازی Bloodborne  از دیدگاه bazivision
-            span.date.pull-right
-              i.fa.fa-calendar
-              |  امروز
-          .tags
-            i.fa.fa-tags
-            a(href='#') Bloodborne
-            | , 
-            a(href='#') first try
-            | , 
-            a(href='#') first boss problem
-            | , 
-            a(href='#') newbie game
-          .description
-            p
-              | تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
-            p
-              | تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
-          a.btn.read-more.pull-left(href='blog-post-1.html') ادامه مطلب
-      // /Single News Block
-      // Single News Block
-      .news-one.row.vertical-gutter
-        .col-md-4
-          a.angled-img(href='blog-post-2.html')
-            .img
-              img(src='/images/game-dark-souls-ii-500x375.jpg', alt='')
-            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9 out of 10')
-              span 9
-        .col-md-8
-          .clearfix
-            h3.h2.pull-left.m-0
-              a(href='blog-post-2.html') تفاوت Dark Soul II و Dark Soul I
-            span.date.pull-right
-              i.fa.fa-calendar
-              |  9 بهمن، 1394
-          .tags
-            i.fa.fa-tags
-            a(href='#') Dark Souls II
-            | , 
-            a(href='#') coming soon
-            | , 
-            a(href='#') first review
-            | , 
-            a(href='#') sale date
-          .description
-            p
-              | تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
-          a.btn.read-more.pull-left(href='blog-post-2.html') ادامه مطلب
-      // /Single News Block
-      // Single News Block
-      .news-one.row.vertical-gutter
-        .col-md-4
-          a.angled-img(href='blog-post-3.html')
-            .img
-              img(src='/images/game-kingdoms-of-amalur-reckoning-500x375.jpg', alt='')
-            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='3.8 out of 10')
-              span 3.8
-        .col-md-8
-          .clearfix
-            h3.h2.pull-left.m-0
-              a(href='blog-post-3.html') نگاهی به بازی Kingdoms of Amalur
-            span.date.pull-right
-              i.fa.fa-calendar
-              |  1 فروردین، 1395
-          .tags
-            i.fa.fa-tags
-            a(href='#') Kingdoms of Amalur
-            | , 
-            a(href='#') game
-            | , 
-            a(href='#') review
-          .description
-            p
-              | تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
-          a.btn.read-more(href='blog-post-3.html') ادامه مطلب
-      // /Single News Block
-    // /Latest News
+      each cat in cats
+        .news-one.row.vertical-gutter
+          .col-md-4
+            a.angled-img(href='/games/#{cat._id}/#{cat.name}')
+              .img
+                img(src='/images/cats/250/#{cat._id}.jpg', alt='')
+              .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9.1 out of 10')
+                span 9.1
+          .col-md-8
+            .clearfix
+              h3.h2.pull-left.m-0
+                a(href='blog-post-1.html') نقد بازی 
+                span= cat.name
+                |  از دیدگاه bazivision 
+              //- span.date.pull-right
+              //-   i.fa.fa-calendar
+              //-   | aa
+            .description
+              p= cat.critic
+            a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
+    
     // Partners
     section.youplay-banner.youplay-banner-parallax.small.mt-80
       .image(style="background-image: url('/images/banner-bg.jpg');")

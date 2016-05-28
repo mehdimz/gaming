@@ -1,6 +1,7 @@
 extends ../layout
 include ../common/sideblock-videos
 include ../common/genres-sidebar
+include parts/tags-list
 block content
   section.content-wrap
     // Banner
@@ -27,14 +28,7 @@ block content
                   | برای دیدن این ویدیو لطفا javascript مرورگر را فعال کنید
                   a(href='#', target='_blank')
           .youplay-review-rating
-            // Post Tags
-            .tags
-              i.fa.fa-tags
-              each tag in item._tags
-                a(href='#')= tag.name
-                | ,
-            // /Post Tags
-            // Post Meta
+            +tags-list(item)
             .meta
               .item
                 i.fa.fa-user.meta-icon
@@ -46,8 +40,11 @@ block content
                 a(href='#!')= moment(item.date).format('jD jMMMM jYYYY') 
               .item
                 i.fa.fa-bookmark.meta-icon
-                span دسته 
-                a(href='#!')= item._category._genre.name 
+                span دسته
+                if item._category
+                  each genre in item._category._genres
+                    a(href='/genres/view/#{genre._id}')= genre.name
+                    | &nbsp
               .item
                 i.fa.fa-eye.meta-icon
                 span بازدید
