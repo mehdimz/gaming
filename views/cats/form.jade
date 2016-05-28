@@ -8,11 +8,6 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
     textarea.form-control(name="critic", placeholder="نقد بازی")
       = item ? item.critic : '' 
 
-  fieldset.form-group
-    select.form-control(name="_genre")
-      each genre in genres
-        option(value="#{genre._id}", selected=(item && item._genre && item._genre.toString() == genre._id.toString()) )= genre.name
-
   .form-group.clearfix
     span.pull-left تصویر
     input.pull-left(type="file", name="image", required=(item ? false : 'required'))                  

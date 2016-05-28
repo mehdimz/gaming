@@ -1,0 +1,12 @@
+extends ../layout-normal
+block content
+	.row
+		.col-xs-12
+			h1= item.name
+			form(method="post", action="/cats/#{item._id}/genres")
+				ul.list-inline
+					each genre in genres
+						li
+							input(type="checkbox", value="#{genre._id}", name="genres", checked=(item._genres.indexOf(genre._id) > -1))
+							= genre.name
+				button.btn.btn-primary.btn-block(type="submit") submit

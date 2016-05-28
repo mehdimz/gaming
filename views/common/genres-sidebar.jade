@@ -3,7 +3,7 @@ mixin genres-sidebar(genres)
     h4.block-title سبک بازی ها
     ul.block-content
       li
-        a(href='#!') همه بازی ها
+        a(href='/genre/view') همه بازی ها
       each genre in genres
         li
           a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name

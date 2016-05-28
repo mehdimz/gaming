@@ -27,10 +27,10 @@ block content
                   .row
                     .col-xs-6
                       .category
-                        span= item._genre.name
+                        span= item._genres.map(function(x){return x.name}).join() 
                     .col-xs-6
                       .platform
-                        | PC
+                        span= item._platforms.map(function(x){return x.name}).join() 
           
         //- nav
         //-   ul.pager

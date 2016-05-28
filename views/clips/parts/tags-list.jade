@@ -1,0 +1,6 @@
+mixin tags-list(item)
+  .tags
+    i.fa.fa-tags
+    each tag in item._tags
+      a(href='#')= tag.name
+      | ,
