@@ -1,4 +1,4 @@
-mixin carousel(items, name)
+mixin carousel(items)
   .youplay-carousel(data-autoplay='5000')
     each item in items
       a.angled-img(href='/games/#{item._id}/#{item.name}')

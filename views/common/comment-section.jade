@@ -1,0 +1,28 @@
+mixin comment-section(item, page)
+  .comments-block
+    h3
+      | نظرات 
+      small (#{item.comments.length})
+    form.comment-form(action='/#{page}/#{item._id}/comments', method="post")
+      .comment-avatar.pull-left
+        img(src='/images/avatar.png', alt='')
+      .comment-cont.clearfix
+        //- .youplay-input
+        //-   input(type='text', name='username', placeholder='نام *', required='')
+        //- .youplay-input
+        //-   input(type='email', name='email', placeholder='پست الکترونیکی *', required='')
+        .youplay-textarea
+          textarea(name='comment', rows='5', placeholder='نظر شما... *', required='')
+        button.btn.btn-default.pull-right ارسال نظر
+    ul.comments-list
+      each comment in item.comments
+        li
+          article
+            .comment-avatar.pull-left
+              img(src='/images/avatar.png', alt='')
+            .comment-cont.clearfix
+              a.comment-author.h4(href='#!')= comment._user.fullname
+              .date
+                i.fa.fa-calendar
+                span= moment(comment.date).fromNow()
+              .comment-text= comment.body
