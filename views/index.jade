@@ -26,20 +26,19 @@ block content
       a.btn.pull-right(href='#!') بیشتر
     +video-carousel(clips)
     // Preorder
-    .h2
-    section.youplay-banner.youplay-banner-parallax.small
-      .image(style="background-image: url('/images/banner-witcher-3.jpg');")
-      .info.container.align-center
-        div
-          h2
-            | The Witcher 3:
+    if toBeReleasedGame
+      .h2
+      section.youplay-banner.youplay-banner-parallax.small
+        .image(style="background-image: url('/images/cats/1000/#{toBeReleasedGame._id}.jpg');")
+        .info.container.align-center
+          div
+            h2
+              = toBeReleasedGame.name 
+            // See countdown init in bottom of the page
+            .countdown.h2(data-end='#{toBeReleasedGame.releasedate}')
             br
-            |  Wild Hunt
-          // See countdown init in bottom of the page
-          .countdown.h2(data-end='2017/01/01')
-          br
-          br
-          a.btn.btn-lg(href='#!') صفحه بازی
+            br
+            a.btn.btn-lg(href='/games/#{toBeReleasedGame._id}') بازی نامه
     // /Preorder
     // Latest News
     h2.container.h1 نقد بازی ها
