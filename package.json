@@ -18,7 +18,7 @@
     "formidable": "^1.0.17",
     "jade": "~1.11.0",
     "jquery": "^2.2.3",
-    "lwip": "0.0.8",
+    "lwip": "0.0.9",
     "moment-jalali": "^0.3.9",
     "mongoose": "^4.4.6",
     "mongoose-unique-validator": "^1.0.2",
