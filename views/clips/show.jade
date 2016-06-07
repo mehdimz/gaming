@@ -140,55 +140,18 @@ block content
         .side-block.right-side
           h4.block-title نقد بازی
           .block-content.p-0
-            // Single News Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='blog-post-1.html')
-                  .img
-                    img(src='/images/game-bloodborne-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='blog-post-1.html', title='Bloodborne - First Try!') تلاش در بازی Blood borne
-                span.date
-                  i.fa.fa-calendar
-                  |  امروز
-            // /Single News Block
-            // Single News Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-middle-eart-shadow-of-mordor-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title='Whats New in Middle-earth') hearthstone و هیجان
-                span.date
-                  i.fa.fa-calendar
-                  |  12 فروردین 1394
-            // /Single News Block
-            // Single News Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
-            // /Single News Block
-            // Single News Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='#!')
-                  .img
-                    img(src='/images/game-diablo-iii-500x375.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='#!', title="Let's Grind Diablo III") world of warcraft Mythic
-                span.date
-                  i.fa.fa-calendar
-                  |  January 18, 2015
- 
+            each game in games
+              // Single News Block
+              .row.youplay-side-news
+                .col-xs-3.col-md-4
+                  a.angled-img(href='/games/#{game._id}/#{game.name}')
+                    .img
+                      img(src='/images/cats/250/#{game._id}.jpg', alt='')
+                .col-xs-9.col-md-8
+                  h4.ellipsis
+                    a(href='/games/#{game._id}/#{game.name}', title='#{game.name}')= game.name 
+   //-                span.date
+   //-                  i.fa.fa-calendar
+   //-                  |  امروز
+             
+   //- 
