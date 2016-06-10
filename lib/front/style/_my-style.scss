@@ -112,3 +112,12 @@ a.btn-default label{
 .test{
 	text-decoration:none;
 }
+
+ul.two-columns li{
+	float:left !important;
+	width:50% !important;
+}
+
+ul.two-columns li a{
+	text-align:center;
+}
