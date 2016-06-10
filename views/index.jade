@@ -4,146 +4,145 @@ include ./common/slider
 extends layout
 
 block content
-  section.content-wrap
-    +slider(cats)   
-    +carousel(cats)
+  +slider(cats)   
+  +carousel(cats)
 
-    h2.container.h1
-      | پربازدیدها
-      a.btn.pull-right(href='#!') بیشتر
-    +video-carousel(clips)
-    
+  h2.container.h1
+    | پربازدیدها
+    a.btn.pull-right(href='#!') بیشتر
+  +video-carousel(clips)
+  
 
-    // todays video
-    h2.container.h1
-      | ویدیوهای روز
-      a.btn.pull-right(href='#!') بیشتر
-    +video-carousel(clips)
+  // todays video
+  h2.container.h1
+    | ویدیوهای روز
+    a.btn.pull-right(href='#!') بیشتر
+  +video-carousel(clips)
 
-    // Specials
-    h2.container.h1
-      | تریلرها 
-      a.btn.pull-right(href='#!') بیشتر
-    +video-carousel(clips)
-    // Preorder
-    if toBeReleasedGame
-      .h2
-      section.youplay-banner.youplay-banner-parallax.small
-        .image(style="background-image: url('/images/cats/1000/#{toBeReleasedGame._id}.jpg');")
-        .info.container.align-center
-          div
-            h2
-              = toBeReleasedGame.name 
-            // See countdown init in bottom of the page
-            .countdown.h2(data-end='#{toBeReleasedGame.releasedate}')
-            br
-            br
-            a.btn.btn-lg(href='/games/#{toBeReleasedGame._id}') بازی نامه
-    // /Preorder
-    // Latest News
-    h2.container.h1 نقد بازی ها
-    section.youplay-news.container
-      // Single News Block
-      each cat in cats
-        .news-one.row.vertical-gutter
-          .col-md-4
-            a.angled-img(href='/games/#{cat._id}/#{cat.name}')
-              .img
-                img(src='/images/cats/250/#{cat._id}.jpg', alt='')
-              .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9.1 out of 10')
-                span 9.1
-          .col-md-8
-            .clearfix
-              h3.h2.pull-left.m-0
-                a(href='blog-post-1.html') نقد بازی 
-                span= cat.name
-                |  از دیدگاه bazivision 
-              //- span.date.pull-right
-              //-   i.fa.fa-calendar
-              //-   | aa
-            .description
-              p= cat.critic
-            a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
-    
-    // Partners
-    section.youplay-banner.youplay-banner-parallax.small.mt-80
-      .image(style="background-image: url('/images/banner-bg.jpg');")
-      //
-        <div class="info align-center">
-        <div>
-        <h2 class="mb-40">Partners</h2>
-        <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-        <div class="owl-carousel" data-autoplay="6000">
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-1.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-2.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-3.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-4.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-5.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-6.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-7.png" alt="">
-        </a>
-        </div>
-        <div class="item">
-        <a href="#">
-        <img src="/images/partner-logo-8.png" alt="">
-        </a>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    // /Partners
-    // Features
-    h2.container.h1 توانایی های تیم bazivision
-    section.youplay-features.container
-      .col-md-3.col-sm-6
-        a.feature.angled-bg(href='#')
-          i.fa.fa-line-chart
-          h3 خدمات SEO
-          small عرفی وب سایت به موتورهای جستجو
-      .col-md-3.col-sm-6
-        .feature.angled-bg
-          i.fa.fa-pencil-square-o
-          h3 طراحی لوگو
-          small سادگی و زیبایی
-      .col-md-3.col-sm-6
-        .feature.angled-bg
-          i.fa.fa-list-alt
-          h3 تولید محتوا
-          small ایجاد محتوای وب سایت
-      .col-md-3.col-sm-6
-        .feature.angled-bg
-          i.fa.fa-html5
-          h3 طراحی سایت
-          small واکنش گرا و مدرن
+  // Specials
+  h2.container.h1
+    | تریلرها 
+    a.btn.pull-right(href='#!') بیشتر
+  +video-carousel(clips)
+  // Preorder
+  if toBeReleasedGame
+    .h2
+    section.youplay-banner.youplay-banner-parallax.small
+      .image(style="background-image: url('/images/cats/1000/#{toBeReleasedGame._id}.jpg');")
+      .info.container.align-center
+        div
+          h2
+            = toBeReleasedGame.name 
+          // See countdown init in bottom of the page
+          .countdown.h2(data-end='#{toBeReleasedGame.releasedate}')
+          br
+          br
+          a.btn.btn-lg(href='/games/#{toBeReleasedGame._id}') بازی نامه
+  // /Preorder
+  // Latest News
+  h2.container.h1 نقد بازی ها
+  section.youplay-news.container
+    // Single News Block
+    each cat in cats
+      .news-one.row.vertical-gutter
+        .col-md-4
+          a.angled-img(href='/games/#{cat._id}/#{cat.name}')
+            .img
+              img(src='/images/cats/250/#{cat._id}.jpg', alt='')
+            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9.1 out of 10')
+              span 9.1
+        .col-md-8
+          .clearfix
+            h3.h2.pull-left.m-0
+              a(href='blog-post-1.html') نقد بازی 
+              span= cat.name
+              |  از دیدگاه bazivision 
+            //- span.date.pull-right
+            //-   i.fa.fa-calendar
+            //-   | aa
+          .description
+            p= cat.critic
+          a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
+  
+  // Partners
+  section.youplay-banner.youplay-banner-parallax.small.mt-80
+    .image(style="background-image: url('/images/banner-bg.jpg');")
+    //
+      <div class="info align-center">
+      <div>
+      <h2 class="mb-40">Partners</h2>
+      <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+      <div class="owl-carousel" data-autoplay="6000">
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-1.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-2.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-3.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-4.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-5.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-6.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-7.png" alt="">
+      </a>
+      </div>
+      <div class="item">
+      <a href="#">
+      <img src="/images/partner-logo-8.png" alt="">
+      </a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+  // /Partners
+  // Features
+  h2.container.h1 توانایی های تیم bazivision
+  section.youplay-features.container
+    .col-md-3.col-sm-6
+      a.feature.angled-bg(href='#')
+        i.fa.fa-line-chart
+        h3 خدمات SEO
+        small عرفی وب سایت به موتورهای جستجو
+    .col-md-3.col-sm-6
+      .feature.angled-bg
+        i.fa.fa-pencil-square-o
+        h3 طراحی لوگو
+        small سادگی و زیبایی
+    .col-md-3.col-sm-6
+      .feature.angled-bg
+        i.fa.fa-list-alt
+        h3 تولید محتوا
+        small ایجاد محتوای وب سایت
+    .col-md-3.col-sm-6
+      .feature.angled-bg
+        i.fa.fa-html5
+        h3 طراحی سایت
+        small واکنش گرا و مدرن
 
 
 block addscript
