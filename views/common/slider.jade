@@ -9,8 +9,9 @@ mixin slider(cats)
             img(src='/images/dummy.png', alt='', data-lazyload='/images/cats/1000/#{cat._id}.jpg', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
          
             .tp-caption.customin.customout(data-x='right', data-hoffset='60', data-y='center', data-voffset='-60', data-customin='x:200;scaleX:0.5;scaleY:0.5;', data-customout='x:0;scaleX:1;scaleY:1;', data-start='500', data-speed='700', data-easing='Sine.easeInOut', data-endspeed='600', data-endeasing='Linear.easeNone')
-              h2.h1
-                = cat.name
+              h2.h1= cat.name
+              h2.text-muted= cat.subtitle
+
 
             .tp-caption.customin.customout(data-x='right', data-hoffset='60', data-y='center', data-voffset='60', data-customin='x:200;scaleX:0.5;scaleY:0.5;', data-customout='x:0;scaleX:1;scaleY:1;', data-start='1000', data-speed='700', data-easing='Sine.easeInOut', data-endspeed='600', data-endeasing='Linear.easeNone')
               a.btn.btn-lg(href='/games/#{cat._id}/#{cat.name}') بازی نامه
