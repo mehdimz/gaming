@@ -14,6 +14,10 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
     span.pull-left تصویر
     input.pull-left(type="file", name="image", required=(item ? false : 'required'))                  
 
+  .form-group.clearfix
+    span.pull-left تصویر اسلایدر
+    input.pull-left(type="file", name="sliderImage", required=(item ? false : 'required'))                  
+
   fieldset.form-group
     input.form-control(name="releasedate",  value=(item ? item.releasedate : ''), placeholder="2017/01/01 مثال" ) 
 

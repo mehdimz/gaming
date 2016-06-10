@@ -4,9 +4,9 @@ mixin slider(cats)
 
       ul
         each cat in cats.slice(0,3)
-          li(data-thumb='/images/cats/1000/#{cat._id}.jpg', data-saveperformance='on', data-transition='random-static', data-slotamount='7', data-masterspeed='700')
+          li(data-thumb='/images/sliders/1600/#{cat._id}.jpg', data-saveperformance='on', data-transition='random-static', data-slotamount='7', data-masterspeed='700')
 
-            img(src='/images/dummy.png', alt='', data-lazyload='/images/cats/1000/#{cat._id}.jpg', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
+            img(src='/images/dummy.png', alt='', data-lazyload='/images/sliders/1600/#{cat._id}.jpg', data-bgposition='center top', data-bgfit='cover', data-bgrepeat='no-repeat')
          
             .tp-caption.customin.customout(data-x='right', data-hoffset='60', data-y='center', data-voffset='-60', data-customin='x:200;scaleX:0.5;scaleY:0.5;', data-customout='x:0;scaleX:1;scaleY:1;', data-start='500', data-speed='700', data-easing='Sine.easeInOut', data-endspeed='600', data-endeasing='Linear.easeNone')
               h2.h1= cat.name
