@@ -17,4 +17,8 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
   fieldset.form-group
     input.form-control(name="releasedate",  value=(item ? item.releasedate : ''), placeholder="2017/01/01 مثال" ) 
 
+  fieldset.form-group
+    label(for="inBanner") نمایش در بنر
+    input#inBanner(type="checkbox", checked=(item ? item.inBanner : false), name="inBanner")
+
   button.btn.btn-secondary(type="submit", class=(item ? 'btn-info':'')) ثبت +
