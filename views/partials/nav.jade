@@ -21,9 +21,34 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
             span.label Games
           .dropdown-menu
             ul(role='menu')
-              each platform in platforms
-                li
-                  a(href='/genre/view')= platform.name
+              li.dropdown.dropdown-submenu.pull-left
+                a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false') بر اساس کنسول
+                .dropdown-menu(style='width: 340px;')
+                  ul(role='menu')
+                    li
+                      a(href='user-activity.html') PC
+                    li
+                      a(href='user-profile.html') Playstation
+                    li
+                  ul(role='menu')
+                    li
+                      a(href='user-activity.html') PC
+                    li
+                      a(href='user-profile.html') Playstation
+              li.dropdown.dropdown-submenu.pull-left
+                a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
+                .dropdown-menu(style='width: 340px;')
+                  ul(role='menu')
+                    li
+                      a(href='user-activity.html') Action
+                    li
+                      a(href='user-activity.html') arcade
+                  ul(role='menu')
+                    li
+                      a(href='user-activity.html') racing
+                    li
+                      a(href='user-activity.html') strategy               
+
         li.dropdown.dropdown-hover
           a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
             | تماس با ما 
