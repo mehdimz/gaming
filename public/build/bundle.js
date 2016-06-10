@@ -25,7 +25,7 @@ $('#thumb-down').click(function() {
 });
 
 },{"jquery":13}],2:[function(require,module,exports){
-// window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 // window.Tether = require('tether');
 // require('./js/bootstrap.min.js');
 // require('./js/owl.carousel.js');
@@ -54,6 +54,7 @@ if (typeof youplay !== 'undefined') {
     smoothscroll: false
   });
 }
+
 $('.countdown').each(function() {
   $(this).countdown($(this).attr('data-end'), function(event) {
     $(this).text(
@@ -63,7 +64,7 @@ $('.countdown').each(function() {
 });
 
 
-},{"./amir/thumbs":1,"./js/plugins/bootstrap.min.js":3,"./js/plugins/jarallax.js":4,"./js/plugins/jquery.countdown.min.js":5,"./js/plugins/jquery.hexagonprogress.min.js":6,"./js/plugins/owl.carousel.min.js":7,"./js/plugins/shapes-polyfill.min.js":8,"./js/plugins/skrollr.min.js":9,"./js/plugins/smoothscroll.js":10,"./js/plugins/youplay.min.js":11,"./js/video.js":12}],3:[function(require,module,exports){
+},{"./amir/thumbs":1,"./js/plugins/bootstrap.min.js":3,"./js/plugins/jarallax.js":4,"./js/plugins/jquery.countdown.min.js":5,"./js/plugins/jquery.hexagonprogress.min.js":6,"./js/plugins/owl.carousel.min.js":7,"./js/plugins/shapes-polyfill.min.js":8,"./js/plugins/skrollr.min.js":9,"./js/plugins/smoothscroll.js":10,"./js/plugins/youplay.min.js":11,"./js/video.js":12,"jquery":13}],3:[function(require,module,exports){
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
