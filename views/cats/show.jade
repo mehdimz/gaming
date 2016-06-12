@@ -13,35 +13,17 @@ block content
             h2= item.name
     // /Banner
     // Images With Text
-    //- .youplay-carousel.gallery-popup
-    //-   a.angled-img(href='#')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-500x375.jpg', alt='')
-    //-     i.fa.fa-play.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-4-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-4-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-5-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-5-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-2-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-2-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-3-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-3-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-6-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-6-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
-    //-   a.angled-img(href='assets/images/game-bloodborne-7-1920x1080.jpg')
-    //-     .img
-    //-       img(src='assets/images/game-bloodborne-7-500x375.jpg', alt='')
-    //-     i.fa.fa-search-plus.icon
+    .youplay-carousel.gallery-popup
+      //- a.angled-img(href='#')
+      //-   .img
+      //-     img(src='/images/additional/400/#{img}.jpg', alt='')
+      //-   i.fa.fa-play.icon
+      each img in item.additional_pictures
+        a.angled-img(href='/images/additional/400/#{img}.jpg')
+          .img
+            img(src='/images/additional/400/#{img}.jpg', alt='')
+          i.fa.fa-search-plus.icon
+
     // /Images With Text
     .container.youplay-store
       .col-md-9

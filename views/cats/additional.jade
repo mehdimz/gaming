@@ -1,0 +1,18 @@
+extends ../layout-normal
+block content
+  .row
+    .col-xs-6
+      form(method="post", action="/cats/#{item._id}/additional", enctype="multipart/form-data")
+        
+        .form-group.clearfix
+          span.pull-left تصویر
+          input.pull-left(type="file", name="image", required=(item ? false : 'required'))
+        button.btn.btn-primary Submit            
+
+    .col-xs-6
+      h1= item.name
+      h3 Additional pictures
+
+      ul
+        each pic in item.additional_pictures
+          li= pic
