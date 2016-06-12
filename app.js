@@ -9,8 +9,6 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
-var moment = require('moment-jalali');
-var Platform = require('./lib/back/models/platform');
 
 
 var app = express();
@@ -45,17 +43,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-app.use(function(req, res, next) {
-  if (req.user) res.locals.currentUser = req.user;
-  res.locals.error = req.flash('error');
-  //add date format for views
-  moment.loadPersian();
-  app.locals.moment = moment;
-  Platform.find({}, function(err, items) {
-    app.locals.platforms = items;
-    next();
-  });
-});
+app.use(require('./lib/back/common_variables'));
 
 app.use('/', require('./lib/back'));
 
