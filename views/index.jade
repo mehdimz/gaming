@@ -49,8 +49,8 @@ block content
           a.angled-img(href='/games/#{cat._id}/#{cat.name}')
             .img
               img(src='/images/cats/250/#{cat._id}.jpg', alt='')
-            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='9.1 out of 10')
-              span 9.1
+            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='#{cat.score} out of 10')
+              span= cat.score
         .col-md-8
           .clearfix
             h3.h2.pull-left.m-0
