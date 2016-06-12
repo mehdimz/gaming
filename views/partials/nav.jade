@@ -32,9 +32,9 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                 a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
                 .dropdown-menu(style='width: 310px;')
                   ul(role='menu').two-columns
-                    each platform in platforms
+                    each genre in genres
                       li
-                        a(href='/genre/view')= platform.name              
+                        a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name
 
         li.dropdown.dropdown-hover
           a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
