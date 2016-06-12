@@ -11,7 +11,8 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
       = item ? item.critic : '' 
 
   .form-group
-    input.form-control(name="score", type="number", step="0.1", min="1", max="10", value=(item ? item.score : ''))
+    label score
+    input.form-control(name="score", type="number", step="0.1", min="1", max="10", value=(item ? item.score : false), placeholer="score")
 
   .form-group.clearfix
     span.pull-left تصویر
