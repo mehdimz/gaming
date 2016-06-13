@@ -43,7 +43,7 @@ block content
   h2.container.h1 نقد بازی ها
   section.youplay-news.container
     // Single News Block
-    each cat in cats
+    each cat in cats.slice(0,3)
       .news-one.row.vertical-gutter
         .col-md-4
           a.angled-img(href='/games/#{cat._id}/#{cat.name}')
