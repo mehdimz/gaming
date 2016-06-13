@@ -2,7 +2,7 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
   .form-group
     input.form-control(type="text", name="name", value=(item?item.name:''))
   .form-group
-    input.form-control(placeholder="subtitle", name="subtitle", value=(item ? item.subtitle : ''), required)
+    input.form-control(placeholder="subtitle", name="subtitle", value=(item ? item.subtitle : ''))
   .form-group
     textarea.form-control(name="about", placeholder="درباره بازی")
       = item ? item.about : '' 
