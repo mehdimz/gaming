@@ -46,22 +46,24 @@ block content
               .col-md-4
                 .youplay-hexagon-rating(data-max='10', title='#{item.score} out of 10')
                   span= item.score
-              .col-md-4
-                h3.mt-0 ویژگی های مثبت
-                ul
-                  each quality in item.properties.pros
-                    if quality
-                      li
-                        i.fa.fa-plus-circle
-                        span=  quality
-              .col-md-4
-                h3.mt-0 ویژگی های منفی
-                ul
-                  each quality in item.properties.cons
-                    if quality
-                      li
-                        i.fa.fa-minus-circle
-                        span= quality
+              if item.properties.pros.length
+                .col-md-4
+                  h3.mt-0 ویژگی های مثبت
+                  ul
+                    each quality in item.properties.pros
+                      if quality
+                        li
+                          i.fa.fa-plus-circle
+                          span=  quality
+              if item.properties.cons.length
+                .col-md-4
+                  h3.mt-0 ویژگی های منفی
+                  ul
+                    each quality in item.properties.cons
+                      if quality
+                        li
+                          i.fa.fa-minus-circle
+                          span= quality
           // /Review Rating
           // Post Share
           .btn-group.social-list.social-likes(data-counters='no')
