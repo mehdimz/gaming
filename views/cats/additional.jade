@@ -15,4 +15,7 @@ block content
 
       ul
         each pic in item.additional_pictures
-          li= pic
+          li
+            span= pic
+            a(href="/cats/#{item._id}/additional/#{pic}/delete")
+              span.fa.fa-trash
