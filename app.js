@@ -9,7 +9,6 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
-var vidStreamer = require('vid-streamer');
 
 var app = express();
 app.use(compression());
@@ -44,14 +43,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use(require('./lib/back/common_variables'));
-
-app.get('/vid-streamer/:id', vidStreamer.settings({
-  'mode': 'development',
-  'forceDownload': false,
-  'random': false,
-  'rootFolder': __dirname + '/lib/storage/data/',
-  'rootPath': 'vid-streamer/'
-}));
 app.use('/', require('./lib/back'));
 
 
