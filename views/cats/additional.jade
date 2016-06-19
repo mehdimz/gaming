@@ -12,10 +12,12 @@ block content
     .col-xs-6
       h1= item.name
       h3 Additional pictures
+      p aspect ratio is 500 * 375
 
       ul
         each pic in item.additional_pictures
           li
+            img(src="/images/additional/250/#{pic}.jpg")
             span= pic
             a(href="/cats/#{item._id}/additional/#{pic}/delete")
               span.fa.fa-trash
