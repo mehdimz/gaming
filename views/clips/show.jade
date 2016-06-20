@@ -33,7 +33,7 @@ block content
             .item
               i.fa.fa-user.meta-icon
               span انتشار کننده 
-              a(href='#!')= item._creator.fullname
+              a(href='#!').publisher= item._creator.fullname
             .item
               i.fa.fa-calendar.meta-icon
               span تاریخ انتشار 
@@ -130,11 +130,12 @@ block content
       // /Post Comments
     // Right Side
     .col-md-3
-      +genres-sidebar(genres)
+      
 
               
       +sideblock-videos(' ویدیوهای مشابه', populars)
       +sideblock-videos('پر بازدیدترین ها', populars)
+
 
       // Side Popular News
       .side-block.right-side
@@ -150,8 +151,6 @@ block content
               .col-xs-9.col-md-8
                 h4.ellipsis
                   a(href='/games/#{game._id}/#{game.name}', title='#{game.name}')= game.name 
- //-                span.date
- //-                  i.fa.fa-calendar
- //-                  |  امروز
-           
- //- 
+
+        +genres-sidebar(genres)          
+
