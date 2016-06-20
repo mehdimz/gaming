@@ -92,9 +92,24 @@ block content
         +comment-section(item, 'games') 
       // Right Side
       .col-md-3
-        // Side Categories
-        +genres-sidebar(genres)
-        // /Side Categories
+        // Side Popular News
+        .side-block.right-side
+          h4.block-title بازی های مشابه
+          .block-content.p-0
+            each cat in cats
+              .row.youplay-side-news
+                .col-xs-3.col-md-4
+                  a.angled-img(href='/games/#{cat._id}/#{cat.name}')
+                    .img
+                      img(src='/images/cats/250/#{cat._id}.jpg', alt='')
+                .col-xs-9.col-md-8
+                  h4.ellipsis
+                    a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name
+                  //- span.date
+                  //-   i.fa.fa-calendar
+                  //-   // date
+            
+        // /Side Popular News
         // Side Popular News
         .side-block.right-side
           h4.block-title بازی نامه ها
@@ -113,7 +128,10 @@ block content
                   //-   // date
             
         // /Side Popular News
+        // Side Categories
+        +genres-sidebar(genres)
+        // /Side Categories
       // /Right Side
     // Related
-    h2.container نسخه های دیگر بازی
+    h2.container دیگر نسخه های بازی
     +carousel(cats, 'Related')
