@@ -2,6 +2,10 @@ extends ../layout
 include ../common/genres-sidebar
 include ../common/comment-section
 include ../common/carousel
+
+block title
+  title= item.name + ' ' + item.subtitle
+
 block content
   section.content-wrap
     // Banner
@@ -67,11 +71,17 @@ block content
           // /Review Rating
           // Post Share
           .btn-group.social-list.social-likes(data-counters='no')
-            span.btn.btn-default.facebook(title='Share link on Facebook')
-            span.btn.btn-default.twitter(title='Share link on Twitter')
-            span.btn.btn-default.plusone(title='Share link on Google+')
-            span.btn.btn-default.pinterest(title='Share image on Pinterest', data-media='')
-            span.btn.btn-default.vkontakte(title='Share link on VK')
+            a.btn.btn-default.twitter-share-button(href='https://twitter.com/share?via=bazvsion', data-via='bazivision', data-related='bazivision', data-hashtags='bazivision', data-dnt='true')
+              span.fa.fa-twitter
+            a.btn.btn-default.facebook-share-button(href='https://www.facebook.com/sharer/sharer.php', target='_blank')
+              span.fa.fa-facebook
+            a.btn.btn-default.telegram-share-button(href='https://telegram.me/share/url?url=', target='_blank', data-telegram='true')
+              span.fa.fa-send
+            a.btn.btn-default(href="https://www.instagram.com/bazivision/", target="_black")
+              span.fa.fa-instagram
+
+
+     
 
         +comment-section(item, 'games') 
       // Right Side
