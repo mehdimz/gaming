@@ -5,6 +5,12 @@ include ../common/carousel
 
 block title
   title= item.name + ' ' + item.subtitle
+  meta(name='description', content='#{item.name} #{item.subtitle}')
+  meta(name='twitter:card', value='#{item.name}')
+  meta(property='og:title', content='#{item.name}')
+  meta(property='og:type', content='article')
+  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/500/#{item._id}.jpg')
+  meta(property='og:description', content='#{item.name} #{item.subtitle}')
 
 block content
   section.content-wrap
