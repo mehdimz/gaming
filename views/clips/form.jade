@@ -22,4 +22,10 @@ form(method="post", action="/clips#{item ? '/'+item._id: ''}", enctype="multipar
         label IMAGE:
       .col-xs-8
         input(type="file", name="image", required)
+  
+  fieldset.form-group
+    label تریلر
+    input(type="checkbox", name="isTrailer", checked=(item ? item.isTrailer : false))
+
   button.btn.btn-primary.btn-block Submit
+

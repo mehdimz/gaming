@@ -1,4 +1,4 @@
-mixin video-carousel(items)
+mixin video-carousel(items, isTrailer)
   .youplay-carousel
     each item in items
       a.angled-img(href='/videos/#{item._id}')
@@ -9,8 +9,18 @@ mixin video-carousel(items)
             i.fa.fa-clock-o
           .badge.date-badge.bg-default.bg-transparent
             = moment(item.date).fromNow()
-        .over-info
-          div
+
+        if isTrailer
+          .bottom-info
+            h4= item.title
+            .row
+              .col-xs-12
+                .platform= item._category._platforms.map(function(x){return x.name}).join() 
+                  
+
+        else 
+          .over-info
             div
-              h4= item.title
-              i.fa.fa-play.icon
+              div
+                h4= item.title
+                i.fa.fa-play.icon
