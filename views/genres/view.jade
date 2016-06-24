@@ -8,14 +8,8 @@ block content
     .container.youplay-store.store-grid
       // Games List
       .col-md-9.isotope
-        // Sort Categories
-        ul.pagination.isotope-options
-          li.active(data-filter='all')
-            span همه
-          each platform in platforms
-            li(data-filter='#{platform.name}')
-              span= platform.name
-        // /Sort Categories
+
+        h1.mt-0 بازی های Action
         .isotope-list.row.vertical-gutter
           each item in data.cats 
             .item.col-lg-4.col-md-6.col-xs-12(data-filters='#{item._platforms.map(function(x){return x.name}).join()}')
