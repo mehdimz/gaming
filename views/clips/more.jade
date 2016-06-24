@@ -9,6 +9,7 @@ block content
       // Games List
       .col-md-9.isotope
         // /Sort Categories
+        h1.mt-0 ویدیوها
         .isotope-list.row.vertical-gutter
           each item in data.clips 
             .item.col-lg-4.col-md-6.col-xs-12
@@ -16,8 +17,8 @@ block content
                 .img.img-offset
                   img(src='/images/clips/250/#{item._id}.jpg', alt='')
                 .bottom-info
-                  h4= item.title
-                  .row
+                  h4(style="overflow:hidden;height:35px;margin-bottom:10px;")= item.title
+                  .row(style="border-top:1px solid #fff; padding-top:10px; margin:0;")
                     .col-xs-6
                       .category
                         span= item._category._genres.map(function(x){return x.name}).join() 
