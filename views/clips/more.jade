@@ -1,0 +1,44 @@
+include ../common/genres-sidebar
+include ../common/slider
+
+extends ../layout
+block content
+  section.content-wrap
+    +slider(data.cats)
+    .container.youplay-store.store-grid
+      // Games List
+      .col-md-9.isotope
+        // /Sort Categories
+        .isotope-list.row.vertical-gutter
+          each item in data.clips 
+            .item.col-lg-4.col-md-6.col-xs-12
+              a.angled-img(href='/videos/#{item._id}')
+                .img.img-offset
+                  img(src='/images/clips/250/#{item._id}.jpg', alt='')
+                .bottom-info
+                  h4= item.title
+                  .row
+                    .col-xs-6
+                      .category
+                        span= item._category._genres.map(function(x){return x.name}).join() 
+                    .col-xs-6
+                      .platform
+                        span= item._category._platforms.map(function(x){return x.name}).join() 
+          
+        nav
+          ul.pager
+            li
+              a(href='#') بعدی
+            li
+              a(href='#') قبلی
+      // /Games List
+      // Right Side
+      .col-md-3
+        // Side Categories
+        +genres-sidebar(data.genres)
+
+
+block addscript
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js')
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.revolution.min.js')
+  //- script(type='text/javascript', src='/plugins/isotope/isotope.pkgd.min.js')
