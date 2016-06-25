@@ -32,12 +32,12 @@ block content
       .info.container.align-center
         div
           h2
-            = toBeReleasedGame.name 
+            = data.toBeReleasedGame.name 
           // See countdown init in bottom of the page
-          .countdown.h2(data-end='#{toBeReleasedGame.releasedate}')
+          .countdown.h2(data-end='#{data.toBeReleasedGame.releasedate}')
           br
           br
-          a.btn.btn-lg(href='/games/#{toBeReleasedGame._id}') بازی نامه
+          a.btn.btn-lg(href='/games/#{data.toBeReleasedGame._id}') بازی نامه
   // /Preorder
   // Latest News
   h2.container.h1 نقد بازی ها
