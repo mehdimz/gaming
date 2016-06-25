@@ -4,28 +4,28 @@ include ./common/slider
 extends layout
 
 block content
-  +slider(bannerGames)   
-  +carousel(cats)
+  +slider(data.bannerGames)   
+  +carousel(data.cats)
 
   h2.container.h1
     | پربازدیدها
     a.btn.pull-right(href='/videos/more/latest') بیشتر
-  +video-carousel(clips)
+  +video-carousel(data.mostViewed)
   
 
   // todays video
   h2.container.h1
     | ویدیوهای روز
     a.btn.pull-right(href='/videos/more/latest') بیشتر
-  +video-carousel(clips)
+  +video-carousel(data.todayClips)
 
   // Specials
   h2.container.h1
     | تریلرها 
     a.btn.pull-right(href='/videos/more/latest') بیشتر
-  +video-carousel(trailers, 1)
+  +video-carousel(data.trailers, 1)
   // Preorder
-  if toBeReleasedGame
+  if data.toBeReleasedGame
     .h2
     section.youplay-banner.youplay-banner-parallax.small
       .image(style="background-image: url('/images/cats/1000/#{toBeReleasedGame._id}.jpg');")
@@ -43,7 +43,7 @@ block content
   h2.container.h1 نقد بازی ها
   section.youplay-news.container
     // Single News Block
-    each cat in cats.slice(0,3)
+    each cat in data.cats.slice(0,3)
       .news-one.row.vertical-gutter
         .col-md-4
           a.angled-img(href='/games/#{cat._id}/#{cat.name}')
