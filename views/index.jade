@@ -13,11 +13,12 @@ block content
   +video-carousel(data.mostViewed)
   
 
-  // todays video
-  h2.container.h1
-    | ویدیوهای روز
-    a.btn.pull-right(href='/videos/more/latest') بیشتر
-  +video-carousel(data.todayClips)
+  
+  if data.todayClips.length
+    h2.container.h1
+      | ویدیوهای روز
+      a.btn.pull-right(href='/videos/more/latest') بیشتر
+    +video-carousel(data.todayClips)
 
   // Specials
   h2.container.h1
