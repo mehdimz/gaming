@@ -2,26 +2,28 @@ extends ../layout
 include ../common/genres-sidebar
 include ../common/comment-section
 include ../common/carousel
+include ../common/video-carousel
+include ../common/slider
 
 block title
-  title= item.name + ' ' + item.subtitle
-  meta(name='description', content='#{item.name} #{item.subtitle}')
-  meta(name='twitter:card', value='#{item.name}')
-  meta(property='og:title', content='#{item.name}')
+  title= data.item.name + ' ' + data.item.subtitle
+  meta(name='description', content='#{data.item.name} #{data.item.subtitle}')
+  meta(name='twitter:card', value='#{data.item.name}')
+  meta(property='og:title', content='#{data.item.name}')
   meta(property='og:type', content='article')
-  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/250/#{item._id}.jpg')
-  meta(property='og:description', content='#{item.name} #{item.subtitle}')
+  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/250/#{data.item._id}.jpg')
+  meta(property='og:description', content='#{data.item.name} #{data.item.subtitle}')
 
 block content
   section.content-wrap
     // Banner
     .youplay-banner.youplay-banner-parallax.banner-top
-      .image(style="background-image: url('/images/sliders/1600/#{item._id}.jpg')")
+      .image(style="background-image: url('/images/sliders/1600/#{data.item._id}.jpg')")
       .info
         div
           .container
-            h2.h1.align-left.mb-0= item.name
-            h3.italic-h2= item.subtitle
+            h2.h1.align-left.mb-0= data.item.name
+            h3.italic-h2= data.item.subtitle
     // /Banner
     // Images With Text
     .youplay-carousel.gallery-popup
@@ -29,7 +31,7 @@ block content
       //-   .img
       //-     img(src='/images/additional/400/#{img}.jpg', alt='')
       //-   i.fa.fa-play.icon
-      each img in item.additional_pictures
+      each img in data.item.additional_pictures
         a.angled-img(href='/images/additional/big/#{img}.jpg')
           .img
             img(src='/images/additional/250/#{img}.jpg', alt='')
@@ -37,39 +39,42 @@ block content
 
     // /Images With Text
     .container.youplay-store
+
+      +video-carousel(data.clips)
+
       .col-md-9
         // Post Info
         article
           // Description
           h2.mt-0 درباره بازی
           .description
-            p= item.about
+            p= data.item.about
           // /Description
           // criticism
           h2.mt-0 نقد بازی
           .description
-            p= item.critic
+            p= data.item.critic
           // /criticism
           // Review Rating
           .youplay-review-rating
             .row
               .col-md-4
-                .youplay-hexagon-rating(data-max='10', title='#{item.score} out of 10')
-                  span= item.score
-              if item.properties.pros.length
+                .youplay-hexagon-rating(data-max='10', title='#{data.item.score} out of 10')
+                  span= data.item.score
+              if data.item.properties.pros.length
                 .col-md-4
                   h3.mt-0 ویژگی های مثبت
                   ul
-                    each quality in item.properties.pros
+                    each quality in data.item.properties.pros
                       if quality
                         li
                           i.fa.fa-plus-circle
                           span=  quality
-              if item.properties.cons.length
+              if data.item.properties.cons.length
                 .col-md-4
                   h3.mt-0 ویژگی های منفی
                   ul
-                    each quality in item.properties.cons
+                    each quality in data.item.properties.cons
                       if quality
                         li
                           i.fa.fa-minus-circle
@@ -96,7 +101,7 @@ block content
         .side-block.right-side
           h4.block-title بازی های مشابه
           .block-content.p-0
-            each cat in cats
+            each cat in data.cats
               .row.youplay-side-news
                 .col-xs-3.col-md-4
                   a.angled-img(href='/games/#{cat._id}/#{cat.name}')
@@ -114,7 +119,7 @@ block content
         .side-block.right-side
           h4.block-title بازی نامه ها
           .block-content.p-0
-            each cat in cats
+            each cat in data.cats
               .row.youplay-side-news
                 .col-xs-3.col-md-4
                   a.angled-img(href='/games/#{cat._id}/#{cat.name}')
@@ -129,9 +134,9 @@ block content
             
         // /Side Popular News
         // Side Categories
-        +genres-sidebar(genres)
+        +genres-sidebar(data.genres)
         // /Side Categories
       // /Right Side
     // Related
     h2.container دیگر نسخه های بازی
-    +carousel(cats, 'Related')
+    +carousel(data.cats, 'Related')
