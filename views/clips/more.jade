@@ -1,5 +1,6 @@
 include ../common/genres-sidebar
 include ../common/slider
+include ../common/sideblock-videos
 
 extends ../layout
 block content
@@ -38,15 +39,13 @@ block content
         nav
           ul.pager
             li
-              a(href='#') بعدی
+              a(href='?page=#{page+1}') بعدی
             li
-              a(href='#') قبلی
-      // /Games List
-      // Right Side
-      .col-md-3
-        // Side Categories
-        +genres-sidebar(data.genres)
+              a(href=(page ? '?page=#{page - 1}' : '#')) قبلی
 
+      .col-md-3
+        +genres-sidebar(data.genres)
+        +sideblock-videos('پر بازدیدترین ها', data.mostViewed)
 
 block addscript
   script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js')
