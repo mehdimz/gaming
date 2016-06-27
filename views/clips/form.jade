@@ -6,8 +6,9 @@ form(method="post", action="/clips#{item ? '/'+item._id: ''}", enctype="multipar
       = item ? item.body : ''
   fieldset.form-group
     select.form-control(name="_category")
+      option(value="") Others
       each cat in cats
-        option(value="#{cat._id}", selected=(item && item._category.toString() == cat._id.toString()) )= cat.name
+        option(value="#{cat._id}", selected=(item && item._category && item._category.toString() == cat._id.toString()) )= cat.name
 
   unless item && item._id
     fieldset.form-group
