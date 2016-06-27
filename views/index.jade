@@ -9,10 +9,8 @@ block content
 
   h2.container.h1
     | پربازدیدها
-    a.btn.pull-right(href='/videos/more/latest') بیشتر
+    a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
   +video-carousel(data.mostViewed)
-  
-
   
   if data.todayClips.length
     h2.container.h1
@@ -20,12 +18,11 @@ block content
       a.btn.pull-right(href='/videos/more/latest') بیشتر
     +video-carousel(data.todayClips)
 
-  // Specials
   h2.container.h1
     | تریلرها 
-    a.btn.pull-right(href='/videos/more/latest') بیشتر
+    a.btn.pull-right(href='/videos/more/trailers') بیشتر
   +video-carousel(data.trailers, 1)
-  // Preorder
+
   if data.toBeReleasedGame
     .h2
     section.youplay-banner.youplay-banner-parallax.small
@@ -34,16 +31,13 @@ block content
         div
           h2
             = data.toBeReleasedGame.name 
-          // See countdown init in bottom of the page
           .countdown.h2(data-end='#{data.toBeReleasedGame.releasedate}')
           br
           br
           a.btn.btn-lg(href='/games/#{data.toBeReleasedGame._id}') بازی نامه
-  // /Preorder
-  // Latest News
+
   h2.container.h1 نقد بازی ها
   section.youplay-news.container
-    // Single News Block
     each cat in data.cats.slice(0,3)
       .news-one.row.vertical-gutter
         .col-md-4
