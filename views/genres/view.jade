@@ -12,8 +12,8 @@ block content
         h1.mt-0 بازی های Action
         .isotope-list.row.vertical-gutter
           each item in data.cats 
-            .item.col-lg-4.col-md-6.col-xs-12(data-filters='#{item._platforms.map(function(x){return x.name}).join()}')
-              a.angled-img(href='#!')
+            .item.col-lg-4.col-md-6.col-xs-12
+              a.angled-img(href='/games/#{item._id}/#{item.name}')
                 .img.img-offset
                   img(src='/images/cats/500/#{item._id}.jpg', alt='')
                 .bottom-info
