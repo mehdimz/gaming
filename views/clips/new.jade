@@ -15,8 +15,9 @@ block content
             table.table.table-bordered
               each clip in items
                 tr
-                  td= clip.title
-                  td= clip._category
+                  td
+                    a(href="/videos/#{clip._id}")= clip.title
+                  td= clip._category ? clip._category.name : null 
                   td
                     a(href="/clips/#{clip._id}/tags")
                       | +tags

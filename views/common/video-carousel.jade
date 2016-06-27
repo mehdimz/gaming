@@ -19,7 +19,8 @@ mixin video-carousel(items, isTrailer)
             h4.title-overflow= item.title
             .row.bottom-info-overflow
               .col-xs-12
-                .platform= item._category._platforms.map(function(x){return x.name}).join() 
+                if item._category
+                  .platform= item._category._platforms.map(function(x){return x.name}).join() 
                   
 
         else 
