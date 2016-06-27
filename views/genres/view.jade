@@ -9,7 +9,12 @@ block content
       // Games List
       .col-md-9.isotope
 
-        h1.mt-0 بازی های Action
+        h1.mt-0 
+          span بازی ها
+          if currentGenre
+            span ی
+            span= currentGenre
+
         .isotope-list.row.vertical-gutter
           each item in data.cats 
             .item.col-lg-4.col-md-6.col-xs-12
