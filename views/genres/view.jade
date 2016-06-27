@@ -2,6 +2,15 @@ include ../common/genres-sidebar
 include ../common/slider
 
 extends ../layout
+block title
+  title 
+    | BaziVision | 
+    if currentGenre
+      | بازی های 
+      = currentGenre
+
+
+
 block content
   section.content-wrap
     +slider(data.cats)
