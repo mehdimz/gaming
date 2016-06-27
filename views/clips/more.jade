@@ -16,9 +16,18 @@ block content
               a.angled-img(href='/videos/#{item._id}')
                 .img.img-offset
                   img(src='/images/clips/250/#{item._id}.jpg', alt='')
+                  .badge.duration-badge.bg-default.bg-transparent
+                    = moment.utc(item.duration * 1000).format("mm:ss")
+                    i.fa.fa-clock-o
+                  .badge.date-badge.bg-default.bg-transparent
+                    = moment(item.date).fromNow()
+                  .over-info
+                    div
+                      div
+                      i.fa.fa-play.icon  
                 .bottom-info
-                  h4(style="overflow:hidden;height:35px;margin-bottom:10px;")= item.title
-                  .row(style="border-top:1px solid #fff; padding-top:10px; margin:0;")
+                  h4.title-overflow= item.title
+                  .row.bottom-info-overflow
                     .col-xs-6
                       .category
                         span= item._category._genres.map(function(x){return x.name}).join() 
