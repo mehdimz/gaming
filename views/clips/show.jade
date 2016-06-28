@@ -17,17 +17,14 @@ block content
     .col-md-9
       // Post Info
       article.news-one
-        .video-player
-          .video-js.vjs-default-skin.vjs-paused
-            video#example_video_1.vjs-tech(style='position:relative; z-index:0;', controls='', preload='none', width='100%', height='auto', poster='/images/clips/1000/#{item._id}.jpg', data-setup='{}')
-              source(src='http://cdn.bazivision.com/data/#{item._id}.mp4', type='video/mp4')
-              track(kind='captions', src='shared/example-captions.vtt', srclang='en', label='English')
-              // Tracks need an ending tag thanks to IE9
-              track(kind='subtitles', src='shared/example-captions.vtt', srclang='en', label='English')
-              // Tracks need an ending tag thanks to IE9
-              p.vjs-no-js
-                | برای دیدن این ویدیو لطفا javascript مرورگر را فعال کنید
-                a(href='#', target='_blank')
+        video#really-cool-video.video-js.vjs-default-skin.vjs-fullscreen(controls='', preload='auto', poster='/images/clips/1000/#{item._id}.jpg', data-setup='{}')
+          source(src='http://cdn.bazivision.com/data/360/#{item._id}.mp4', type='video/mp4', label="360")
+          source(src='http://cdn.bazivision.com/data/144/#{item._id}.mp4', type='video/mp4', label="144")
+          source(src='http://cdn.bazivision.com/data/240/#{item._id}.mp4', type='video/mp4', label="240")
+          source(src='http://cdn.bazivision.com/data/480/#{item._id}.mp4', type='video/mp4', label="480")
+          p.vjs-no-js برای دیدن این ویدیو لطفا javascript مرورگر را فعال کنید
+
+
         p= item.body
         .youplay-review-rating
           +tags-list(item)
@@ -56,15 +53,7 @@ block content
                 i.fa.fa-heart
                 span.count= item.thumbs.up
           // /Post Meta
-        // Post Share
-        //- .btn-group.social-list.social-likes(data-counters='no')
-        //-   span.btn.btn-default.facebook(title='Share link on Facebook')
-        //-   span.btn.btn-default.twitter(title='Share link on Twitter')
-        //-   span.btn.btn-default.plusone(title='Share link on Google+')
-        //-   span.btn.btn-default.pinterest(title='Share image on Pinterest', data-media='')
-        //-   span.btn.btn-default.vkontakte(title='Share link on VK')
-        // /Post Share
-      // /Post Info
+
       // Post Comments
       .comments-block
         h3
@@ -126,11 +115,6 @@ block content
             //-             i.fa.fa-thumbs-down
             //-             |  1
                     // <a href="#!" class="pull-right">پاسخ</a>
-            // /Mike Pearson comment
-          // /Kristen Bradley comment
-        // /Comments List
-      // /Post Comments
-    // Right Side
     .col-md-3
       
 
@@ -156,3 +140,6 @@ block content
 
         +genres-sidebar(genres)          
 
+block addscript
+  //- script(src='/javascripts/video.min.js')
+  //- script(src='/javascripts/video-quality-selector.js')
