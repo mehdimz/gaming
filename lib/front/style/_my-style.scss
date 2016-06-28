@@ -176,6 +176,74 @@ ul.two-columns li a {
   margin: 0;
 }
 
-.play-icon-over i {
-  top: 34% !important;
+
+.play-icon-over i{
+	top:34% !important;
+}
+
+.testimonials blockquote{
+	position: relative;
+    background: rgba(255,255,255,.1);
+    min-height: 150px;
+    margin-bottom: 75px;
+    padding: 20px 30px;
+    border: none;
+    font-size: inherit;
+}
+
+.testimonials blockquote p.news-words {
+    font-size: 14px;
+}
+
+.testimonials blockquote img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.testimonials blockquote:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-top: 10px solid rgba(255,255,255,.1);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.testimonials .author-name {
+    font-size: 14px;
+    text-align: right;
+    color: #FFF;	
+}
+
+h3.news-title{
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+.news-words a{
+	display:block;
+	margin-top:5px;
+	font-weight:bold;
+}
+
+.news-words a:hover small{
+	color: #D92B4C;
+    -o-transition: .3s color ease;
+    transition: .3s color ease;
+}
+
+
+
+
+@media screen and (max-width:992px){
+	.testimonials h2{
+		position:relative !important;
+		top:45px !important;
+	}
 }
