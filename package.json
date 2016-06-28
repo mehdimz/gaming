@@ -15,6 +15,7 @@
     "debug": "^2.2.0",
     "express": "~4.13.1",
     "express-session": "^1.13.0",
+    "fluent-ffmpeg": "^2.1.0",
     "formidable": "^1.0.17",
     "jade": "~1.11.0",
     "jquery": "^2.2.3",
@@ -30,7 +31,9 @@
     "sanitize-html": "^1.11.3",
     "serve-favicon": "~2.3.0",
     "shortid": "^2.2.6",
-    "tether": "^1.2.0"
+    "tether": "^1.2.0",
+    "video.js": "^5.10.4",
+    "videojs-resolution-switcher": "^0.4.2"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
