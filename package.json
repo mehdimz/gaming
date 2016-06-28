@@ -33,7 +33,6 @@
     "shortid": "^2.2.6",
     "tether": "^1.2.0",
     "video.js": "^5.10.4",
-    "videojs-resolution-selector": "^1.6.2",
     "videojs-resolution-switcher": "^0.4.2"
   },
   "devDependencies": {
