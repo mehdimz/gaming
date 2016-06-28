@@ -1,10 +1,11 @@
 @import './vendor/bootstrap.min';
 @import './vendor/font-awesome.min';
 @import './vendor/owl.carousel';
-@import './vendor/settings';
+// @import './vendor/settings';
 @import './vendor/youplay.min';
 @import './vendor/youplay-rtl';
-@import './vendor/video-js';
+@import '../../../node_modules/video.js/src/css/vjs';
+@import '../../../node_modules/videojs-resolution-switcher/lib/videojs-resolution-switcher';
 @import './vendor/magnific-popup';
 @import 'my-style';
 
