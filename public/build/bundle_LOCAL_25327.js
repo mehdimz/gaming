@@ -48,7 +48,7 @@ require('./js/plugins/jquery.countdown.min.js');
 require('./js/plugins/youplay.min.js');
 require('./js/plugins/jquery.magnific-popup.min');
 var videojs = window.videojs = require('video.js');
-require('videojs-resolution-switcher');
+var videoJsResolutionSwitcher = require('videojs-resolution-switcher');
 
 if($('#really-cool-video').length){
   videojs('really-cool-video').videoJsResolutionSwitcher();
