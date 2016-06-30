@@ -237,6 +237,10 @@ h3.news-title{
     transition: .3s color ease;
 }
 
+.play-icon-over i {
+  top: 34% !important;
+}
+
 
 @media screen and (max-width:992px){
 	.testimonials h2{
@@ -244,3 +248,6 @@ h3.news-title{
 		top:45px !important;
 	}
 }
+
+
+
