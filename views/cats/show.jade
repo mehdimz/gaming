@@ -38,11 +38,15 @@ block content
           i.fa.fa-search-plus.icon
 
     // /Images With Text
-    .container.youplay-store
+
+    h2.container
+      | ویدیوها بازی
+      a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
+    .container.youplay-store.mt-0
 
       +video-carousel(data.clips)
 
-      .col-md-9
+      .col-md-9.mt-40
         // Post Info
         article
           // Description
@@ -96,7 +100,7 @@ block content
 
         //- +comment-section(item, 'games') 
       // Right Side
-      .col-md-3
+      .col-md-3.mt-40
         // Side Popular News
         .side-block.right-side
           h4.block-title بازی های مشابه
