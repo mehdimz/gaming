@@ -5,13 +5,16 @@ block content
     include ./form
 
     table.table
-      each item in items
+      each item in data.items
         tr
           td
             a(href=item.page)= item.title
           td
             a(href="/admin/news/#{item._id}/delete")
               span.fa.fa-trash
+          td
+            a(href="/admin/news/#{item._id}/edit")
+              span.fa.fa-edit
 
 block addLink
   // Include Editor style.

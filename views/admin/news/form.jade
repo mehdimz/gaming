@@ -1,14 +1,15 @@
-form.form(method="post", enctype="multipart/form-data")
+form.form.mb-20(method="post", enctype="multipart/form-data", action="/admin/news")
+  input.form-control(type="hidden", name="_id", value=(data.item._id))
   fieldset.form-group
-    input.form-control(type="text", placeholder="title", name="title")
+    input.form-control(type="text", placeholder="title", name="title", value=(data.item.title))
   fieldset.form-group
-    textarea#edit(name="body", style="min-height: 500px")
+    textarea#edit(name="body", style="min-height: 500px")= data.item.body
   fieldset.form-group
     .row
       .col-xs-4
         label IMAGE:
       .col-xs-8
-        input(type="file", name="image", required=(!item))
+        input(type="file", name="image", required=(!data.item))
   
   
   button.btn.btn-primary(type="submit") ثبت

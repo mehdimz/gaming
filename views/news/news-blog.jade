@@ -1,15 +1,27 @@
 extends ../layout
+
+block title
+  title
+    | Bazivision | 
+    = data.item.title
+  meta(name='description', content='#{data.item.title}')
+  meta(name='twitter:card', value='#{data.item.title}')
+  meta(property='og:title', content='#{data.item.title}')
+  meta(property='og:type', content='article')
+  meta(property='og:image', content=data.item.poster.small)
+  meta(property='og:description', content='#{data.item.title}')
+
 block content
   .youplay-banner.banner-top.youplay-banner-parallax.xsmall
-    .image(style="background-image: url('#{item.poster.big}')")
+    .image(style="background-image: url('#{data.item.poster.big}')")
     .info
       div
         .container
-          h1= item.title
+          h1= data.item.title
   .container.youplay-news.youplay-post
     .col-md-9
       article.news-one
-        .description!= item.body
+        .description!= data.item.body
         //- hr
         //- .tags
         //-   i.fa.fa-tags

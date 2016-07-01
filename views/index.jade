@@ -43,14 +43,12 @@ block content
         .col-md-8
           .clearfix
             h3.h2.pull-left.m-0
-              a(href='blog-post-1.html') نقد بازی 
-              span= item.title
-              |  
-            //- span.date.pull-right
-            //-   i.fa.fa-calendar
-            //-   | aa
+              a(href='blog-post-1.html')= item.title
+            span.date.pull-right
+              i.fa.fa-calendar.fa-fw 
+              span= moment(item.date).format('jD jMMMM jYYYY') 
           .description
-            p= item.gist
+            p= item.gist + ' ...'
           a.btn.read-more.pull-left(href=item.page) ادامه مطلب
   
   // Partners
