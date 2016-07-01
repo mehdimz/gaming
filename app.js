@@ -37,13 +37,13 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use(require('./lib/back/common_variables'));
 app.use('/', require('./lib/back'));
+app.use(logger('dev'));
 
 
 // catch 404 and forward to error handler
