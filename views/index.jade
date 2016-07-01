@@ -24,77 +24,54 @@ block content
   +video-carousel(data.trailers, 1)
 
   if data.toBeReleasedGame
-    .h2
     section.youplay-banner.youplay-banner-parallax.small
       .image(style="background-image: url('/images/cats/1000/#{data.toBeReleasedGame._id}.jpg');")
       .info.container.align-center
         div
-          h2
-            = data.toBeReleasedGame.name 
+          h2= data.toBeReleasedGame.name
           .countdown.h2(data-end='#{data.toBeReleasedGame.releasedate}')
-          br
-          br
           a.btn.btn-lg(href='/games/#{data.toBeReleasedGame._id}') بازی نامه
 
-  h2.container.h1 نقد بازی ها
-  section.youplay-news.container
-    each cat in data.cats.slice(0,3)
-      .news-one.row.vertical-gutter
-        .col-md-4
-          a.angled-img(href='/games/#{cat._id}/#{cat.name}')
-            .img
-              img(src='/images/cats/500/#{cat._id}.jpg', alt='')
-            .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='#{cat.score} out of 10')
-              span= cat.score
-        .col-md-8
-          .clearfix
-            h3.h2.pull-left.m-0
-              a(href='blog-post-1.html') نقد بازی 
-              span= cat.name
-              |  
-            //- span.date.pull-right
-            //-   i.fa.fa-calendar
-            //-   | aa
-          .description
-            p= cat.critic
-          a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
+  //- h2.container.h1 تازه های بازی ها
+  //- section.youplay-news.container
+  //-   each cat in data.cats.slice(0,3)
+  //-     .news-one.row.vertical-gutter
+  //-       .col-md-4
+  //-         a.angled-img(href='/games/#{cat._id}/#{cat.name}')
+  //-           .img
+  //-             img(src='/images/cats/500/#{cat._id}.jpg', alt='')
+  //-           .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='#{cat.score} out of 10')
+  //-             span= cat.score
+  //-       .col-md-8
+  //-         .clearfix
+  //-           h3.h2.pull-left.m-0
+  //-             a(href='blog-post-1.html') نقد بازی 
+  //-             span= cat.name
+  //-             |  
+  //-           //- span.date.pull-right
+  //-           //-   i.fa.fa-calendar
+  //-           //-   | aa
+  //-         .description
+  //-           p= cat.critic
+  //-         a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
   
   // Partners
-  section.youplay-banner.youplay-banner-parallax.small.mt-80
+  section.youplay-banner.youplay-banner-parallax.small.mt-10
     .image(style="background-image: url('/images/banner-bg.jpg');") 
     .row.testimonials.vertical-gutter
       .info.align-center
         div
-          h2.mb-40 تازه های بازی ها
-      .col-md-4
-        blockquote
-          h3.news-title.mt-0 World of warcraft
-          p.news-words
-            | محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار 
-            a(href='#')
-              small.author-name ادامه خبر 
-          a(href="#")    
-            img.img-circle(alt='dark soul', src='/images/cats/500/575684417fdd924f555fbbbe.jpg')
-      .col-md-4
-        blockquote
-          h3.news-title.mt-0 World of warcraft
-          p.news-words
-            | محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار 
-            a(href='#')
-              small.author-name ادامه خبر 
-          a(href="#")    
-            img.img-circle(alt='dark soul', src='/images/cats/500/575684417fdd924f555fbbbe.jpg')
-      .col-md-4
-        blockquote
-          h3.news-title.mt-0 World of warcraft
-          p.news-words
-            | محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار محل قرار گیری خلاصه اخبار 
-            a(href='#')
-              small.author-name ادامه خبر 
-          a(href="#")    
-            img.img-circle(alt='dark soul', src='/images/cats/500/575684417fdd924f555fbbbe.jpg')
+          h2.mb-40 نقد بازی ها
+      each cat in data.cats.slice(0,3)
+        .col-md-4
+          blockquote
+            h3.news-title.mt-0= cat.name
+            p.news-words= cat.critic
+              a(href='/games/#{cat._id}/#{cat.name}')
+                small.author-name ادامه 
+            a(href="/games/#{cat._id}/#{cat.name}")    
+              img.img-circle(alt='dark soul', src='/images/cats/250/#{cat._id}.jpg')
 
-  // Features
   h2.container.h1 توانایی های تیم bazivision
   section.youplay-features.container
     .col-md-3.col-sm-6
