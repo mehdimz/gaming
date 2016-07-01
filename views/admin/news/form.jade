@@ -1,0 +1,15 @@
+form.form(method="post", enctype="multipart/form-data")
+  fieldset.form-group
+    input.form-control(type="text", placeholder="title", name="title")
+  fieldset.form-group
+    textarea#edit(name="body", style="min-height: 500px")
+  fieldset.form-group
+    .row
+      .col-xs-4
+        label IMAGE:
+      .col-xs-8
+        input(type="file", name="image", required=(!item))
+  
+  
+  button.btn.btn-primary(type="submit") ثبت
+

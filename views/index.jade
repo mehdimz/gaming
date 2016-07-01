@@ -32,28 +32,26 @@ block content
           .countdown.h2(data-end='#{data.toBeReleasedGame.releasedate}')
           a.btn.btn-lg(href='/games/#{data.toBeReleasedGame._id}') بازی نامه
 
-  //- h2.container.h1 تازه های بازی ها
-  //- section.youplay-news.container
-  //-   each cat in data.cats.slice(0,3)
-  //-     .news-one.row.vertical-gutter
-  //-       .col-md-4
-  //-         a.angled-img(href='/games/#{cat._id}/#{cat.name}')
-  //-           .img
-  //-             img(src='/images/cats/500/#{cat._id}.jpg', alt='')
-  //-           .youplay-hexagon-rating.youplay-hexagon-rating-small(data-max='10', data-size='50', title='#{cat.score} out of 10')
-  //-             span= cat.score
-  //-       .col-md-8
-  //-         .clearfix
-  //-           h3.h2.pull-left.m-0
-  //-             a(href='blog-post-1.html') نقد بازی 
-  //-             span= cat.name
-  //-             |  
-  //-           //- span.date.pull-right
-  //-           //-   i.fa.fa-calendar
-  //-           //-   | aa
-  //-         .description
-  //-           p= cat.critic
-  //-         a.btn.read-more.pull-left(href='/games/#{cat._id}/#{cat.name}') ادامه مطلب
+  h2.container.h1 تازه های بازی ها
+  section.youplay-news.container
+    each item in data.news
+      .news-one.row.vertical-gutter
+        .col-md-4
+          a.angled-img(href=item.page)
+            .img
+              img(src=item.poster.medium, alt='')
+        .col-md-8
+          .clearfix
+            h3.h2.pull-left.m-0
+              a(href='blog-post-1.html') نقد بازی 
+              span= item.title
+              |  
+            //- span.date.pull-right
+            //-   i.fa.fa-calendar
+            //-   | aa
+          .description
+            p= item.gist
+          a.btn.read-more.pull-left(href=item.page) ادامه مطلب
   
   // Partners
   section.youplay-banner.youplay-banner-parallax.small.mt-10

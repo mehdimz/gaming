@@ -17,6 +17,7 @@
     "express-session": "^1.13.0",
     "fluent-ffmpeg": "^2.1.0",
     "formidable": "^1.0.17",
+    "froala-editor": "^2.3.3",
     "jade": "~1.11.0",
     "jquery": "^2.2.3",
     "lodash": "^4.13.1",
