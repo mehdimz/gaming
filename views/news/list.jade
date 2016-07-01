@@ -1,0 +1,35 @@
+extends ../layout
+block content 
+ .container.youplay-news.youplay-post
+    .col-md-9
+      h1.mt-0 تازه ها
+      each item in data.items 
+        .news-one
+          .row.vertical-gutter
+            .col-md-4
+              a.angled-img(href=item.page)
+                .img
+                  img(src=item.poster.medium, alt=item.title)
+                .over-info.bottom.h4= moment(item.date).format('jD jMMMM jYYYY') 
+            .col-md-8
+              .clearfix
+                h3.h2.pull-left.m-0
+                  a(href='blog-post-1.html')= item.title
+              //- .tags
+              //-   i.fa.fa-tags
+              //-   a(href='#') world of warcraft
+              //-   | , 
+              //-   a(href='#') legion
+              //-   | , 
+              //-   a(href='#') تاریخ اکران
+              //-   | , 
+              //-   a(href='#') game
+              .description
+                p= item.gist
+              a.btn.read-more.pull-left(href=item.page) ادامه خبر
+      nav
+        ul.pager
+          li
+            a(href='#') بعدی
+          li
+            a(href='#') قبلی
