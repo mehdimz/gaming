@@ -29,12 +29,13 @@ block content
                 .bottom-info
                   h4.title-overflow= item.title
                   .row.bottom-info-overflow
-                    .col-xs-6
-                      .category
-                        span= item._category._genres.map(function(x){return x.name}).join() 
-                    .col-xs-6
-                      .platform
-                        span= item._category._platforms.map(function(x){return x.name}).join() 
+                    if item._category
+                      .col-xs-6
+                          .category
+                            span= item._category._genres.map(function(x){return x.name}).join() 
+                      .col-xs-6
+                        .platform
+                          span= item._category._platforms.map(function(x){return x.name}).join() 
           
         nav
           ul.pager
