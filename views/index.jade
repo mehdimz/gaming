@@ -62,7 +62,9 @@ block content
         .col-md-4
           blockquote
             h3.news-title.mt-0= cat.name
-            p.news-words= cat.critic
+            p.news-words
+              = cat.criticGist 
+              | ...
               a(href='/games/#{cat._id}/#{cat.name}')
                 small.author-name ادامه 
             a(href="/games/#{cat._id}/#{cat.name}")    
