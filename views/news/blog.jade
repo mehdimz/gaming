@@ -1,5 +1,7 @@
 include ../common/genres-sidebar
 include ../common/games-sidebar
+include ../common/tags-list
+include ../common/meta
 extends ../layout
 block title
   title
@@ -9,7 +11,7 @@ block title
   meta(name='twitter:card', value='#{data.item.title}')
   meta(property='og:title', content='#{data.item.title}')
   meta(property='og:type', content='article')
-  meta(property='og:image', content=data.item.poster.small)
+  meta(property='og:image', content=data.item.poster.medium)
   meta(property='og:description', content='#{data.item.title}')
 
 block content
@@ -24,41 +26,9 @@ block content
       article.news-one
         .description!= data.item.body
         hr
-        //- .tags
-        //-   i.fa.fa-tags
-        //-   a(href='#') Bloodborne
-        //-   | , 
-        //-   a(href='#') first try
-        //-   | , 
-        //-   a(href='#') first boss problem
-        //-   | , 
-        //-   a(href='#') newbie game
-        //- .meta
-        //-   .item
-        //-     i.fa.fa-user.meta-icon
-        //-     | Author 
-        //-     a(href='#!') nK
-        //-   .item
-        //-     i.fa.fa-calendar.meta-icon
-        //-     | Published 
-        //-     a(href='#!') Today
-        //-   .item
-        //-     i.fa.fa-bookmark.meta-icon
-        //-     | Categories 
-        //-     a(href='#!') First Try
-        //-   .item
-        //-     i.fa.fa-eye.meta-icon
-        //-     | Views 384
-        //-   .item
-        //-     a(href='#')
-        //-       i.fa.fa-heart
-        //-       |  27
-        //- .btn-group.social-list.social-likes(data-counters='no')
-        //-   span.btn.btn-default.facebook(title='Share link on Facebook')
-        //-   span.btn.btn-default.twitter(title='Share link on Twitter')
-        //-   span.btn.btn-default.plusone(title='Share link on Google+')
-        //-   span.btn.btn-default.pinterest(title='Share image on Pinterest', data-media='')
-        //-   span.btn.btn-default.vkontakte(title='Share link on VK')
+        +tags-list(data.item)
+        +meta(data.item, 'news')
+        include ../common/social
     .col-md-3
       +genres-sidebar(data.genres)
       +games-sidebar(data.games, 'دیگر بازه ها')

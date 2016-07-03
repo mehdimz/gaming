@@ -1,8 +1,10 @@
 extends ../layout
 include ../common/sideblock-videos
 include ../common/genres-sidebar
+include ../common/games-sidebar
 include ../common/slider
 include ../common/tags-list
+include ../common/meta
 block content
   // Banner
   .youplay-banner.banner-top.youplay-banner-parallax.xsmall
@@ -27,31 +29,7 @@ block content
         p= item.body
         .youplay-review-rating
           +tags-list(item)
-          .meta
-            .item
-              i.fa.fa-user.meta-icon
-              span انتشار کننده 
-              a(href='#!').publisher= item._creator.fullname
-            .item
-              i.fa.fa-calendar.meta-icon
-              span تاریخ انتشار 
-              a(href='#!')= moment(item.date).format('jD jMMMM jYYYY') 
-            .item
-              i.fa.fa-bookmark.meta-icon
-              span دسته
-              if item._category
-                each genre in item._category._genres
-                  a(href='/genres/view/#{genre._id}')= genre.name
-                  | &nbsp
-            .item
-              i.fa.fa-eye.meta-icon
-              span بازدید
-              span= item.viewCount
-            .item
-              a#thumb-up(href='#', data-clip-id="#{item._id}")
-                i.fa.fa-heart
-                span.count= item.thumbs.up
-          // /Post Meta
+          +meta(item, 'videos')
 
       // Post Comments
       .comments-block
@@ -120,24 +98,8 @@ block content
               
       +sideblock-videos(' ویدیوهای مشابه', populars)
       +sideblock-videos('پر بازدیدترین ها', populars)
-
-
-      // Side Popular News
-      .side-block.right-side
-        h4.block-title نقد بازی
-        .block-content.p-0
-          each game in games
-            // Single News Block
-            .row.youplay-side-news
-              .col-xs-3.col-md-4
-                a.angled-img(href='/games/#{game._id}/#{game.name}')
-                  .img
-                    img(src='/images/cats/250/#{game._id}.jpg', alt='')
-              .col-xs-9.col-md-8
-                h4.ellipsis
-                  a(href='/games/#{game._id}/#{game.name}', title='#{game.name}')= game.name 
-
-        +genres-sidebar(genres)          
+      +games-sidebar(games, 'نقد بازی')
+      +genres-sidebar(genres)          
 
 block addscript
   //- script(src='/javascripts/video.min.js')

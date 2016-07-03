@@ -1,0 +1,25 @@
+mixin meta(item, itemModel)
+  .meta
+    .item
+      i.fa.fa-user.meta-icon
+      span انتشار کننده 
+      a(href='#!').publisher= item._creator.fullname
+    .item
+      i.fa.fa-calendar.meta-icon
+      span تاریخ انتشار 
+      a(href='#!')= moment(item.date).format('jD jMMMM jYYYY') 
+    if item._category
+      .item
+        i.fa.fa-bookmark.meta-icon
+        span دسته
+        each genre in item._category._genres
+          a(href='/genres/view/#{genre._id}')= genre.name
+          | &nbsp
+    .item
+      i.fa.fa-eye.meta-icon.fa-fw
+      span بازدید
+      span= item.viewCount
+    .item
+      a#thumb-up(href='#', data-item-id="#{item._id}", data-item-model=itemModel)
+        i.fa.fa-heart.fa-fw
+        span.count= item.thumbs.up

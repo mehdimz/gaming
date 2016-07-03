@@ -1,9 +1,13 @@
-mixin genres-sidebar(genres)
+mixin games-sidebar(cats, title)
   .side-block.right-side
-    h4.block-title سبک بازی ها
-    ul.block-content
-      li
-        a(href='/genre/view') همه بازی ها
-      each genre in genres
-        li
-          a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name
+    h4.block-title= title
+    .block-content.p-0
+      each cat in cats
+        .row.youplay-side-news
+          .col-xs-3.col-md-4
+            a.angled-img(href='/games/#{cat._id}/#{cat.name}')
+              .img
+                img(src='/images/cats/250/#{cat._id}.jpg', alt='')
+          .col-xs-9.col-md-8
+            h4.ellipsis
+              a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name

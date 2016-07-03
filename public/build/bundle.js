@@ -37,13 +37,13 @@ function setThumbs(data) {
 
 $('#thumb-up').click(function(e) {
   e.preventDefault();
-  $.post('/api/clips/' + $(this).data('clip-id') + '/thumbs', { mode: 2 }).success(function(data) {
+  $.post('/'+$(this).data('item-model')+'/' + $(this).data('item-id') + '/thumbs', { mode: 2 }).success(function(data) {
     setThumbs(data);
   });
 });
 
 $('#thumb-down').click(function() {
-  $.post('/api/clips/' + $(this).data('clip-id') + '/thumbs', { mode: 1 }).success(function(data) {
+  $.post('/'+$(this).data('item-model')+'/' + $(this).data('item-id') + '/thumbs', { mode: 1 }).success(function(data) {
     setThumbs(data);
   });
 });
