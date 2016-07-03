@@ -33,6 +33,6 @@ block content
         +meta(data.item, 'news')
         include ../common/social
     .col-md-3
-      +genres-sidebar(data.genres)
+      //- +genres-sidebar(data.genres)
       +games-sidebar(data.games, 'دیگر بازه ها')
-
+      +sideblock-videos('پر بازدیدترین ها', populars)
