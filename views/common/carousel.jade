@@ -1,7 +1,7 @@
 mixin carousel(items)
   .youplay-carousel(data-autoplay='5000')
     each item in items
-      a.angled-img(href='/games/#{item._id}/#{item.name}')
+      a.angled-img(href=item.url)
         .img
           img(src='/images/cats/500/#{item._id}.jpg', alt='')
         .over-info

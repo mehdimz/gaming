@@ -7,7 +7,7 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
     textarea.form-control(name="about", placeholder="درباره بازی")
       = item ? item.about : '' 
   .form-group
-    textarea.form-control(name="critic", placeholder="نقد بازی")
+    textarea.form-control#edit(name="critic", placeholder="نقد بازی")
       = item ? item.critic : '' 
 
   .form-group
@@ -29,4 +29,4 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
     label(for="inBanner") نمایش در بنر
     input#inBanner(type="checkbox", checked=(item ? item.inBanner : false), name="inBanner")
 
-  button.btn.btn-secondary(type="submit", class=(item ? 'btn-info':'')) ثبت +
+  button.btn.btn-secondary.btn-block(type="submit", class=(item ? 'btn-info':'')) ثبت +

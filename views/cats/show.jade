@@ -54,9 +54,8 @@ block content
           // /Description
           // criticism
           h2.mt-0 نقد بازی
-          .description
-            p= data.item.critic
-          // /criticism
+          .description!= data.item.critic
+          
           // Review Rating
           .youplay-review-rating
             .row

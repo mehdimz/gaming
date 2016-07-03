@@ -3,7 +3,7 @@ form.form.mb-20(method="post", enctype="multipart/form-data", action="/admin/new
   fieldset.form-group
     input.form-control(type="text", placeholder="title", name="title", value=(data.item.title))
   fieldset.form-group
-    textarea#edit(name="body", style="min-height: 500px")= data.item.body
+    textarea#edit(name="body")= data.item.body
   fieldset.form-group
     .row
       .col-xs-4
