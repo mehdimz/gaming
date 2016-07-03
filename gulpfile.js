@@ -6,4 +6,4 @@ var gulp = require('./gulp')([
   'minify'
 ]);
 
-gulp.task('default', ['watch', 'serve', 'browserify', 'sass']);
+gulp.task('default', ['watch', 'serve']);
