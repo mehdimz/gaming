@@ -1,0 +1,17 @@
+mixin sideblock-videos(title, items)
+  .side-block.right-side
+    h4.block-title= title
+    .block-content.p-0
+      each item in items
+        .row.youplay-side-news
+          .col-xs-3.col-md-4
+            a.angled-img(href='/videos/#{item._id}')
+              .img
+                img(src='/images/clips/250/#{item._id}.jpg', alt='')
+          .col-xs-9.col-md-8
+            h4.ellipsis
+              a(href='/videos/#{item._id}', title='#{item.title}')= item.title
+            span.date
+              i.fa.fa-calendar
+              span= moment(item.date).fromNow()
+   
