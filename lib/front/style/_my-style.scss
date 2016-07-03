@@ -263,6 +263,18 @@ h3.news-title{
 	text-align:justify;
 }
 
+
+/*** text editor style ***/
+.fr-box.fr-basic.fr-top .fr-wrapper{
+	background:#080325 !important;
+	color:#FFF !important;
+	border:1px solid #FFF;
+}
+
+.fr-box.fr-basic.fr-top .fr-wrapper p{
+	color:#FFF !important;
+}
+
 @media screen and (max-width:992px){
 	.testimonials h2{
 		position:relative !important;
