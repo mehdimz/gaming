@@ -11,7 +11,10 @@ block content
             each cat in cats
               tr
                 td
-                  a(href=cat.url)= cat.name
+                  a(href=cat.url)
+                    = cat.name
+                    br
+                    = cat.subtitle
                 td
                   a(href="/cats/#{cat._id}/platforms") +platforms
                 td
