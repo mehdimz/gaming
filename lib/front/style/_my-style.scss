@@ -183,7 +183,7 @@ ul.two-columns li a {
 .testimonials blockquote{
 	position: relative;
     background: rgba(255,255,255,.1);
-    min-height: 150px;
+    min-height: 191px;
     margin-bottom: 75px;
     padding: 20px 30px;
     border: none;
@@ -243,6 +243,36 @@ h3.news-title{
 
 .full{
 	min-height:1500px !important;
+}
+
+
+.video-js {
+    width: 100% !important;
+	height: 100% !important;
+}
+
+.vjs-fluid {
+	padding-top: 56.25%
+}
+
+.video-js.vjs-fullscreen{
+	padding-top:0 !important;
+}  
+
+.container p{
+	text-align:justify;
+}
+
+
+/*** text editor style ***/
+.fr-box.fr-basic.fr-top .fr-wrapper{
+	background:#080325 !important;
+	color:#FFF !important;
+	border:1px solid #FFF;
+}
+
+.fr-box.fr-basic.fr-top .fr-wrapper p{
+	color:#FFF !important;
 }
 
 @media screen and (max-width:992px){

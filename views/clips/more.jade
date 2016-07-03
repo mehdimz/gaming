@@ -45,8 +45,9 @@ block content
               a(href=(page ? '?page=#{page - 1}' : '#')) قبلی
 
       .col-md-3
-        +genres-sidebar(data.genres)
         +sideblock-videos('پر بازدیدترین ها', data.mostViewed)
+        +genres-sidebar(data.genres)
+
 
 block addscript
   script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js')
