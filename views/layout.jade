@@ -30,6 +30,13 @@ html
         
       include ./footer
     
-    //- script(src="/plugins/jquery/jquery.min.js")
     script(src="/build/bundle.js")
+      
+    // Google Analytics
+    script.
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-79514264-1', 'auto');
+      ga('send', 'pageview');
+    script(async='', src='https://www.google-analytics.com/analytics.js')
+
     block addscript
