@@ -1,5 +1,6 @@
 extends ../layout
 include ../common/genres-sidebar
+include ../common/games-sidebar
 include ../common/comment-section
 include ../common/carousel
 include ../common/video-carousel
@@ -16,7 +17,6 @@ block title
 
 block content
   section.content-wrap
-    // Banner
     .youplay-banner.youplay-banner-parallax.banner-top
       .image(style="background-image: url('/images/sliders/1600/#{data.item._id}.jpg')")
       .info
@@ -24,8 +24,7 @@ block content
           .container
             h2.h1.align-left.mb-0= data.item.name
             h3.italic-h2= data.item.subtitle
-    // /Banner
-    // Images With Text
+            
     .youplay-carousel.gallery-popup
       //- a.angled-img(href='#')
       //-   .img
@@ -37,7 +36,6 @@ block content
             img(src='/images/additional/350/#{img}.jpg', alt='')
           i.fa.fa-search-plus.icon
 
-    // /Images With Text
 
     h2.container
       | ویدیوها بازی
@@ -83,8 +81,7 @@ block content
                         li
                           i.fa.fa-minus-circle
                           span= quality
-          // /Review Rating
-          // Post Share
+
           .btn-group.social-list.social-likes(data-counters='no')
             a.btn.btn-default.twitter-share-button(href='https://twitter.com/share?via=bazvsion', data-via='bazivision', data-related='bazivision', data-hashtags='bazivision', data-dnt='true')
               span.fa.fa-twitter
@@ -99,48 +96,11 @@ block content
      
 
         //- +comment-section(item, 'games') 
-      // Right Side
+
       .col-md-3.mt-40
-        // Side Popular News
-        .side-block.right-side
-          h4.block-title بازی های مشابه
-          .block-content.p-0
-            each cat in data.cats
-              .row.youplay-side-news
-                .col-xs-3.col-md-4
-                  a.angled-img(href='/games/#{cat._id}/#{cat.name}')
-                    .img
-                      img(src='/images/cats/250/#{cat._id}.jpg', alt='')
-                .col-xs-9.col-md-8
-                  h4.ellipsis
-                    a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name
-                  //- span.date
-                  //-   i.fa.fa-calendar
-                  //-   // date
-            
-        // /Side Popular News
-        // Side Popular News
-        .side-block.right-side
-          h4.block-title بازی نامه ها
-          .block-content.p-0
-            each cat in data.cats
-              .row.youplay-side-news
-                .col-xs-3.col-md-4
-                  a.angled-img(href='/games/#{cat._id}/#{cat.name}')
-                    .img
-                      img(src='/images/cats/250/#{cat._id}.jpg', alt='')
-                .col-xs-9.col-md-8
-                  h4.ellipsis
-                    a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name
-                  //- span.date
-                  //-   i.fa.fa-calendar
-                  //-   // date
-            
-        // /Side Popular News
-        // Side Categories
+        +games-sidebar(data.cats, 'بازی های مشابه')
+
         +genres-sidebar(data.genres)
-        // /Side Categories
-      // /Right Side
-    // Related
+
     h2.container دیگر نسخه های بازی
     +carousel(data.cats, 'Related')

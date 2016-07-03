@@ -1,5 +1,6 @@
+include ../common/genres-sidebar
+include ../common/games-sidebar
 extends ../layout
-
 block title
   title
     | Bazivision | 
@@ -22,7 +23,7 @@ block content
     .col-md-9
       article.news-one
         .description!= data.item.body
-        //- hr
+        hr
         //- .tags
         //-   i.fa.fa-tags
         //-   a(href='#') Bloodborne
@@ -58,3 +59,7 @@ block content
         //-   span.btn.btn-default.plusone(title='Share link on Google+')
         //-   span.btn.btn-default.pinterest(title='Share image on Pinterest', data-media='')
         //-   span.btn.btn-default.vkontakte(title='Share link on VK')
+    .col-md-3
+      +genres-sidebar(data.genres)
+      +games-sidebar(data.games, 'دیگر بازه ها')
+
