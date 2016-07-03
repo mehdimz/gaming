@@ -245,6 +245,20 @@ h3.news-title{
 	min-height:1500px !important;
 }
 
+
+      .video-js {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+
+.video-js.vjs-fullscreen{
+	padding-top:0 !important;
+}  
+
 @media screen and (max-width:992px){
 	.testimonials h2{
 		position:relative !important;

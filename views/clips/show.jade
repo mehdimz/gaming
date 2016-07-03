@@ -19,7 +19,7 @@ block content
     .col-md-9
       // Post Info
       article.news-one
-        video#really-cool-video.video-js.vjs-default-skin.vjs-fullscreen(controls='', preload='auto', poster='/images/clips/1000/#{item._id}.jpg', data-setup='{}')
+        video#really-cool-video.video-js.vjs-default-skin.vjs-fullscreen(style='position:relative; z-index:0;',controls='', preload='auto', poster='/images/clips/1000/#{item._id}.jpg', data-setup='{}')
           source(src='http://cdn.bazivision.com/data/360/#{item._id}.mp4', type='video/mp4', label="360")
           source(src='http://cdn.bazivision.com/data/480/#{item._id}.mp4', type='video/mp4', label="480")
           source(src='http://cdn.bazivision.com/data/720/#{item._id}.mp4', type='video/mp4', label="720")
