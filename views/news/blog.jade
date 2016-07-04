@@ -24,10 +24,12 @@ block content
   .container.youplay-news.youplay-post
     .col-md-9
       article.news-one
-        .description!= data.item.body
-          a.angled-img.pull-left.video-popup(href='#')
-            .img
-              img(src=item.poster.medium, alt=item.title)
+        .description
+          p
+            .angled-img.pull-left
+              .img
+                img(src=data.item.poster.medium, alt=data.item.title)
+            != data.item.body
         hr
         +tags-list(data.item)
         +meta(data.item, 'news')
@@ -35,4 +37,4 @@ block content
     .col-md-3
       //- +genres-sidebar(data.genres)
       +games-sidebar(data.games, 'دیگر بازه ها')
-      +sideblock-videos('پر بازدیدترین ها', populars)
+      //- +sideblock-videos('پر بازدیدترین ها', populars)
