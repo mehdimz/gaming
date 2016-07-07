@@ -4,6 +4,7 @@ include ../common/games-sidebar
 include ../common/comment-section
 include ../common/carousel
 include ../common/video-carousel
+include ../common/news-sidebar
 include ../common/slider
 
 block title
@@ -88,6 +89,7 @@ block content
 
       .col-md-3.mt-40
         +games-sidebar(data.cats, 'بازی های مشابه')
+        +news-sidebar('پر بازدیدترین های اخبار', data.popularNews)
 
         //- +genres-sidebar(data.genres)
 
