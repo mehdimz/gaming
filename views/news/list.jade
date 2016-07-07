@@ -1,6 +1,11 @@
 extends ../layout
+include ../common/slider
+include ../common/sideblock-videos
+include ../common/games-sidebar
+
 block content 
- .container.youplay-news
+  +slider(data.bannerGames)
+  .container.youplay-news
     .col-md-9
       h1.mt-0 تازه ها
       each item in data.items 
@@ -33,4 +38,12 @@ block content
             a(href='#') بعدی
           li
             a(href='#') قبلی
+    .col-md-3
+      +sideblock-videos('پر بازدیدترین ها', data.populars)
+      +games-sidebar(data.games, 'نقد بازی')
 
+
+block addscript
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.tools.min.js')
+  script(type='text/javascript', src='/plugins/slider-revolution/examples&source/rs-plugin/js/jquery.themepunch.revolution.min.js')
+  script(type='text/javascript', src='/plugins/isotope/isotope.pkgd.min.js')
