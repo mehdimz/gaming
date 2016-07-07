@@ -1,0 +1,17 @@
+mixin news-sidebar(title, items)
+  .side-block.right-side
+    h4.block-title= title
+    .block-content.p-0
+      each item in items
+        .row.youplay-side-news
+          .col-xs-3.col-md-4
+            a.angled-img(href=item.page)
+              .img
+                img(src=item.poster.small, alt=item.title)
+          .col-xs-9.col-md-8
+            h4.ellipsis
+              a(href=item.page, title=item.title)= item.title
+            span.date
+              i.fa.fa-calendar
+              span= moment(item.date).fromNow()
+   
