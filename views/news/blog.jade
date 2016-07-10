@@ -2,6 +2,7 @@ include ../common/genres-sidebar
 include ../common/games-sidebar
 include ../common/tags-list
 include ../common/meta
+include ../common/news-sidebar
 extends ../layout
 block title
   title
@@ -35,6 +36,5 @@ block content
         +meta(data.item, 'news')
         include ../common/social
     .col-md-3
-      //- +genres-sidebar(data.genres)
-      +games-sidebar(data.games, 'دیگر بازه ها')
-      //- +sideblock-videos('پر بازدیدترین ها', populars)
+      +news-sidebar('پر بازدیدترین های اخبار', data.popularNews)
+      +games-sidebar(data.games, 'دیگر بازی ها')
