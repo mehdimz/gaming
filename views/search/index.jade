@@ -5,41 +5,60 @@ block content
       .youplay-input
         input(type='text', name='query', placeholder='جستجو...', autofocus='', value="#{data.query}")
     .row
-      .col-md-6
+      .col-md-4.col-sm-4.col-xs-6
         h2 ویدیو ها
         // Single Product Block
         each item in data.clips
           a.angled-bg(href='/videos/#{item._id}')
             .row
-              .col-md-3.col-xs-4
+              .col-md-4.col-xs-4
                 .angled-img
                   .img
                     img(src='/images/clips/250/#{item._id}.jpg', alt='')
                     i.fa.fa-play.icon
-              .col-md-9.col-xs-8
+              .col-md-8.col-xs-8
                 .row
-                  .col-xs-6.col-md-9
+                  .col-xs-12.col-md-12.pr-0
                     h4= item.title
-                  .col-xs-6.col-md-3.align-center
-                    .date
-                      i.fa.fa-calendar
-                      div= moment(item.date).fromNow()
+                  //- .col-xs-6.col-md-3.align-center
+                  //-   .date
+                  //-     i.fa.fa-calendar
+                  //-     div= moment(item.date).fromNow()
 
-      .col-md-6
-        h2 نقد بازی ها
+      .col-md-4.col-sm-4.col-xs-6
+        h2 بازی ها
         // Single News
         each item in data.games
           a.angled-bg(href='#!')
             .row
-              .col-md-3.col-xs-4
+              .col-md-4.col-xs-4
                 .angled-img
                   .img
                     img(src='/images/cats/250/#{item._id}.jpg', alt='')
-              .col-md-9.col-xs-8
+              .col-md-8.col-xs-8
                 .row
-                  .col-xs-6.col-md-9
+                  .col-xs-12.col-md-12.pr-0
                     h4= item.name
-                  .col-xs-6.col-md-3.align-center
-                    .date
-                      i.fa.fa-calendar
-                      div= moment(item.date).fromNow()
+                  //- .col-xs-6.col-md-3.align-center
+                  //-   .date
+                  //-     i.fa.fa-calendar
+                  //-     div= moment(item.date).fromNow()
+
+      .col-md-4.col-sm-4.col-xs-6
+        h2 اخبار ها
+        // Single News
+        each item in data.games
+          a.angled-bg(href='#!')
+            .row
+              .col-md-4.col-xs-4
+                .angled-img
+                  .img
+                    img(src='/images/cats/250/#{item._id}.jpg', alt='')
+              .col-md-8.col-xs-8
+                .row
+                  .col-xs-12.col-md-12.pr-0
+                    h4= item.name
+                  //- .col-xs-6.col-md-3.align-center
+                  //-   .date
+                  //-     i.fa.fa-calendar
+                  //-     div= moment(item.date).fromNow()
