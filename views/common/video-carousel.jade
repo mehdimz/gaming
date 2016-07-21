@@ -1,7 +1,7 @@
 mixin video-carousel(items, isTrailer)
   .youplay-carousel
     each item in items
-      a.angled-img(href='/videos/#{item._id}')
+      a.angled-img(href=item.page)
         .img
           img(src='/images/clips/500/#{item._id}.jpg', alt='')
           .badge.duration-badge.bg-default.bg-transparent
