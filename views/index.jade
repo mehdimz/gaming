@@ -4,8 +4,10 @@ include ./common/slider
 extends layout
 
 block content
+  h1(style='display:none') بازی ویژن | کلکسیون ویدیو های گیمینگ و پایگاه تحلیلی خبری بازی های ویدیویی
   +slider(data.bannerGames)   
   +carousel(data.cats)
+
 
   h2.container.h1
     | پربازدیدها
