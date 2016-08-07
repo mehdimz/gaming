@@ -7,7 +7,7 @@ mixin games-sidebar(cats, title)
           .col-xs-3.col-md-4
             a.angled-img(href=cat.url)
               .img
-                img(src='/images/cats/250/#{cat._id}.jpg', alt='')
+                img(src='/images/cats/250/#{cat._id}.jpg', alt=cat.name)
           .col-xs-9.col-md-8
             h4.ellipsis
               a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name

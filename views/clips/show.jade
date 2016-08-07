@@ -5,10 +5,21 @@ include ../common/games-sidebar
 include ../common/slider
 include ../common/tags-list
 include ../common/meta
+block title
+  title
+    | Bazivision | 
+    = item.title
+  meta(name='description', content=item.title)
+  meta(name='twitter:card', value=item.title)
+  meta(property='og:title', content=item.title)
+  meta(property='og:type', content='article')
+  meta(property='og:image', content="http://cdn.bazivision.com#{item.poster.md}")
+  meta(property='og:description', content=item.title)
+
 block content
   // Banner
   .youplay-banner.banner-top.youplay-banner-parallax.xsmall
-    .image(style="background-image: url('/images/banner-blog-bg.jpg')")
+    .image(style="background-image: url('/images/banner-blog-bg.jpg')", alt="background")
     .info
       div
         .container

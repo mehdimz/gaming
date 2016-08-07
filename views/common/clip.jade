@@ -1,12 +1,11 @@
 mixin clip(item)
   .image-box
     a(href='/videos/#{item._id}')
-      img.img-responsive(src="#{item.poster.four}")
+      img.img-responsive(src="#{item.poster.four}", alt=item.title)
     span.duration 10:31
   .info-box.m-t-1
     p
       a(href='#')= item.title
-        
     ul
       li= item.body
       li

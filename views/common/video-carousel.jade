@@ -3,7 +3,7 @@ mixin video-carousel(items, isTrailer)
     each item in items
       a.angled-img(href=item.page)
         .img
-          img(src='/images/clips/500/#{item._id}.jpg', alt='')
+          img(src='/images/clips/500/#{item._id}.jpg', alt=item.title)
           .badge.duration-badge.bg-default.bg-transparent
             = moment.utc(item.duration * 1000).format("mm:ss")
             i.fa.fa-clock-o

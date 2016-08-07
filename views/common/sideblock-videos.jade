@@ -7,7 +7,7 @@ mixin sideblock-videos(title, items)
           .col-xs-3.col-md-4
             a.angled-img(href='/videos/#{item._id}')
               .img
-                img(src='/images/clips/250/#{item._id}.jpg', alt='')
+                img(src='/images/clips/250/#{item._id}.jpg', alt=item.title)
           .col-xs-9.col-md-8
             h4.ellipsis
               a(href='/videos/#{item._id}', title='#{item.title}')= item.title
