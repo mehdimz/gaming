@@ -11,10 +11,12 @@ var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
 
 var app = express();
+var oneYear = 31557600000;
+
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'lib/storage')));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneYear }));
+app.use(express.static(path.join(__dirname, 'lib/storage'), { maxAge: oneYear }));
 
 app.use(cookieParser());
 app.use(session({
