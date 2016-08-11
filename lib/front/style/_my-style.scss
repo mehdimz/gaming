@@ -133,6 +133,14 @@ ul.two-columns li a {
   text-align: center;
 }
 
+.angled-img .img>img{
+	opacity:1;
+}
+
+.rs-youplay .slotholder>.slot .slotslide:after, .rs-youplay .slotholder>.tp-bgimg:after, .rs-youplay .tp-arr-iwrapper:after{
+	opacity:1;
+}
+
 .tp-banner .h1 {
   direction: ltr;
   text-align: left;
