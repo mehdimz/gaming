@@ -74,5 +74,29 @@ block addscript
   // Initialize the editor.
   script.
     $(function() {
-      $('#edit').froalaEditor()
+      $('#edit').froalaEditor({
+        imageUploadURL: '/admin/images',
+        imageUploadParams: {
+          id: 'my_editor'
+        }
+      }).on('froalaEditor.image.removed', function (e, editor, $img) {
+        $.ajax({
+          // Request method.
+          method: "DELETE",
+
+          // Request URL.
+          url: "/admin"+$img.attr('src'),
+
+          // Request params.
+          data: {
+            src: $img.attr('src')
+          }
+        })
+        .done (function (data) {
+          console.log ('image was deleted');
+        })
+        .fail (function () {
+          console.log ('image delete problem');
+        })
+      });
     });
