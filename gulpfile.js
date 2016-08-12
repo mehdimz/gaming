@@ -1,5 +1,6 @@
 var gulp = require('./gulp')([
   'browserify',
+  'browserify-video',
   'serve',
   'watch',
   'sass',
