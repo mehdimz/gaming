@@ -19,7 +19,8 @@ mixin meta(item, itemModel)
       i.fa.fa-eye.meta-icon.fa-fw
       span بازدید
       span= item.viewCount
-    .item
-      a#thumb-up(href='#', data-item-id="#{item._id}", data-item-model=itemModel)
-        i.fa.fa-heart.fa-fw
-        span.count= item.thumbs.up
+    if item.thumbs
+      .item
+        a#thumb-up(href='#', data-item-id="#{item._id}", data-item-model=itemModel)
+          i.fa.fa-heart.fa-fw
+          span.count= item.thumbs.up

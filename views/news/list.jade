@@ -4,6 +4,15 @@ include ../common/sideblock-videos
 include ../common/news-sidebar
 include ../common/games-sidebar
 
+block title
+  title اخبار
+  meta(name='description', content='جدید ترین اخبار بازی ها')
+  meta(name='twitter:card', value='جدید ترین اخبار بازی ها')
+  meta(property='og:title', content='جدید ترین اخبار بازی ها')
+  meta(property='og:type', content='news')
+  meta(property='og:description', content='جدید ترین اخبار بازی ها')
+
+
 block content 
   +slider(data.bannerGames)
   .container.youplay-news

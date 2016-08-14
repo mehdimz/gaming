@@ -5,12 +5,12 @@ mixin sideblock-videos(title, items)
       each item in items
         .row.youplay-side-news
           .col-xs-3.col-md-4
-            a.angled-img(href='/videos/#{item._id}')
+            a.angled-img(href=item.page)
               .img
                 img(src='/images/clips/250/#{item._id}.jpg', alt=item.title)
           .col-xs-9.col-md-8
             h4.ellipsis
-              a(href='/videos/#{item._id}', title='#{item.title}')= item.title
+              a(href=item.page, title='#{item.title}')= item.title
             span.date
               i.fa.fa-calendar
               span= moment(item.date).fromNow()

@@ -5,9 +5,9 @@ mixin games-sidebar(cats, title)
       each cat in cats
         .row.youplay-side-news
           .col-xs-3.col-md-4
-            a.angled-img(href=cat.url)
+            a.angled-img(href=cat.url + '/review')
               .img
                 img(src='/images/cats/250/#{cat._id}.jpg', alt=cat.name)
           .col-xs-9.col-md-8
             h4.ellipsis
-              a(href='/games/#{cat._id}/#{cat.name}', title='#{cat.name}')= cat.name
+              a(href=cat.url + '/review', title='#{cat.name}')= cat.name
