@@ -1,0 +1,23 @@
+extends ../layout
+include ../common/genres-sidebar
+include ../common/games-sidebar
+include ../common/news-sidebar
+
+block title
+  -var titleText = 'موسیقی های' + data.item.name + ' ' + data.item.subtitle
+  title= titleText
+  meta(name='description', content='#{data.item.name} #{data.item.subtitle}')
+  meta(name='twitter:card', value='#{data.item.name}')
+  meta(property='og:title', content='#{data.item.name}')
+  meta(property='og:type', content='article')
+  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/250/#{data.item._id}.jpg')
+  meta(property='og:description', content='#{data.item.name} #{data.item.subtitle}')
+
+block content
+  section.content-wrap
+    .youplay-banner.youplay-banner-parallax.banner-top
+      .image(style="background-image: url(#{data.item.poster.lg})")
+      .info
+        div
+          .container
+            h1.h1.align-left.mb-0= 'موسیقی های' + data.item.name + ' ' + data.item.subtitle
