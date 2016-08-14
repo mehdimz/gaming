@@ -59,43 +59,40 @@ block content
             span ... 
             a.more-review(href=data.item.url + '/review') ادامه نقد بازی
             
-          //- h2.mt-0 آهنگ های بازی
-          
-          // Review Rating
-          //- .youplay-review-rating
-          //-   .row
-          //-     .col-md-4
-          //-       .youplay-hexagon-rating(data-max='10', title='#{data.item.score} out of 10')
-          //-         span= data.item.score
-          //-     if data.item.properties.pros.length
-          //-       .col-md-4
-          //-         h3.mt-0 ویژگی های مثبت
-          //-         ul
-          //-           each quality in data.item.properties.pros
-          //-             if quality
-          //-               li
-          //-                 i.fa.fa-plus-circle
-          //-                 span=  quality
-          //-     if data.item.properties.cons.length
-          //-       .col-md-4
-          //-         h3.mt-0 ویژگی های منفی
-          //-         ul
-          //-           each quality in data.item.properties.cons
-          //-             if quality
-          //-               li
-          //-                 i.fa.fa-minus-circle
-          //-                 span= quality
+          h2 موسیقی های بازی
+          table.youplay-messages.table.table-hover
+            tbody
+              tr.message-unread
+                td.message-from
+                  a.angled-img(href='#')
+                    .img
+                      img(src='/images/cats/250/575684417fdd924f555fbbbe.jpg', width='80', height='80', alt='')
+                  strong آهنگساز:      
+                    a.date(href='#')
+                      span رامین نودقان
+                  br
+                  strong ناشر:      
+                    span.date
+                      span حسین متین
+                  br
+                  strong سال:   
+                    span.date 2015
+                  br  
+                  strong دانلود:   
+                    a.date(href='#') کلیک کنید  
+                td.message-description.hidden-xs
+                  a.message-description-name(href='#', title='View Message') درباره آهنگساز
+                  br
+                  .message-excerpt تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست   
                           
           include ../common/social
      
 
         //- +comment-section(item, 'games') 
-
       .col-md-3.mt-40
         +games-sidebar(data.cats, 'بازی های مشابه')
         +news-sidebar('پر بازدیدترین اخبارها', data.popularNews)
 
         //- +genres-sidebar(data.genres)
-
     h2.container دیگر نسخه های بازی
     +carousel(data.cats, 'Related')
