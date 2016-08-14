@@ -1,0 +1,51 @@
+﻿extends ../layout
+include ../common/comment-section
+include ../common/tags-list
+include ../common/meta
+
+block title
+  -var titleText = ' نقد بازی ' + data.item.name + ' ' + data.item.subtitle
+  title= titleText
+  meta(name='description', content=titleText)
+  meta(name='twitter:card', value=titleText)
+  meta(property='og:title', content=titleText)
+  meta(property='og:type', content='article')
+  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/250/#{data.item._id}.jpg')
+  meta(property='og:description', content=titleText)
+
+block content
+  section.content-wrap.no-banner
+    h1.container= titleText
+    .container.youplay-news.youplay-post
+      article.news-one
+        .description
+          != data.item.critic
+                    
+          .youplay-review-rating
+            .row
+              .col-md-4
+                .youplay-hexagon-rating(data-max='10', title='#{data.item.score} out of 10')
+                  span= data.item.score
+              if data.item.properties.pros.length
+                .col-md-4
+                  h3.mt-0 ویژگی های مثبت
+                  ul
+                    each quality in data.item.properties.pros
+                      if quality
+                        li
+                          i.fa.fa-plus-circle
+                          span=  quality
+              if data.item.properties.cons.length
+                .col-md-4
+                  h3.mt-0 ویژگی های منفی
+                  ul
+                    each quality in data.item.properties.cons
+                      if quality
+                        li
+                          i.fa.fa-minus-circle
+                          span= quality
+                          
+          //- +tags-list(data.item)
+          +meta(data.item, 'videos')
+          include ../common/social
+        +comment-section(data.item, 'games') 

@@ -55,10 +55,11 @@ block content
           // /Description
           // criticism
           h2.mt-0 نقد بازی
-          .description!= data.item.critic
-            a.more-review(href='#') ادامه نقد بازی
+          .description!= data.item.criticGist
+            span ... 
+            a.more-review(href=data.item.url + '/review') ادامه نقد بازی
             
-          h2.mt-0 آهنگ های بازی
+          //- h2.mt-0 آهنگ های بازی
           
           // Review Rating
           //- .youplay-review-rating
