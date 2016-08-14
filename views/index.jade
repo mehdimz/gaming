@@ -67,7 +67,7 @@ block content
             p.news-words
               = cat.criticGist 
               | ...
-              a(href='/games/#{cat._id}/#{cat.name}')
+              a(href= cat.url + '/review')
                 small.author-name ادامه 
             //- a(href="/games/#{cat._id}/#{cat.name}")    
             //-   img.img-circle(alt='dark soul', src='/images/cats/250/#{cat._id}.jpg')
