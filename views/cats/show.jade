@@ -59,31 +59,31 @@ block content
             span ... 
             a.more-review(href=data.item.url + '/review') ادامه نقد بازی
 
-          h2 موسیقی های بازی
-          table.youplay-messages.table.table-hover
-            tbody
-              tr.message-unread
-                td.message-from
-                  a.angled-img(href=data.item.url + '/soundtracks')
-                    .img
-                      img(src='/images/cats/250/575684417fdd924f555fbbbe.jpg', width='120', height='120', alt='')
-                  strong آهنگساز:      
-                    a.date(href='#')
-                      span رامین نودقان
-                  br
-                  strong ناشر:      
-                    span.date
-                      span حسین متین
-                  br
-                  strong سال:   
-                    span.date 2015
-                  br  
-                  strong دانلود:   
-                    a.date(href='#') کلیک کنید  
-                td.message-description.hidden-xs
-                  a.message-description-name(href='#') توضیحات
-                  br
-                  .message-excerpt تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
+          if data.album
+            h2 موسیقی های بازی
+            table.youplay-messages.table.table-hover
+              tbody
+                tr.message-unread
+                  td.message-from
+                    a.angled-img(href=data.item.url + '/soundtracks')
+                      .img
+                        img(src=data.album.poster.sm, width='120', height='120', alt='')
+                    strong آهنگساز:      
+                      a.date(href='#')
+                        span= data.album.composer
+                    br
+                    strong ناشر:      
+                      span.date
+                        span= data.album.publisher
+                    br
+                    strong سال:   
+                      span.date= data.album.year
+                    br  
+                    strong دانلود:   
+                      a.date(href=data.item.url + '/soundtracks') کلیک کنید  
+                  td.message-description.hidden-xs
+                    .message-description-name توضیحات
+                    .message-excerpt= data.album.info
 
           
           include ../common/social

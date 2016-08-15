@@ -1,0 +1,16 @@
+form(method="post", action=(item?"album/#{item.id}":"album"), enctype="multipart/form-data")
+  .form-group
+    input.form-control(type="text", placeholder="composer", name="composer", value=(item?item.composer:''), required)
+  .form-group
+    input.form-control(type="text", placeholder="publisher", name="publisher", value=(item ? item.publisher : ''), required)
+  .form-group
+    input.form-control(type="number", placeholder="year", name="year", value=(item ? item.year : ''), required)
+  .form-group
+    textarea.form-control(name="info", placeholder="info")
+      = item ? item.info : '' 
+
+  .form-group.clearfix
+    span.pull-left تصویر
+    input.pull-left(type="file", name="image", required=(item ? false : 'required'))                  
+
+  button.btn.btn-secondary.btn-block(type="submit", class=(item ? 'btn-info':'')) ثبت +

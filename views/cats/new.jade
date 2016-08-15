@@ -16,6 +16,8 @@ block content
                     br
                     = cat.subtitle
                 td
+                  a(href="/cats/#{cat._id}/album") +album
+                td
                   a(href="/cats/#{cat._id}/platforms") +platforms
                 td
                   a(href="/cats/#{cat._id}/genres") +genres
