@@ -29,4 +29,8 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
     label(for="inBanner") نمایش در بنر
     input#inBanner(type="checkbox", checked=(item ? item.inBanner : false), name="inBanner")
 
+  fieldset.form-group
+    label(for="inCarousel") نمایش در carousel
+    input#inCarousel(type="checkbox", checked=(item ? item.inCarousel : false), name="inCarousel")
+
   button.btn.btn-secondary.btn-block(type="submit", class=(item ? 'btn-info':'')) ثبت +
