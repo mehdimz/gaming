@@ -282,7 +282,17 @@ h3.news-title{
 
 .youplay-messages .message-from .angled-img{
 	float:right;
-	margin-left: 20px;
+	margin-left: 0px;
+	margin-right:0px;
+	width:120px;
+}
+
+td.message-from strong{
+	margin-right:20px !important;
+}
+
+.youplay-messages .message-description .message-excerpt{
+	font-size:1.3rem;
 }
 
 
