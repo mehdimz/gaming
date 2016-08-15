@@ -30,10 +30,10 @@ block content
     .col-md-9
       // Post Info
       article.news-one
-        video#really-cool-video.video-js.vjs-default-skin.vjs-fullscreen.really-cool-video(style='position:relative; z-index:0;',controls='', preload='auto', poster= item.poster.lg, data-setup='{}')
-          source(src='http://cdn.bazivision.com/data/360/#{item._id}.mp4', type='video/mp4', label="360")
-          source(src='http://cdn.bazivision.com/data/480/#{item._id}.mp4', type='video/mp4', label="480")
-          source(src='http://cdn.bazivision.com/data/720/#{item._id}.mp4', type='video/mp4', label="720")
+        video#really-cool-video.video-js.vjs-default-skin.vjs-fullscreen.really-cool-video(style='position:relative; z-index:0;', preload='none', poster= item.poster.lg)
+          source(src=item.address.sm, type='video/mp4', label="360")
+          source(src=item.address.md, type='video/mp4', label="480")
+          source(src=item.address.lg, type='video/mp4', label="720")
           p.vjs-no-js برای دیدن این ویدیو لطفا javascript مرورگر را فعال کنید
 
 
@@ -114,5 +114,4 @@ block content
 
 block addscript
   script(src="/build/video.js")
-  //- script(src='/javascripts/video.min.js')
-  //- script(src='/javascripts/video-quality-selector.js')
+
