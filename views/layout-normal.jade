@@ -7,9 +7,9 @@ html(lang="fa")
 
     title BaziVision
 
-    link(rel="icon",type="image/png",href="/images/icon.png")
+    link(rel="icon",type="image/png",href=prefix + "/images/icon.png")
     link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
-    link(href='/stylesheets/main.css', rel='stylesheet')
+    link(href=prefix + '/stylesheets/main.css', rel='stylesheet')
   body
     // Preloader
     .page-preloader.preloader-wrapp
@@ -30,7 +30,7 @@ html(lang="fa")
 
 
     
-    script(src="/build/bundle.js")
+    script(src=prefix + "/build/bundle.js")
     // Google Analytics
     script.
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

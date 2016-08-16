@@ -13,7 +13,9 @@ var flash = require('connect-flash');
 var app = express();
 app.disable('x-powered-by');
 
-var oneYear = 31557600000;
+app.locals.prefix = process.env.NODE_ENV == 'production' ? 'http://cdn.bazivision.com' : '';
+
+// var oneYear = 31557600000;
 app.use(compression());
 
 app.use(express.static(path.join(__dirname, 'public')));
