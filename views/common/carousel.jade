@@ -1,12 +1,11 @@
 mixin carousel(items)
   .youplay-carousel(data-autoplay='5000')
     each item in items
-      a.angled-img(href=item.url)
+      a.angled-img(href=item.url, title=item.fullname)
         .img
-          img(src='/images/cats/500/#{item._id}.jpg', alt=item.name)
+          img(src=item.poster.sm, alt=item.name)
         .over-info
           div
-            div
-              h4= item.name
-              h5= item.subtitle
-              p.btn.btn-xs(href='#!') بازی نامه
+            h4= item.name
+            h5= item.subtitle
+            p.btn.btn-xs(href=item.url, title=item.fullname) بازی نامه
