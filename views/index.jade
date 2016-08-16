@@ -66,7 +66,7 @@ block content
         .col-md-4
           blockquote
             article
-              h2.review-title.mt-0= cat.name
+              h2.review-title.mt-0= cat.name + ' ' + cat.subtitle
               p.news-words
                 = cat.criticGist 
                 | ...
