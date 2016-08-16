@@ -44,14 +44,16 @@ block content
               img(src=item.poster.medium, alt=item.title)
         .col-md-8
           .clearfix
-            h3.h2.pull-left.m-0
-              a(href=item.page)= item.title
-            span.date.pull-right
-              i.fa.fa-calendar.fa-fw 
-              span= moment(item.date).format('jD jMMMM jYYYY') 
-          .description
-            p= item.gist + ' ...'
-          a.btn.read-more.pull-left(href=item.page) ادامه مطلب
+            article
+              h2.news-title.pull-left.m-0
+                a(href=item.page)= item.title 
+              span.date.pull-right
+                i.fa.fa-calendar.fa-fw 
+                span= moment(item.date).format('jD jMMMM jYYYY')
+              .clearfix   
+              .description
+                p= item.gist + ' ...'
+              a.btn.read-more.pull-left(href=item.page) ادامه مطلب
   
   // Partners
   section.youplay-banner.youplay-banner-parallax.small.mt-10.p-15
@@ -59,16 +61,17 @@ block content
     .row.testimonials.vertical-gutter
       .info.align-center
         div
-          h2.mb-40 نقد بازی ها
+          h2.mb-40.mt-30 نقد بازی ها
       each cat in data.naghds
         .col-md-4
           blockquote
-            h3.news-title.mt-0= cat.name
-            p.news-words
-              = cat.criticGist 
-              | ...
-              a(href= cat.url + '/review')
-                small.author-name ادامه 
+            article
+              h2.review-title.mt-0= cat.name
+              p.news-words
+                = cat.criticGist 
+                | ...
+                a(href= cat.url + '/review')
+                  small.author-name ادامه 
             //- a(href="/games/#{cat._id}/#{cat.name}")    
             //-   img.img-circle(alt='dark soul', src='/images/cats/250/#{cat._id}.jpg')
 
