@@ -11,8 +11,9 @@ var MongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
 
 var app = express();
-var oneYear = 31557600000;
+app.disable('x-powered-by');
 
+var oneYear = 31557600000;
 app.use(compression());
 
 app.use(express.static(path.join(__dirname, 'public')));
