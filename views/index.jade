@@ -9,18 +9,18 @@ block content
   +carousel(data.cats)
 
 
-  h2.container.h1
+  h4.container.h1
     | پربازدیدها
     a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
   +video-carousel(data.mostViewed)
   
   if data.todayClips.length
-    h2.container.h1
+    h4.container.h1
       | ویدیوهای هفته
       a.btn.pull-right(href='/videos/more/latest') بیشتر
     +video-carousel(data.todayClips)
 
-  h2.container.h1
+  h4.container.h1
     | تریلرها 
     a.btn.pull-right(href='/videos/more/trailers') بیشتر
   +video-carousel(data.trailers, 1)
@@ -45,7 +45,7 @@ block content
         .col-md-8
           .clearfix
             article
-              h2.news-title.pull-left.m-0
+              h3.news-title.pull-left.m-0
                 a(href=item.page)= item.title 
               span.date.pull-right
                 i.fa.fa-calendar.fa-fw 
@@ -66,7 +66,7 @@ block content
         .col-md-4
           blockquote
             article
-              h2.review-title.mt-0= cat.name + ' ' + cat.subtitle
+              h3.review-title.mt-0= cat.name + ' ' + cat.subtitle
               p.news-words
                 = cat.criticGist 
                 | ...

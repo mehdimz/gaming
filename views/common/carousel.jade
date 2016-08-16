@@ -3,9 +3,15 @@ mixin carousel(items)
     each item in items
       a.angled-img(href=item.url, title=item.fullname)
         .img
-          img(src=item.poster.sm, alt=item.name)
+          img(src='/images/cats/500/#{item._id}.jpg', alt=item.name)
         .over-info
           div
-            h4= item.name
-            h5= item.subtitle
-            p.btn.btn-xs(href=item.url, title=item.fullname) بازی نامه
+            div
+              p.over-info-title= item.name
+              p.over-info-subtitle= item.subtitle
+              p.btn.btn-xs بازی نامه
+
+
+
+
+

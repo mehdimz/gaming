@@ -188,6 +188,15 @@ ul.two-columns li a {
   margin-bottom: 10px !important;
 }
 
+h3.title-overflow{
+	font-size: 18px;
+    color: #FFF;
+    position: relative;
+    text-align: center;
+    margin-top: 1.8rem;
+    font-weight: 700;
+}
+
 .bottom-info-overflow {
   border-top: 1px solid #fff;
   padding-top: 10px;
@@ -242,14 +251,14 @@ ul.two-columns li a {
     color: #FFF;	
 }
 
-article h2.review-title{
+article h3.review-title{
 	text-transform:uppercase;
 	font-weight:bold;
 	font-size:24px;
 	margin:0;
 }
 
-article h2.news-title{
+article h3.news-title{
 	font-size:30px;
 	margin:0;
 }
@@ -272,6 +281,25 @@ article h2.news-title{
 
 .angled-img .over-info .rating, .angled-img .over-info h4{
 	text-shadow:2px 1px 2px #000;
+}
+
+.angled-img .over-info .rating, .angled-img .over-info p.over-info-title{
+	text-shadow:2px 1px 2px #000;
+	font-size:18px;
+	margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    color: #FFF;	
+}
+
+.angled-img .over-info .rating, .angled-img .over-info p.over-info-subtitle{
+	text-shadow:2px 1px 2px #000;
+	font-size:14px;
+	margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    color: #FFF;
+    line-height: 1.1;	
 }
 
 .full{

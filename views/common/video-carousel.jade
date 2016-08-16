@@ -16,7 +16,7 @@ mixin video-carousel(items, isTrailer)
               div
                 span.fa.fa-play.icon
           .bottom-info
-            h4.title-overflow= item.title
+            h3.title-overflow= item.title
             .row.bottom-info-overflow
               .col-xs-12
                 if item._category
@@ -27,5 +27,5 @@ mixin video-carousel(items, isTrailer)
           .over-info
             div
               div
-                h4= item.title
+                p.over-info-title= item.title
                 span.fa.fa-play.icon
