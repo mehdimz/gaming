@@ -142,7 +142,8 @@ ul.two-columns li a {
 }
 
 .youplay-banner .image{
-	opacity:0.99;
+	// opacity:0.99;
+	opacity:0.5;
 }
 
 .more-review{
@@ -191,6 +192,7 @@ ul.two-columns li a {
   border-top: 1px solid #fff;
   padding-top: 10px;
   margin: 0;
+  height: 31px;
 }
 
 .play-icon-over i{
@@ -256,6 +258,10 @@ h3.news-title{
 
 .navbar-youplay .navbar-nav>li{
 	margin-left:25px;
+}
+
+.angled-img .over-info .rating, .angled-img .over-info h4{
+	text-shadow:2px 1px 2px #000;
 }
 
 .full{

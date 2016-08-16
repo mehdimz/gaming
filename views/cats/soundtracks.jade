@@ -3,8 +3,9 @@ include ../common/genres-sidebar
 include ../common/games-sidebar
 include ../common/news-sidebar
 
+
 block title
-  -var titleText = 'موسیقی های' + data.item.name + ' ' + data.item.subtitle
+  -var titleText = 'موسیقی های بازی' + data.item.name + ' : ' + data.item.subtitle
   title= titleText
   meta(name='description', content='#{data.item.name} #{data.item.subtitle}')
   meta(name='twitter:card', value='#{data.item.name}')
@@ -20,4 +21,62 @@ block content
       .info
         div
           .container
-            h1.h1.align-left.mb-0= 'موسیقی های' + data.item.name + ' ' + data.item.subtitle
+            h1.h1.align-left.mb-0= data.item.name
+            h3.italic-h2= data.item.subtitle
+
+    .container.youplay-store.mt-0
+
+      .col-md-9.mt-40
+        h2.mt-0= titleText
+        table.table.table-striped
+          thead
+            tr
+              th #
+              th نام
+              th حجم
+              th مدت زمان
+              th ‍‍‍کیفیت
+              th.hidden-xs پخش موسیقی
+              th دانلود
+          tbody
+            tr
+              th(scope='row') 1
+              td Phantom of the opera
+              td 7.5mb
+              td 7:21
+              td 360kbs
+              td.hidden-xs
+                audio(controls='')
+                  source(src='horse.mp3', type='audio/mpeg')
+              td
+                a(href='#')
+                  i.fa.fa-download
+            tr
+              th(scope='row') 2
+              td Phantom of the opera
+              td 7.5mb
+              td 7:21
+              td 360kbs
+              td.hidden-xs
+                audio(controls='')
+                  source(src='horse.mp3', type='audio/mpeg')              
+              td
+                a(href='#')
+                  i.fa.fa-download
+            tr
+              th(scope='row') 3
+              td Phantom of the opera
+              td 7.5mb
+              td 7:21
+              td 360kbs
+              td.hidden-xs
+                audio(controls='')
+                  source(src='horse.mp3', type='audio/mpeg')              
+              td
+                a(href='#')
+                  i.fa.fa-download
+      .col-md-3.mt-40
+        +games-sidebar(data.cats, 'بازی های مشابه')
+        //- +news-sidebar('پر بازدیدترین اخبارها', data.popularNews)
+
+
