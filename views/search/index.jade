@@ -14,51 +14,45 @@ block content
               .col-md-4.col-xs-4
                 .angled-img
                   .img
-                    img(src='/images/clips/250/#{item._id}.jpg', alt='')
-                    i.fa.fa-play.icon
+                    img(src='/images/clips/250/#{item._id}.jpg', alt=item.title)
+                    span.fa.fa-play.icon
               .col-md-8.col-xs-8
                 .row
                   .col-xs-12.col-md-12.pr-0
                     h4= item.title
-                  //- .col-xs-6.col-md-3.align-center
-                  //-   .date
-                  //-     i.fa.fa-calendar
-                  //-     div= moment(item.date).fromNow()
+                    .date.align-left
+                      span.fa.fa-calendar.fa-fw
+                      = moment(item.date).fromNow()
 
       .col-md-4.col-sm-4.col-xs-6
         h2 بازی ها
         // Single News
         each item in data.games
-          a.angled-bg(href='#!')
+          a.angled-bg(href=item.url)
             .row
               .col-md-4.col-xs-4
                 .angled-img
                   .img
-                    img(src='/images/cats/250/#{item._id}.jpg', alt='')
+                    img(src='/images/cats/250/#{item._id}.jpg', alt=item.name)
               .col-md-8.col-xs-8
                 .row
                   .col-xs-12.col-md-12.pr-0
                     h4= item.name
-                  //- .col-xs-6.col-md-3.align-center
-                  //-   .date
-                  //-     i.fa.fa-calendar
-                  //-     div= moment(item.date).fromNow()
 
       .col-md-4.col-sm-4.col-xs-6
         h2 اخبار ها
         // Single News
-        each item in data.games
-          a.angled-bg(href='#!')
+        each item in data.news
+          a.angled-bg(href=item.page)
             .row
               .col-md-4.col-xs-4
                 .angled-img
                   .img
-                    img(src='/images/cats/250/#{item._id}.jpg', alt='')
+                    img(src=item.poster.small, alt=item.title)
               .col-md-8.col-xs-8
                 .row
                   .col-xs-12.col-md-12.pr-0
-                    h4= item.name
-                  //- .col-xs-6.col-md-3.align-center
-                  //-   .date
-                  //-     i.fa.fa-calendar
-                  //-     div= moment(item.date).fromNow()
+                    h4= item.title
+                    .date.align-left
+                      span.fa.fa-calendar.fa-fw
+                      = moment(item.date).fromNow()
