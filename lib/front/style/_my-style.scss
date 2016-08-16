@@ -211,6 +211,9 @@ ul.two-columns li a {
 
 .testimonials blockquote p.news-words {
     font-size: 14px;
+    text-align: justify;
+    text-transform:lowercase;
+    font-weight: normal;
 }
 
 .testimonials blockquote img {
@@ -239,9 +242,16 @@ ul.two-columns li a {
     color: #FFF;	
 }
 
-h3.news-title{
+article h2.review-title{
 	text-transform:uppercase;
 	font-weight:bold;
+	font-size:24px;
+	margin:0;
+}
+
+article h2.news-title{
+	font-size:30px;
+	margin:0;
 }
 
 .news-words a{
