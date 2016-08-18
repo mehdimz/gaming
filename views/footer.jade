@@ -1,5 +1,5 @@
 footer.youplay-footer-parallax
-  .wrapper(style="background-image: url('/images/footer-bg.jpg')")
+  .wrapper(style="background-image: url('#{prefix}/images/footer-bg.jpg')")
     .social
       .container
         h4.h3
@@ -7,7 +7,6 @@ footer.youplay-footer-parallax
           strong bazivision
           |  در شبکه های اجتماعی همراه شوید
         .row.icons
-          //- .col-xs-6.col-sm-3
           .col-xs-6.col-sm-3.col-sm-offset-3
             a(href='http://instagram.com/bazivision')
               i.fa.fa-instagram
@@ -16,15 +15,10 @@ footer.youplay-footer-parallax
             a(href='https://telegram.me/bazivision')
               i.fa.fa-paper-plane
               span ارتباط در تلگرام
-          //- .col-xs-6.col-sm-3
     .copyright
       .container
         | تمامی حقوق برای سایت 
         strong bazivision
         |  محفوظ است
 
-.search-block
-  a.search-toggle.glyphicon.glyphicon-remove(href='#!')
-  form(action='search.html')
-    .youplay-input
-      input(type='text', name='search', placeholder='Search...')
+
