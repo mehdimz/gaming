@@ -39,7 +39,7 @@ block content
     each item in data.news
       .news-one.row.vertical-gutter
         .col-md-4
-          a.angled-img(href=item.page)
+          a.angled-img(href=item.page, title=item.title)
             .img
               img(src=item.poster.medium, alt=item.title)
         .col-md-8
@@ -53,7 +53,7 @@ block content
               .clearfix   
               .description
                 p= item.gist + ' ...'
-              a.btn.read-more.pull-left(href=item.page) ادامه مطلب
+              a.btn.read-more.pull-left(href=item.page, title=item.title) ادامه مطلب
   
   // Partners
   section.youplay-banner.youplay-banner-parallax.small.mt-10.p-15
@@ -66,12 +66,15 @@ block content
         .col-md-4
           blockquote
             article
-              h3.review-title.mt-0= cat.name + ' ' + cat.subtitle
+              h3.review-title.mt-0
+                a(href= cat.url + '/review', title='نقد '+ cat.fullname)= cat.fullname
               p.news-words
                 = cat.criticGist 
                 | ...
-                a(href= cat.url + '/review')
-                  small.author-name ادامه 
+              a(href= cat.url + '/review')
+                small.author-name 
+                  | ادامه نقد  
+                  = cat.fullname
             //- a(href="/games/#{cat._id}/#{cat.name}")    
             //-   img.img-circle(alt='dark soul', src='/images/cats/250/#{cat._id}.jpg')
 
