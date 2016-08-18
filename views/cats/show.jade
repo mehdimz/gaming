@@ -37,13 +37,15 @@ block content
             img(src='/images/additional/350/#{img}.jpg', alt='')
           i.fa.fa-search-plus.icon
 
-
-    h2.container
-      | ویدیوهای بازی
-      a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
+    if data.clips.length
+      .container
+        h2
+          span ویدیوهای بازی 
+          small= data.item.fullname
+          a.btn.pull-right(href='/videos/more/most-viewed', title='ویدیوهای بازی '+data.item.fullname) بیشتر
+        +video-carousel(data.clips)
     .container.youplay-store.mt-0
 
-      +video-carousel(data.clips)
 
       .col-md-9.mt-40
         // Post Info
