@@ -32,9 +32,9 @@ block content
       //-     img(src='/images/additional/400/#{img}.jpg', alt='')
       //-   i.fa.fa-play.icon
       each img in data.item.additional_pictures
-        a.angled-img(href='/images/additional/big/#{img}.jpg')
+        a.angled-img(href='/images/additional/big/#{img}.jpg', title=data.item.fullname + ' gameplay image ')
           .img
-            img(src='/images/additional/350/#{img}.jpg', alt='')
+            img(src='/images/additional/350/#{img}.jpg', alt=data.item.fullname + ' gameplay image ')
           i.fa.fa-search-plus.icon
 
     if data.clips.length
