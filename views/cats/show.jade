@@ -8,7 +8,7 @@ include ../common/news-sidebar
 include ../common/slider
 
 block title
-  title= data.item.fullname 
+  title= 'بازی نامه ' + data.item.fullname 
   meta(name='description', content=data.item.about)
   meta(name='twitter:card', value=data.item.name)
   meta(property='og:title', content=data.item.name)
@@ -24,26 +24,24 @@ block content
         div
           .container
             h1.h1.align-left.mb-0= data.item.name
-            h3.italic-h2= data.item.subtitle
+            h2.italic-h2= data.item.subtitle
             
     .youplay-carousel.gallery-popup
-      //- a.angled-img(href='#')
-      //-   .img
-      //-     img(src='/images/additional/400/#{img}.jpg', alt='')
-      //-   i.fa.fa-play.icon
       each img in data.item.additional_pictures
         a.angled-img(href='/images/additional/big/#{img}.jpg', title=data.item.fullname + ' gameplay image ')
           .img
             img(src='/images/additional/350/#{img}.jpg', alt=data.item.fullname + ' gameplay image ')
           i.fa.fa-search-plus.icon
 
+
     if data.clips.length
       .container
-        h2
+        h3.h2
           span ویدیوهای بازی 
-          small= data.item.fullname
+          small.hidden= data.item.fullname
           a.btn.pull-right(href='/videos/more/most-viewed', title='ویدیوهای بازی '+data.item.fullname) بیشتر
         +video-carousel(data.clips)
+
     .container.youplay-store.mt-0
 
 
@@ -51,18 +49,24 @@ block content
         // Post Info
         article
           // Description
-          h2.mt-0 درباره بازی
+          h3.h2.mt-0 
+            span درباره بازی
+            small.hidden= data.item.fullname
           .description
             p= data.item.about
           // /Description
           // criticism
-          h2.mt-0 نقد بازی
+          h3.h2.mt-0
+            span نقد بازی
+            small.hidden= data.item.fullname
           .description!= data.item.criticGist
             span ... 
             a.more-review(href=data.item.url + '/review') ادامه نقد بازی
 
           if data.album
-            h2 موسیقی های بازی
+            h3.h2
+              span موسیقی های بازی
+              small.hidden= data.item.fullname
             table.youplay-messages.table.table-hover
               tbody
                 tr.message-unread

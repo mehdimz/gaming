@@ -9,11 +9,11 @@ block title
   title
     | Bazivision | 
     = item.title
-  meta(name='description', content=item.body)
+  meta(name='description', content=item.title)
   meta(name='twitter:card', value=item.title)
   meta(property='og:title', content=item.title)
   meta(property='og:type', content='article')
-  meta(property='og:image', content=item.poster.md)
+  meta(property='og:image', content="http://cdn.bazivision.com#{item.poster.md}")
   meta(property='og:description', content=item.title)
 
 block content

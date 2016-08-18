@@ -159,7 +159,7 @@ ul.two-columns li a {
 }
 
 .italic-h2 {
-  font-size: 3em;
+  font-size: 3em !important;
   margin: 0;
   font-style: italic;
   text-align: left;
@@ -291,7 +291,8 @@ a.news-words:hover small{
 	margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     font-weight: 700;
-    color: #FFF;	
+    color: #FFF;
+    text-align: center;	
 }
 
 .angled-img .over-info .rating, .angled-img .over-info p.over-info-subtitle{
