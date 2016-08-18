@@ -8,13 +8,13 @@ include ../common/news-sidebar
 include ../common/slider
 
 block title
-  title= data.item.name + ' ' + data.item.subtitle
+  title= data.item.fullname 
   meta(name='description', content=data.item.about)
   meta(name='twitter:card', value=data.item.name)
   meta(property='og:title', content=data.item.name)
   meta(property='og:type', content='article')
   meta(property='og:image', content=data.item.poster.md)
-  meta(property='og:description', content='#{data.item.name} #{data.item.subtitle}')
+  meta(property='og:description', content=data.item.fullname)
 
 block content
   section.content-wrap
