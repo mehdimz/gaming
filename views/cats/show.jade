@@ -38,7 +38,7 @@ block content
       .container
         h3.h2
           span ویدیوهای بازی 
-          small= data.item.fullname
+          small.hidden= data.item.fullname
           a.btn.pull-right(href='/videos/more/most-viewed', title='ویدیوهای بازی '+data.item.fullname) بیشتر
         +video-carousel(data.clips)
 
@@ -49,18 +49,24 @@ block content
         // Post Info
         article
           // Description
-          h3.h2.mt-0 درباره بازی
+          h3.h2.mt-0 
+            span درباره بازی
+            small.hidden= data.item.fullname
           .description
             p= data.item.about
           // /Description
           // criticism
-          h3.h2.mt-0 نقد بازی
+          h3.h2.mt-0
+            span نقد بازی
+            small.hidden= data.item.fullname
           .description!= data.item.criticGist
             span ... 
             a.more-review(href=data.item.url + '/review') ادامه نقد بازی
 
           if data.album
-            h3.h2 موسیقی های بازی
+            h3.h2
+              span موسیقی های بازی
+              small.hidden= data.item.fullname
             table.youplay-messages.table.table-hover
               tbody
                 tr.message-unread
