@@ -11,10 +11,6 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
         li.dropdown.dropdown-hover
-          a.dropdown-toggle(href='/', data-toggle='dropdown', role='button', aria-expanded='false')
-            | خانه 
-            span.label Home
-        li.dropdown.dropdown-hover
           a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
             | بازی ها 
             span.caret
@@ -57,9 +53,6 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
               ul(role='menu')
                 li
                   a(href='/auth/signup') کاربر عادی
-                //- li.divider
-                //- li
-                //-   a(href='#')  تفاوت کاربر عادی با کاربر ویژه
           li
             a.btn-xs(href='/auth/login')
               | ورود
@@ -68,7 +61,6 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
           li.dropdown.dropdown-hover
             a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
               = currentUser.fullname  
-              //- span.badge.bg-default 2
               span.caret
               if currentUser.admin
                 span.label ادمین
@@ -89,16 +81,6 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                     a(href='/admin/comments') نظرات
                   li
                     a(href='/admin/news') تازه ها
-                //- li.divider
-                //- li
-                //-   a(href='user-profile.html')
-                //-     | پروفایل 
-                //-     span.badge.pull-right.bg-warning 13
-                //- li
-                //-   a(href='cart.html')
-                //-     | پیام ها
-                //-     span.badge.pull-right.bg-default 3
-                //- li.divider
                 li
                   a(href='/auth/logout') خروج
         li
