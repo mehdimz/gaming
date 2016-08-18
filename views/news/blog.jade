@@ -8,12 +8,12 @@ block title
   title
     | Bazivision | 
     = data.item.title
-  meta(name='description', content=data.item.title)
+  meta(name='description', content=data.item.gist)
   meta(name='twitter:card', value=data.item.title)
   meta(property='og:title', content=data.item.title)
   meta(property='og:type', content='article')
   meta(property='og:image', content="http://cdn.bazivision.com#{data.item.poster.medium}")
-  meta(property='og:description', content=data.item.title)
+  meta(property='og:description', content=data.item.gist)
 
 block content
   .youplay-banner.banner-top.youplay-banner-parallax.xsmall

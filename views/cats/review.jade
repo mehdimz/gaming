@@ -4,9 +4,9 @@ include ../common/tags-list
 include ../common/meta
 
 block title
-  -var titleText = ' نقد بازی ' + data.item.name + ' ' + data.item.subtitle
+  -var titleText = ' نقد بازی ' + data.item.fullname
   title= titleText
-  meta(name='description', content=titleText)
+  meta(name='description', content=data.item.criticGist)
   meta(name='twitter:card', value=titleText)
   meta(property='og:title', content=titleText)
   meta(property='og:type', content='article')
