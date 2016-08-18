@@ -3,7 +3,7 @@ mixin carousel(items)
     each item in items
       a.angled-img(href=item.url, title=item.fullname)
         .img
-          img(src='/images/cats/500/#{item._id}.jpg', alt=item.name)
+          img(src=item.poster.sm, alt=item.name)
         .over-info
           div
             div
