@@ -25,7 +25,7 @@ block content
         .container
           h1= item.title
   // /Banner
-  .container.youplay-news.youplay-post
+  .container-fluid.youplay-news.youplay-post
 
     .col-md-9
       // Post Info
@@ -37,7 +37,8 @@ block content
           p.vjs-no-js برای دیدن این ویدیو لطفا javascript مرورگر را فعال کنید
 
 
-        h2.p-style= item.body
+        h2= item.title
+        h3.p-style= item.body
         .youplay-review-rating
           +tags-list(item)
           +meta(item, 'videos')
