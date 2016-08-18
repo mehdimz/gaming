@@ -49,7 +49,7 @@ block content
                 a(href=item.page)= item.title 
               span.date.pull-right
                 i.fa.fa-calendar.fa-fw 
-                span= moment(item.date).format('jD jMMMM jYYYY')
+                time= moment(item.date).format('jD jMMMM jYYYY')
               .clearfix   
               .description
                 p= item.gist + ' ...'
@@ -71,7 +71,7 @@ block content
               p.news-words
                 = cat.criticGist 
                 | ...
-              a(href= cat.url + '/review')
+              a.news-words(href= cat.url + '/review')
                 small.author-name 
                   | ادامه نقد  
                   = cat.fullname

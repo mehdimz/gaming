@@ -256,6 +256,8 @@ article h3.review-title{
 	font-weight:bold;
 	font-size:24px;
 	margin:0;
+	overflow:hidden;
+	max-height:30px;
 }
 
 article h3.news-title{
@@ -263,13 +265,13 @@ article h3.news-title{
 	margin:0;
 }
 
-.news-words a{
+a.news-words{
 	display:block;
 	margin-top:5px;
 	font-weight:bold;
 }
 
-.news-words a:hover small{
+a.news-words:hover small{
 	color: #D92B4C;
     -o-transition: .3s color ease;
     transition: .3s color ease;
