@@ -5,7 +5,7 @@ mixin news-sidebar(title, items)
       each item in items
         .row.youplay-side-news
           .col-xs-3.col-md-4
-            a.angled-img(href=item.page)
+            a.angled-img(href=item.page, title=item.title)
               .img
                 img(src=item.poster.small, alt=item.title)
           .col-xs-9.col-md-8
