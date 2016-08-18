@@ -13,14 +13,14 @@ html(lang="fa")
     block title
       title بازی ویژن
 
-    link(rel="icon",type="image/png",href="/images/icon.png")
+    link(rel="icon",type="image/png",href=prefix + "/images/icon.png")
     link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
-    link(href='/stylesheets/main.css', rel='stylesheet')
+    link(href=prefix + '/stylesheets/main.css', rel='stylesheet')
     block addLink
   body
     // Preloader
     .page-preloader.preloader-wrapp
-      img(src='/images/logo.png', alt='بازی ویژن')
+      img(src=prefix + '/images/logo.png', alt='بازی ویژن')
       .preloader
 
 
@@ -30,7 +30,7 @@ html(lang="fa")
         
       include ./footer
     
-    script(src="/build/bundle.js")
+    script(src=prefix + "/build/bundle.js")
       
     // Google Analytics
     script.
