@@ -9,11 +9,11 @@ include ../common/slider
 
 block title
   title= data.item.name + ' ' + data.item.subtitle
-  meta(name='description', content='#{data.item.name} #{data.item.subtitle}')
-  meta(name='twitter:card', value='#{data.item.name}')
-  meta(property='og:title', content='#{data.item.name}')
+  meta(name='description', content=data.item.about)
+  meta(name='twitter:card', value=data.item.name)
+  meta(property='og:title', content=data.item.name)
   meta(property='og:type', content='article')
-  meta(property='og:image', content='http://cdn.bazivision.com/images/cats/250/#{data.item._id}.jpg')
+  meta(property='og:image', content=data.item.poster.md)
   meta(property='og:description', content='#{data.item.name} #{data.item.subtitle}')
 
 block content
