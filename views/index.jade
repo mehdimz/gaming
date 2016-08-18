@@ -27,12 +27,12 @@ block content
 
   if data.toBeReleasedGame
     section.youplay-banner.youplay-banner-parallax.small
-      .image(style="background-image: url('/images/sliders/1600/#{data.toBeReleasedGame._id}.jpg');")
+      .image(style="background-image: url('#{data.toBeReleasedGame.poster.lg}');")
       .info.container.align-center
         div
           h2= data.toBeReleasedGame.name
-          .countdown.h2(data-end='#{data.toBeReleasedGame.releasedate}')
-          a.btn.btn-lg(href='/games/#{data.toBeReleasedGame._id}') بازی نامه
+          .countdown.h2(data-end=data.toBeReleasedGame.releasedate)
+          a.btn.btn-lg(href=data.toBeReleasedGame.url) بازی نامه
 
   h2.container.h1 تازه های بازی ها
   section.youplay-news.container
@@ -57,7 +57,7 @@ block content
   
   // Partners
   section.youplay-banner.youplay-banner-parallax.small.mt-10.p-15
-    .image(style="background-image: url('/images/banner-bg.jpg');") 
+    .image(style="background-image: url('#{prefix}/images/banner-bg.jpg');") 
     .row.testimonials.vertical-gutter
       .info.align-center
         div
@@ -100,5 +100,5 @@ block content
 
 
 block addscript
-  script(type='text/javascript', src='/plugins/slider-revolution/jquery.themepunch.tools.min.js')
-  script(type='text/javascript', src='/plugins/slider-revolution/jquery.themepunch.revolution.min.js')
+  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.tools.min.js')
+  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.revolution.min.js')
