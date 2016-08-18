@@ -3,12 +3,16 @@ include ../common/slider
 
 extends ../layout
 block title
-  title 
-    | BaziVision | 
-    if currentGenre
-      | بازی های 
-      = currentGenre
-
+  if !currentGenre
+    title= 'سبک بازی ها'
+    meta(name='description', content='سبک های مختلف بازی  ' + data.genres.map(function(x){return x.name}).join(','))
+  else
+    title= currentGenre
+    meta(name='description', content=' بازیهای سبک ' + currentGenre)
+    meta(name='twitter:card', value=currentGenre)
+    meta(property='og:title', content=currentGenre)
+    meta(property='og:type', content='article')
+    meta(property='og:description', content=' بازیهای سبک ' + currentGenre)
 
 
 block content
