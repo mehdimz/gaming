@@ -8,7 +8,7 @@ include ../common/news-sidebar
 include ../common/slider
 
 block title
-  title= data.item.fullname 
+  title= 'بازی نامه ' + data.item.fullname 
   meta(name='description', content=data.item.about)
   meta(name='twitter:card', value=data.item.name)
   meta(property='og:title', content=data.item.name)
