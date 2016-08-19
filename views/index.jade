@@ -4,10 +4,8 @@ include ./common/slider
 extends layout
 
 block content
-  h1(style='display:none') بازی ویژن | کلکسیون ویدیو های گیمینگ و پایگاه تحلیلی خبری بازی های ویدیویی
-  +slider(data.bannerGames)   
+  
   +carousel(data.cats)
-
 
   h4.container.h1
     | پربازدیدها
@@ -101,7 +99,3 @@ block content
   //-       h3 طراحی سایت
   //-       small واکنش گرا و مدرن
 
-
-block addscript
-  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.tools.min.js')
-  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.revolution.min.js')
