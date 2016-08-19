@@ -10,8 +10,7 @@ html(lang="fa")
       title ‌‌‌بازی ویژن | ویدیو، تریلر، نقد، اخبار، بازی نامه و موسیقی بازی ها
 
     link(rel="icon",type="image/png",href=prefix + "/images/icon.png")
-    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
-    link(href=prefix + '/stylesheets/main.css', rel='stylesheet')
+
     block addLink
   body
     // Preloader
@@ -26,6 +25,23 @@ html(lang="fa")
         
       include ./footer
     
+    noscript#deferred-styles
+      link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
+      link(href=prefix + '/stylesheets/main.css', rel='stylesheet')
+    
+    script.
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+
     script(src=prefix + "/build/bundle.js")
       
     // Google Analytics
