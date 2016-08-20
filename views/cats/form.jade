@@ -25,16 +25,9 @@ form(method="post", action=(item?"/cats/#{item._id}":"/cats"), enctype="multipar
   fieldset.form-group
     input.form-control(name="releasedate",  value=(item ? item.releasedate : ''), placeholder="2017/01/01 مثال" ) 
 
-  fieldset.form-group
-    label(for="inBanner") نمایش در بنر
-    input#inBanner(type="checkbox", checked=(item ? item.inBanner : false), name="inBanner")
-
-  fieldset.form-group
-    label(for="inCarousel") نمایش در carousel
-    input#inCarousel(type="checkbox", checked=(item ? item.inCarousel : false), name="inCarousel")
-
-  fieldset.form-group
-    label(for="inReview") نمایش در نقد home
-    input#inReview(type="checkbox", checked=(item ? item.inReview : false), name="inReview")
+  for checktype in ['inBanner', 'inCarousel', 'inReview', 'hidden']
+    fieldset.form-group
+      label(for=checktype)= checktype
+      input(id=checktype, type="checkbox", checked=(item ? item[checktype] : false), name=checktype)
 
   button.btn.btn-secondary.btn-block(type="submit", class=(item ? 'btn-info':'')) ثبت +
