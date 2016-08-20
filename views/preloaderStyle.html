@@ -1,0 +1,127 @@
+<style type="text/css">
+  .preloader-wrapp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #080325;
+    z-index: 100000000
+  }
+
+  .preloader-wrapp .preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px
+  }
+
+  .preloader-wrapp>img {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 180px;
+    margin-left: -90px;
+    margin-bottom: -10px;
+    z-index: 2
+  }
+
+  .preloader {
+    position: relative;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 5px solid rgba(255, 255, 255, .1);
+    -webkit-mask: linear-gradient(rgba(0, 0, 0, .1), #000 90%);
+    -webkit-transform-origin: 50% 60%;
+    -ms-transform-origin: 50% 60%;
+    -o-transform-origin: 50% 60%;
+    transform-origin: 50% 60%;
+    -webkit-transform: perspective(200px) rotateX(80deg);
+    transform: perspective(200px) rotateX(80deg)
+  }
+
+  .preloader:after,
+  .preloader:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: -5px;
+    box-sizing: inherit;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: 5px solid rgba(255, 255, 255, .1);
+    opacity: .85;
+    border-color: #D92B4C transparent transparent;
+    -webkit-animation: youplay-preloader-spin 1s infinite;
+    -o-animation: youplay-preloader-spin 1s infinite;
+    animation: youplay-preloader-spin 1s infinite
+  }
+
+  .preloader:after {
+    -webkit-animation-delay: .35s;
+    -o-animation-delay: .35s;
+    animation-delay: .35s
+  }
+
+  @-webkit-keyframes youplay-preloader-spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+  }
+
+  @-o-keyframes youplay-preloader-spin {
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+  }
+
+  @keyframes youplay-preloader-spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+  }
+
+  .preloader-wrapp>.preloader,
+  .preloader-wrapp>img {
+    -webkit-animation: youplay-preloader-fade .5s;
+    -o-animation: youplay-preloader-fade .5s;
+    animation: youplay-preloader-fade .5s
+  }
+
+  @-webkit-keyframes youplay-preloader-fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+  }
+
+  @-o-keyframes youplay-preloader-fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+  }
+
+  @keyframes youplay-preloader-fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+  }
+</style>
