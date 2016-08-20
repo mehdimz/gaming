@@ -4,16 +4,16 @@ include ../../common/sideblock-videos
 include ../../common/news-sidebar
 
 block title
-  title اخبار
-  meta(name='description', content='جدید ترین اخبار بازی ها')
-  meta(name='twitter:card', value='جدید ترین اخبار بازی ها')
-  meta(property='og:title', content='جدید ترین اخبار بازی ها')
+  title بازی ها
+  meta(name='description', content='جدید ترین بازی ها')
+  meta(name='twitter:card', value='جدید ترین بازی ها')
+  meta(property='og:title', content='جدید ترین بازی ها')
   meta(property='og:type', content='news')
-  meta(property='og:description', content='جدید ترین اخبار بازی ها')
+  meta(property='og:description', content='جدید ترین بازی ها')
 
 
 block content 
-  .container.youplay-news
+.container.youplay-news
     .col-md-9
       h1.mt-0 تازه ترین بازی ها
       each item in data.items 
