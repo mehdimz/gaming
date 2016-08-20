@@ -1,5 +1,38 @@
-.main-box{
-	background: white;
-	margin-top: 80px;
-	height: 350px;
+.banner-news{
+  a{
+    cursor: pointer;
+  }
+  .block-content{
+    margin-top: 2rem;
+  }
+  .you-play-side-news{
+    margin-bottom: 1.7rem;
+  }
+  .block-title{
+    &:after{
+      transform: skew(0deg) !important;
+    }
+  }
+  span.date{
+    span{
+      float: left;  
+    }
+  }  
 }
+
+.image-box{
+  max-height: 500px;
+  position:relative;
+}
+
+.max-height-374{
+  max-height: 374px;
+  overflow: hidden;
+}
+
+.max-height-187{
+  max-height: 187px;
+  overflow: hidden;
+}
+
+
