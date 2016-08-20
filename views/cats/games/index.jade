@@ -1,0 +1,44 @@
+extends ../../layout
+include ../../common/slider
+include ../../common/sideblock-videos
+include ../../common/news-sidebar
+
+block title
+  title اخبار
+  meta(name='description', content='جدید ترین اخبار بازی ها')
+  meta(name='twitter:card', value='جدید ترین اخبار بازی ها')
+  meta(property='og:title', content='جدید ترین اخبار بازی ها')
+  meta(property='og:type', content='news')
+  meta(property='og:description', content='جدید ترین اخبار بازی ها')
+
+
+block content 
+  .container.youplay-news
+    .col-md-9
+      h1.mt-0 تازه ترین بازی ها
+      each item in data.items 
+        .news-one
+          .row.vertical-gutter
+            .col-md-4
+              a.angled-img(href=item.url, title=item.fullname)
+                .img
+                  img(src=item.poster.md, alt=item.fullname)
+            .col-md-8
+              .clearfix
+                h3.h2.pull-left.m-0
+                  a(href=item.url)= item.fullname
+              .description
+                p= item.about
+              a.btn.read-more.pull-right(href=item.url, title=item.fullname) بازی نامه
+              if item.critic
+                a.btn.read-more.pull-right(href=item.url + '/review', title=item.fullname) نقد بازی
+          hr    
+      //- nav
+      //-   ul.pager
+      //-     li
+      //-       a(href='#') بعدی
+      //-     li
+      //-       a(href='#') قبلی
+    .col-md-3
+      +news-sidebar('پر بازدیدترین اخبارها', data.popularNews)
+      +sideblock-videos('پر بازدیدترین ویدیوها', data.populars)
