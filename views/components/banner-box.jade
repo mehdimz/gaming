@@ -3,29 +3,29 @@
     .col-xs-12.col-sm-8.col-md-9.banner-image
       .side-block
         h4.block-title داغ ترین ها
-      .row
-        .col-sm-12.col-md-3.small-img
-          each item in data.cats.slice(0,3)
-            .thumbnail
-              a.angled-img(href=item.url, title=item.fullname)
-                img(src=item.poster.sm, alt=item.fullname)
-                .over-info
-                  div
+        .row.mt-10
+          .col-sm-12.col-md-3.small-img
+            each item in data.cats.slice(0,3)
+              .thumbnail
+                a.angled-img(href=item.url, title=item.fullname)
+                  img(src=item.poster.sm, alt=item.fullname)
+                  .over-info
                     div
-                      p.over-info-title= item.name
-                      p.over-info-subtitle= item.subtitle
-                      p.btn.btn-xs بازی نامه
+                      div
+                        p.over-info-title= item.name
+                        p.over-info-subtitle= item.subtitle
+                        p.btn.btn-xs بازی نامه
 
-        .col-sm-12.col-md-9 
-          each item in data.cats.slice(0,2)
-            .thumbnail
-              a.angled-img(href=item.url, title=item.fullname)
-                img(src=item.poster.md, alt=item.fullname)
-                .over-info
-                  div
+          .col-sm-12.col-md-9 
+            each item in data.cats.slice(0,2)
+              .thumbnail
+                a.angled-img(href=item.url, title=item.fullname)
+                  img(src=item.poster.md, alt=item.fullname)
+                  .over-info
                     div
-                      p.over-info-title= item.name
-                      p.over-info-subtitle= item.subtitle
+                      div
+                        p.over-info-title= item.name
+                        p.over-info-subtitle= item.subtitle
 
     .col-xs-12.col-sm-4.col-md-3
       .side-block.banner-news
