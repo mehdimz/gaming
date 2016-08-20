@@ -18,14 +18,14 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
           .dropdown-menu
             ul(role='menu')
               li.dropdown.dropdown-submenu.pull-left
-                a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false') بر اساس پلتفرم
+                a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس پلتفرم
                 .dropdown-menu(style='width: 310px;')
                   ul(role='menu').two-columns
                     each platform in platforms
                       li
                         a(href='/genre/view')= platform.name
               li.dropdown.dropdown-submenu.pull-left
-                a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
+                a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
                 .dropdown-menu(style='width: 380px;')
                   ul(role='menu').two-columns
                     each genre in genres
@@ -43,7 +43,7 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
             span.label Videos
 
         //- li.dropdown.dropdown-hover
-        //-   a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
+        //-   a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false')
         //-     | تماس با ما 
         //-     span.label Contact
 
@@ -64,7 +64,7 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
               span.label Login
         else
           li.dropdown.dropdown-hover
-            a.dropdown-toggle(href='#!', data-toggle='dropdown', role='button', aria-expanded='false')
+            a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false')
               = currentUser.fullname  
               span.caret
               if currentUser.admin
