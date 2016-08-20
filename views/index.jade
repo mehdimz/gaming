@@ -3,9 +3,79 @@ include ./common/video-carousel
 include ./common/slider
 extends layout
 
+
+
 block content
-  .main-box
-    p test
+  .container-fluid
+    .row.mt-100
+      .col-sm-3
+        .side-block.banner-news
+          h4.block-title تازه های بازی ها
+          .block-content
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href='#')
+                  .img
+                    img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href='#', title='#') 
+                    p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                    span.date
+                      i.fa.fa-calendar
+                        span ۲ ماه بیش
+
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href='#')
+                  .img
+                    img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href='#', title='#') 
+                    p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                    span.date
+                      i.fa.fa-calendar
+                        span ۲ ماه بیش  
+
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href='#')
+                  .img
+                    img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href='#', title='#') 
+                    p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                    span.date
+                      i.fa.fa-calendar
+                        span ۲ ماه بیش  
+
+             .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href='#')
+                  .img
+                    img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href='#', title='#') 
+                    p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                    span.date
+                      i.fa.fa-calendar
+                        span ۲ ماه بیش
+
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href='#')
+                  .img
+                    img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href='#', title='#') 
+                    p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                    span.date
+                      i.fa.fa-calendar
+                        span ۲ ماه بیش  
      
   +carousel(data.cats)
 

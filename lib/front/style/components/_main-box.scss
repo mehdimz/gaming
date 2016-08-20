@@ -1,5 +1,22 @@
-.main-box{
-	background: white;
-	margin-top: 80px;
-	height: 350px;
+.banner-news{
+	a{
+		cursor: pointer;
+	}
+	.block-content{
+		margin-top: 2rem;
+	}
+	.you-play-side-news{
+		margin-bottom: 2rem;
+	}
+	.block-title{
+		&:after{
+			transform: skew(0deg) !important;
+		}
+	}
+	span.date{
+		span{
+			float: left;	
+		}
+	}	 
 }
+
