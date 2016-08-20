@@ -10,6 +10,16 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
         img(src='/images/logo.png', alt='بازی ویژن')
     #navbar.navbar-collapse.collapse
       ul.nav.navbar-nav
+        li
+          a(href='/news', data-toggle='dropdown', role='button', aria-expanded='false')
+            span تازه ها
+            span.label News
+            
+        li
+          a(href='/videos', data-toggle='dropdown', role='button', aria-expanded='false')
+            span ویدیوها
+            span.label Videos
+            
         li.dropdown.dropdown-hover
           a.dropdown-toggle(href='/games', data-toggle='dropdown', role='button', aria-expanded='false')
             | بازی ها 
@@ -32,34 +42,16 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                       li
                         a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name
 
-        li.dropdown.dropdown-hover
-          a.dropdown-toggle(href='/news', data-toggle='dropdown', role='button', aria-expanded='false')
-            | تازه ها
-            span.label News
-            
-        li.dropdown.dropdown-hover
-          a.dropdown-toggle(href='/videos', data-toggle='dropdown', role='button', aria-expanded='false')
-            | ویدیوها
-            span.label Videos
 
-        //- li.dropdown.dropdown-hover
-        //-   a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false')
-        //-     | تماس با ما 
-        //-     span.label Contact
 
       ul.nav.navbar-nav.navbar-right
         if !currentUser
-          li.dropdown.dropdown-hover
-            a.dropdown-toggle.btn-xs(data-toggle='dropdown', role='button', aria-expanded='false')
-              | ثبت نام
-              span.caret
-              span.label Register
-            .dropdown-menu(style='width:222px;')
-              ul(role='menu')
-                li
-                  a(href='/auth/signup') کاربر عادی
           li
-            a.btn-xs(href='/auth/login')
+            a(href='/auth/signup', data-toggle='dropdown', role='button', aria-expanded='false')
+              | ثبت نام
+
+          li
+            a(href='/auth/login')
               | ورود
               span.label Login
         else

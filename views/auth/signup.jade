@@ -1,68 +1,48 @@
-extends ../layout-normal
+extends ../layout
 block content
-  .youplay-form
-    h2 ثبت نام کاربر عادی
-    form(action="/auth/signup", method="post")
-      .form-horizontal
-        .form-group.m-0
+  .container
+    .row
+      .col-md-8
+        .youplay-form
+          h2 ثبت نام
+          if message
+            h3.alert.alert-danger.text-center= message
 
-          label.control-label.col-sm-2(for='family_name') نام و نام خانوادگی:
-          .col-sm-10
-            .youplay-input
-              input#family_name(type='text', name="fullname",  placeholder='لطفا نام و نام خانوادگی خود را وارد کنید', required)
-          //- label.control-label.col-sm-2(for='username') نام کاربری:
-          //- .col-sm-10
-          //-   .youplay-input
-          //-     input#username(type='text', placeholder='لطفا نام کاربری خود را وارد کنید (حداقل 3 حرف)', required)
-          label.control-label.col-sm-2(for='email') پست الکترونیکی:
-          .col-sm-10
-            .youplay-input
-              input#email(type='email', name="email", placeholder='لطفا ایمیل خود را وارد کنید', required)
-          label.control-label.col-sm-2(for='password') رمز عبور:
-          .col-sm-10
-            .youplay-input
-              input#password(type='password', name="password", placeholder='لطفا رمز عبور مورد نظر خود را وارد کنید (حداقل 6 حرف)', required)
-          label.control-label.col-sm-2(for='confirm_password') تکرار رمز عبور:
-          .col-sm-10
-            .youplay-input
-              input#confirm_password(type='password', name="repeatpassword", placeholder='لطفا رمز عبور خود را مجددا وارد کنید', required)
-          label.control-label.col-sm-2(for='tel') شماره تلفن همراه:
-          .col-sm-10
-            .youplay-input
-              input#tel(type='tel', placeholder='لطفا شماره تماس خود را وارد کنید', required)
-          label.control-label.col-sm-2(for='age') سن:
-          .col-sm-10
-            .youplay-input
-              input#age(type='text', placeholder='لطفا سن خود را وارد کنید', required)
-          label.control-label.col-sm-2(for='gender') جنسیت:
-          .col-sm-10
-            .youplay-select
-              select#gender(name="gender")
-                option(value="1") مرد
-                option(value="2") زن
-          label.col-sm-2  
-          .col-sm-10
-            button.btn.btn-default.db ثبت نام
-
-  //- .row
-  //-   .col-xs-12
-  //-     form.form(action="/auth/signup", method="post")
-  //-       .form-group
-  //-         input.form-control(type="text", name="fullname", placeholder="fullname", required)
-  //-       .form-group
-  //-         input.form-control(type="email", name="email", placeholder="Email", required)
-  //-       .form-group
-  //-         input.form-control#password(type="password", name="password", placeholder="Password", required)
-  //-         input.form-control#confirm_password(type="password", name="repeatpassword", placeholder="Repeat password", required)
-  //-       .form-group
-  //-         .row
-  //-           .col-xs-3
-  //-             label gender:
-  //-           .col-xs-9
-  //-             select.form-control(name="gender", required)
-  //-               option(value="1") mard
-  //-               option(value="2") zan
-  //-       .form-group
-  //-         input.form-control(type="number", name="age", placeholder="age", required)
-  //-       button.btn.btn-secondary.btn-block(type="submit") sabte nam
+          form(action="/auth/signup", method="post")
+            .form-horizontal
+              .form-group
+                label.control-label.col-sm-4(for='family_name') * نام و نام خانوادگی:
+                .col-sm-8
+                  .youplay-input
+                    input#family_name(type='text', name="fullname",  placeholder='لطفا نام و نام خانوادگی خود را وارد کنید', required, pattern=".{6,}", title="حداقل 5 کاراکتر")
+                label.control-label.col-sm-4(for='email') * پست الکترونیکی:
+                .col-sm-8
+                  .youplay-input
+                    input#email(type='email', name="email", placeholder='لطفا ایمیل خود را وارد کنید', required)
+              .form-group       
+                label.control-label.col-sm-4(for='password') * رمز عبور:
+                .col-sm-8
+                  .youplay-input
+                    input#password(type='password', name="password", pattern=".{6,}", placeholder='لطفا رمز عبور مورد نظر خود را وارد کنید (حداقل 6 حرف)', required, title="حداقل 5 کاراکتر")
+                label.control-label.col-sm-4(for='confirm_password') * تکرار رمز عبور:
+                .col-sm-8
+                  .youplay-input
+                    input#confirm_password(type='password', name="repeatpassword", pattern=".{6,}", placeholder='لطفا رمز عبور خود را مجددا وارد کنید', required, title="حداقل 5 کاراکتر")
+              .form-group        
+                label.control-label.col-sm-4(for='tel') شماره تلفن همراه:
+                .col-sm-8
+                  .youplay-input
+                    input#tel(type='tel', placeholder='لطفا شماره تماس خود را وارد کنید')
+                label.control-label.col-sm-4(for='age') سن:
+                .col-sm-8
+                  .youplay-input
+                    input#age(type='text', placeholder='لطفا سن خود را وارد کنید')
+                label.control-label.col-sm-4(for='gender') جنسیت:
+                .col-sm-8
+                  .youplay-select
+                    select#gender(name="gender")
+                      option(value="1") مرد
+                      option(value="2") زن
+                label.col-sm-4  
+                button.btn.btn-default.btn-block ثبت نام
 
