@@ -20,13 +20,28 @@
   }  
 }
 
-.event-section, .game-side-bar{
+.banner-image{
+  .side-block{
+    margin-bottom: 1.5rem;
+    h4{
+      margin-bottom: 0;
+    }
+  }
+  .block-title{
+    &:after{
+      transform: skew(0deg) !important;
+    }
+  }
+}
+
+.banner-image,.banner-news{
   .angled-img{
     .img{
       transform: skew(0deg);
       -webkit-transform: skew(0deg);
       -ms-transform: skew(0deg);
-      -o-transform: skew(0deg); 
+      -o-transform: skew(0deg);
+      background:inherit;
       > img{
         width: 100%;
         -webkit-transform: skew(0deg);
@@ -45,8 +60,30 @@
       opacity: .7;
     }
   }
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .small-img{
+    .thumbnail{
+      width: 50%;
+      float: right;
+      img{
+        width: 100%;
+      }
+    }
+  } 
+}
 
+@media (max-width:768px){
+  .small-img{
+    .thumbnail{
+      width: 50%;
+      float: right;
+      img{
+        width: 100%;
+      }
+    }
+  }   
 }
 
 
