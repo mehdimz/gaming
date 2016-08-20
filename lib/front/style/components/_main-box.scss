@@ -20,29 +20,22 @@
   }  
 }
 
-.image-box{
+.event-section, .game-side-bar{
   .angled-img{
     .img{
       transform: skew(0deg);
       -webkit-transform: skew(0deg);
       -ms-transform: skew(0deg);
-      -o-transform: skew(0deg);
-      background:inherit;
+      -o-transform: skew(0deg); 
       > img{
-        width: inherit;
+        width: 100%;
         -webkit-transform: skew(0deg);
         -ms-transform: skew(0deg);
         -o-transform: skew(0deg);
-        transform: skew(0deg);
-      }
-    }
-    .over-info{
-      width: 70%;
+        transform: skew(0deg);      
+      }   
     }
   }
-}
-
-.event-section, .game-side-bar{
   img{
     -o-transition: .3s opacity ease;
     transition: .3s opacity ease;
@@ -52,21 +45,8 @@
       opacity: .7;
     }
   }
-}
 
-.image-box{
-  max-height: 500px;
-  position:relative;
-}
 
-.max-height-374{
-  max-height: 374px;
-  overflow: hidden;
-}
-
-.max-height-187{
-  max-height: 187px;
-  overflow: hidden;
 }
 
 
