@@ -1,134 +1,47 @@
 .container-fluid
   .row.mt-100
-    .col-sm-8.col-md-9.banner-image
+    .col-xs-12.col-sm-8.col-md-9.banner-image
       .side-block
         h4.block-title داغ ترین ها
       .row
         .col-sm-12.col-md-3.small-img
-          .thumbnail
-            a.angled-img(href="#")
-              img(src='http://cdn.bazivision.com/images/cats/250/575d69de5753e65669dd7e89.jpg', alt='#')
-              .over-info
-                div
+          each item in data.cats.slice(0,3)
+            .thumbnail
+              a.angled-img(href=item.url, title=item.fullname)
+                img(src=item.poster.sm, alt=item.fullname)
+                .over-info
                   div
-                    p.over-info-title World of Warcraft
-                    p.over-info-subtitle Wrath of the Lich king
-                    p.btn.btn-xs بازی نامه
-                          
-          .thumbnail
-            a.angled-img(href="#")
-              img(src='http://cdn.bazivision.com/images/cats/250/575d69de5753e65669dd7e89.jpg', alt='#')
-              .over-info
-                div
-                  div
-                    p.over-info-title World of Warcraft
-                    p.over-info-subtitle Wrath of the Lich king
-                    p.btn.btn-xs بازی نامه
-          .clearfix     
+                    div
+                      p.over-info-title= item.name
+                      p.over-info-subtitle= item.subtitle
+                      p.btn.btn-xs بازی نامه
+
         .col-sm-12.col-md-9 
-          .thumbnail
-            a.angled-img(href="#")
-              img(src='/images/additional/big/ByORoz8q.jpg')  
-              .over-info
-                div
+          each item in data.cats.slice(0,2)
+            .thumbnail
+              a.angled-img(href=item.url, title=item.fullname)
+                img(src=item.poster.md, alt=item.fullname)
+                .over-info
                   div
-                    p.over-info-title World of Warcraft
-                    p.over-info-subtitle Wrath of the Lich king
-      .row      
-        .col-sm-12.col-md-3
-          .thumbnail.hidden-sm.hidden-xs
-            a.angled-img(href="#")
-              img(src='http://cdn.bazivision.com/images/cats/250/575d69de5753e65669dd7e89.jpg', alt='#')
-              .over-info
-                div
-                  div
-                    p.over-info-title World of Warcraft
-                    p.over-info-subtitle Wrath of the Lich king
-        .col-sm-12.col-md-9 
-          .thumbnail
-            a.angled-img(href="#")
-              img(src='/images/additional/big/SkDsGX8c.jpg')
-              .over-info
-                div
-                  div
-                    p.over-info-title World of Warcraft
-                    p.over-info-subtitle Wrath of the Lich king
-    .col-sm-4.col-md-3
+                    div
+                      p.over-info-title= item.name
+                      p.over-info-subtitle= item.subtitle
+
+    .col-xs-12.col-sm-4.col-md-3
       .side-block.banner-news
         h4.block-title تازه های بازی ها
         .block-content
-          .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش
-          .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش
-          .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش  
-
-          .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش  
-
-           .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش
-
-          .row.you-play-side-news
-            .col-xs-3.col-sm-6.col-md-5
-              a.angled-img(href='#')
-                .img
-                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
-            .col-xs-3.col-sm-6.col-md-7.p-l-0
-              h5.m-0
-                a(href='#', title='#') 
-                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
-                  span.date
-                    i.fa.fa-calendar
-                      span ۲ ماه بیش      
+          each item in data.news 
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href=item.page, title=item.title)
+                  .img
+                    img(src=item.poster.small, alt=item.title).img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href=item.page, title=item.title) 
+                    p.m-0= item.title
+                    span.date
+                      i.fa.fa-calendar
+                      time= moment(item.date).format('jD jMMMM jYYYY')
+           
