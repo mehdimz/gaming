@@ -9,18 +9,18 @@ mixin thumbnail(item)
 
 
 .container-fluid
-  .row.mt-80
+  .row.mt-80.banner-box
     .col-sm-8.col-md-9.banner-image
       .side-block
-        h4.block-title داغ ترین
+        h4.block-title داغ ترین ها
         .row
           .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
             .row
               each item in data.cats.slice(0,3)
-                .col-xs-4.col-sm-12
+                .col-xs-4.col-sm-4.col-md-12
                   +thumbnail(item)
 
-          .col-xs-12.col-sm-12.col-md-9.mt-10.p-0.big-img
+          .col-xs-12.col-sm-12.col-md-9.mt-10.big-img
             .column.thumbnail
               a.angled-img(href="#")
                 figure.fixedratio-large(style="background-image:url('#{data.cats[0].poster.md}')")
