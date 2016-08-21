@@ -13,22 +13,24 @@ mixin thumbnail(item)
     .col-sm-8.col-md-9.banner-image
       .side-block
         h4.block-title داغ ترین
-        .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
-          each item in data.cats.slice(0,2)
-            +thumbnail(item)
+        .row
+          .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
+            .row
+              each item in data.cats.slice(0,3)
+                .col-xs-4.col-sm-12
+                  +thumbnail(item)
 
-        .col-sm-12.col-md-9.mt-10.p-0.big-img
-          .column.thumbnail
-            a.angled-img(href="#")
-              figure.fixedratio-large(style="background-image:url('/images/cats/250/575684417fdd924f555fbbbe.jpg')")
-              .badge.date-badge.bg-default.bg-transparent توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات  توضیحات توضیحات توضیحات 
-              .badge.duration-badge.bg-default.bg-transparent جدیدترین ها
-          .column.thumbnail
-            a.angled-img(href="#")
-              figure.fixedratio-normal(style="background-image:url('/images/cats/250/575684417fdd924f555fbbbe.jpg')")
-              .badge.date-badge.bg-default.bg-transparent توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات  توضیحات توضیحات توضیحات 
-              .badge.duration-badge.bg-default.bg-transparent مقاله
-        .clearfix  
+          .col-xs-12.col-sm-12.col-md-9.mt-10.p-0.big-img
+            .column.thumbnail
+              a.angled-img(href="#")
+                figure.fixedratio-large(style="background-image:url('#{data.cats[0].poster.md}')")
+                .badge.duration-badge.bg-default.bg-transparent جدیدترین ها
+                .badge.date-badge.bg-default.bg-transparent= data.cats[0].about
+            .column.thumbnail
+              a.angled-img(href="#")
+                figure.fixedratio-normal(style="background-image:url('#{data.cats[0].poster.md}')")
+                .badge.date-badge.bg-default.bg-transparent= data.cats[0].about
+                .badge.duration-badge.bg-default.bg-transparent مقاله
 
 
 
