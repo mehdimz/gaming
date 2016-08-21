@@ -78,28 +78,6 @@
   }
 }
 
-div.column {
-  max-width: 800px;
-}
-
-figure{
-  .fixedratio-large {
-    padding-top: 46.5%;
-
-    background-size: cover;
-    -moz-background-size: cover;
-    // background-position: center;  
-    }
-  .fixedratio-normal {
-      padding-top: 21.3%; 
-
-      background-size: cover;
-      -moz-background-size: cover;
-      // background-position: center;
-    }
-}
-
-
 @media (min-width: 768px) and (max-width: 991px) {
   .small-img{
     padding:0;
@@ -132,5 +110,22 @@ figure{
   }   
 }
 
+div.column {
+  max-width: 800px;
+}
 
+figure.fixedratio-large {
+  padding-top: 46.5%;
 
+  background-size: cover;
+  -moz-background-size: cover;
+  // background-position: center;
+}
+
+figure.fixedratio-normal {
+  padding-top: 21.3%; 
+
+  background-size: cover;
+  -moz-background-size: cover;
+  // background-position: center;
+}
