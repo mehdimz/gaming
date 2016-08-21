@@ -2,46 +2,118 @@ mixin thumbnail(item)
   .thumbnail
     a.angled-img(href=item.url, title=item.fullname)
       img(src=item.poster.sm, alt=item.fullname)
-      .over-info
-        div
-          div
-            p.over-info-title= item.name
-            p.over-info-subtitle= item.subtitle
-            p.btn.btn-xs بازی نامه
+      .badge.date-badge.bg-default.bg-transparent= item.name +' : '+item.subtitle
+      .badge.duration-badge.bg-default.bg-transparent بازی نامه
+
+
+
 
 .container-fluid
-  .row.mt-100
+  .row.mt-80
     .col-sm-8.col-md-9.banner-image
       .side-block
-        h4.block-title داغ ترین ها
-      .row.mt-10
-        .col-sm-12.col-md-3.small-img
+        h4.block-title داغ ترین
+        .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
           each item in data.cats.slice(0,2)
             +thumbnail(item)
-            .clearfix   
-        .col-sm-12.col-md-9 
-            +thumbnail(data.cats[0])
-      .row      
-        .col-sm-12.col-md-3
-          +thumbnail(data.cats[0])
-        .col-sm-12.col-md-9 
-          +thumbnail(data.cats[0])
-          
-    .col-xs-12.col-sm-4.col-md-3
+          each item in data.cats.slice(0,2)
+            +thumbnail(item)          
+          each item in data.cats.slice(0,2)
+            +thumbnail(item)
+
+        .col-sm-12.col-md-9.mt-10.p-0.big-img
+          .column.thumbnail
+            a.angled-img(href="#")
+              figure.fixedratio-large(style="background-image:url('/images/cats/250/575684417fdd924f555fbbbe.jpg')")
+              .badge.date-badge.bg-default.bg-transparent توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات  توضیحات توضیحات توضیحات 
+              .badge.duration-badge.bg-default.bg-transparent جدیدترین ها
+          .column.thumbnail
+            a.angled-img(href="#")
+              figure.fixedratio-normal(style="background-image:url('/images/cats/250/575684417fdd924f555fbbbe.jpg')")
+              .badge.date-badge.bg-default.bg-transparent توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات توضیحات  توضیحات توضیحات توضیحات 
+              .badge.duration-badge.bg-default.bg-transparent مقاله
+        .clearfix  
+
+
+
+
+
+    .col-sm-4.col-md-3
       .side-block.banner-news
         h4.block-title تازه های بازی ها
         .block-content
-          each item in data.news 
-            .row.you-play-side-news
-              .col-xs-3.col-sm-6.col-md-5
-                a.angled-img(href=item.page, title=item.title)
-                  .img
-                    img(src=item.poster.small, alt=item.title).img-responsive
-              .col-xs-3.col-sm-6.col-md-7.p-l-0
-                h5.m-0
-                  a(href=item.page, title=item.title) 
-                    p.m-0= item.title
-                    span.date
-                      i.fa.fa-calendar
-                      time= moment(item.date).format('jD jMMMM jYYYY')
-           
+          .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش
+          .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش
+          .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش  
+
+          .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش  
+
+           .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش
+
+          .row.you-play-side-news
+            .col-xs-3.col-sm-6.col-md-5
+              a.angled-img(href='#')
+                .img
+                  img(src='http://cdn.bazivision.com/images/news/400/57b031d3cff44eda39cb172c.jpg' alt='').img-responsive
+            .col-xs-3.col-sm-6.col-md-7.p-l-0
+              h5.m-0
+                a(href='#', title='#') 
+                  p.m-0 برترین بازی سال ۲۰۱۶ ملادی بر اساس یکی 
+                  span.date
+                    i.fa.fa-calendar
+                      span ۲ ماه بیش  
