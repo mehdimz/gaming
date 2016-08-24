@@ -142,6 +142,32 @@ ul.two-columns li a {
 	border:1px solid #201C3a;
 }
 
+.extra-news-title{
+	margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.extra-news-content{
+	width: 90%;
+    margin: auto;
+    padding: 0 10px;
+}
+
+.extra-news{
+	margin:20px 0 0 0;
+}
+
+.extra-news p.extra-news-title{
+    transform: skew(-7deg);
+    background: rgba(255,255,255,.1);
+    width: 90%;
+    padding:10px;
+    margin: 0 auto;
+}
+
+
 .rs-youplay .slotholder>.slot .slotslide:after, .rs-youplay .slotholder>.tp-bgimg:after, .rs-youplay .tp-arr-iwrapper:after{
 	opacity:0;
 }
@@ -200,6 +226,7 @@ h3.title-overflow{
     text-align: center;
     margin-top: 1.8rem;
     font-weight: 700;
+    direction: rtl;
 }
 
 .bottom-info-overflow {
@@ -209,7 +236,7 @@ h3.title-overflow{
   height: 31px;
 }
 
-.play-icon-over i{
+.play-icon-over span{
 	top:34% !important;
 }
 
