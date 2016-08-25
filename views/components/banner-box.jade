@@ -53,17 +53,4 @@ mixin thumbnail(item)
                     span.date
                       i.fa.fa-calendar
                       time= moment(item.date).format('jD jMMMM jYYYY')
-          each item in data.news 
-            .row.you-play-side-news
-              .col-xs-3.col-sm-6.col-md-5
-                a.angled-img(href=item.page, title=item.title)
-                  .img
-                    img(src=item.poster.small, alt=item.title).img-responsive
-              .col-xs-3.col-sm-6.col-md-7.p-l-0
-                h5.m-0
-                  a(href=item.page, title=item.title) 
-                    p.m-0= item.title
-                    span.date
-                      i.fa.fa-calendar
-                      time= moment(item.date).format('jD jMMMM jYYYY')
 
