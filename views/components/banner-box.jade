@@ -16,20 +16,20 @@ mixin thumbnail(item)
         .row
           .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
             .row
-              each item in data.cats.slice(0,3)
+              each item in data.bannerGames
                 .col-xs-4.col-sm-4.col-md-12
                   +thumbnail(item)
 
           .col-xs-12.col-sm-12.col-md-9.mt-10.big-img
             .column.thumbnail
-              a.angled-img(href="#")
-                figure.fixedratio-large(style="background-image:url('#{data.cats[0].poster.md}')")
-                .badge.duration-badge.bg-default.bg-transparent جدیدترین ها
-                .badge.date-badge.bg-default.bg-transparent= data.cats[0].about
+              a.angled-img(href=data.todayClips[0].page)
+                figure.fixedratio-large(style="background-image:url('#{data.todayClips[0].poster.md}')")
+                .badge.duration-badge.bg-default.bg-transparent جدیدترین
+                .badge.date-badge.bg-default.bg-transparent= data.todayClips[0].title
             .column.thumbnail
-              a.angled-img(href="#")
-                figure.fixedratio-normal(style="background-image:url('#{data.cats[0].poster.md}')")
-                .badge.date-badge.bg-default.bg-transparent= data.cats[0].about
+              a.angled-img(href=data.news[1].page, title=data.news[1].title)
+                figure.fixedratio-normal(style="background-image:url('#{data.news[1].poster.medium}')")
+                .badge.date-badge.bg-default.bg-transparent= data.news[1].title
                 .badge.duration-badge.bg-default.bg-transparent مقاله
 
 
@@ -53,3 +53,17 @@ mixin thumbnail(item)
                     span.date
                       i.fa.fa-calendar
                       time= moment(item.date).format('jD jMMMM jYYYY')
+          each item in data.news 
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href=item.page, title=item.title)
+                  .img
+                    img(src=item.poster.small, alt=item.title).img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href=item.page, title=item.title) 
+                    p.m-0= item.title
+                    span.date
+                      i.fa.fa-calendar
+                      time= moment(item.date).format('jD jMMMM jYYYY')
+

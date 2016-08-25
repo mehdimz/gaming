@@ -4,6 +4,11 @@ include ./common/slider
 extends layout
 
 
+mixin extra-news
+  .extra-news
+    p.extra-news-title.h4 محل قرارگیری عنوان
+    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
+
 
 block content
 
@@ -11,29 +16,22 @@ block content
   include ./components/banner-box    
   
   +carousel(data.cats)
-  .extra-news
-    p.extra-news-title.h4 محل قرارگیری عنوان
-    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
+  //- +extra-news 
 
   h4.container.h1
     | پربازدیدها
     a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
   +video-carousel(data.mostViewed)
+  //- +extra-news
 
 
   if data.todayClips.length
-  .extra-news
-    p.extra-news-title.h4 محل قرارگیری عنوان
-    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
-
     h4.container.h1
       | ویدیوهای هفته
       a.btn.pull-right(href='/videos/more/latest') بیشتر
     +video-carousel(data.todayClips)
+    //- +extra-news
 
-  .extra-news
-    p.extra-news-title.h4 محل قرارگیری عنوان
-    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
   h4.container.h1
     | تریلرها 
     a.btn.pull-right(href='/videos/more/trailers') بیشتر
