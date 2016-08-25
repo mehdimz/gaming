@@ -49,3 +49,6 @@ block content
           +meta(data.item, 'videos')
           include ../common/social
         +comment-section(data.item, 'games') 
+
+block richSnippet
+  !=JSON.stringify(data.item.richSnippet)

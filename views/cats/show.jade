@@ -109,3 +109,6 @@ block content
     if data.otherVersions.length
       h2.container دیگر نسخه های بازی
       +carousel(data.otherVersions, 'Related')
+
+block richSnippet
+  !=JSON.stringify(data.item.richSnippet)

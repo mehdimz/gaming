@@ -3,22 +3,34 @@ include ./common/video-carousel
 include ./common/slider
 extends layout
 
-block content
-  h1(style='display:none') بازی ویژن | کلکسیون ویدیو های گیمینگ و پایگاه تحلیلی خبری بازی های ویدیویی
-  +slider(data.bannerGames)   
-  +carousel(data.cats)
 
+mixin extra-news
+  .extra-news
+    p.extra-news-title.h4 محل قرارگیری عنوان
+    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
+
+
+block content
+
+ 
+  include ./components/banner-box    
+  
+  +carousel(data.cats)
+  //- +extra-news 
 
   h4.container.h1
     | پربازدیدها
     a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
   +video-carousel(data.mostViewed)
-  
+  //- +extra-news
+
+
   if data.todayClips.length
     h4.container.h1
       | ویدیوهای هفته
       a.btn.pull-right(href='/videos/more/latest') بیشتر
     +video-carousel(data.todayClips)
+    //- +extra-news
 
   h4.container.h1
     | تریلرها 
@@ -101,7 +113,3 @@ block content
   //-       h3 طراحی سایت
   //-       small واکنش گرا و مدرن
 
-
-block addscript
-  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.tools.min.js')
-  script(type='text/javascript', src=prefix+'/plugins/slider-revolution/jquery.themepunch.revolution.min.js')

@@ -1,17 +1,18 @@
-extends ../layout-normal
+extends ../layout
 block content
-  .row
-    .col-md-6
-      form(method="post", action="/genres")
-        .form-group
-          input.form-control(type="text", name="name")
-        button.btn.btn-secondary(type="submit") Add +
-    .col-md-6
-      table.table.table-bordered
-        each item in items
-          tr
-            td= item.name
-            td
-              a(href="/genres/#{item._id}/delete")
-                span.fa.fa-trash
+  .container.m-100
+    .row
+      .col-md-6
+        form(method="post", action="/genres")
+          .form-group
+            input.form-control(type="text", name="name")
+          button.btn.btn-secondary(type="submit") Add +
+      .col-md-6
+        table.table.table-bordered
+          each item in items
+            tr
+              td= item.name
+              td
+                a(href="/genres/#{item._id}/delete")
+                  span.fa.fa-trash
 

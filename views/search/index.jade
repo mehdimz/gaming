@@ -1,9 +1,18 @@
-extends ../layout-normal
+extends ../layout
+block title
+  title جستجو
+  meta(name='description', content='جستجوی پیشرفته میان بازی ها, ویدیو ها, تریلر ها و اخبار گیمینگ')
+
 block content
-  .container.youplay-search
-    form()
-      .youplay-input
-        input(type='text', name='query', placeholder='جستجو...', autofocus='', value="#{data.query}")
+  .container.youplay-search.mt-100
+    form
+      .row
+        .col-xs-10
+          .youplay-input
+            input(type='text', name='query', placeholder='جستجو...', autofocus='', value="#{data.query}")
+        .col-xs-2
+          button.btn.btn-primary.btn-block(type="submit") جستجو
+
     .row
       .col-md-4.col-sm-4.col-xs-6
         h2 ویدیو ها
