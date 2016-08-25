@@ -2,7 +2,7 @@ mixin thumbnail(item)
   .thumbnail
     a.angled-img(href=item.url, title=item.fullname)
       img(src=item.poster.sm, alt=item.fullname)
-      .badge.date-badge.bg-default.bg-transparent= item.name +' : '+item.subtitle
+      .badge.date-badge.bg-default.bg-transparent= item.fullname 
       .badge.duration-badge.bg-default.bg-transparent بازی نامه
 
 
