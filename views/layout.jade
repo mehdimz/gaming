@@ -11,23 +11,8 @@ html(lang="fa")
 
     link(rel="icon",type="image/png",href=prefix + "/images/icon.png")
     include ./preloaderStyle.html
-    block addLink
 
-  body
-    // Preloader
-    .page-preloader.preloader-wrapp
-      img(src=prefix + '/images/logo.png', alt='بازی ویژن')
-      .preloader
-
-
-    include ./partials/nav
-    section.content-wrap
-      block content 
-        
-      include ./footer
-    
     noscript#deferred-styles
-      //- link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
       link(href=prefix + '/stylesheets/main.css', rel='stylesheet')
     
     script.
@@ -42,14 +27,23 @@ html(lang="fa")
           webkitRequestAnimationFrame || msRequestAnimationFrame;
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
+    block addLink
+
+  body
+    // Preloader
+    .page-preloader.preloader-wrapp
+      img(src=prefix + '/images/logo.png', alt='بازی ویژن')
+      .preloader
+
+
+    include ./partials/nav
+    section.content-wrap
+      block content 
+      include ./footer
+    
+
 
     script(src=prefix + "/build/bundle.js")
-      
-
-
-
-
-
     script(type="application/ld+json")
       block richSnippet
 
