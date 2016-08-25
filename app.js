@@ -56,7 +56,7 @@ app.use(logger('dev'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('صفحه مورد نظر یافت نشد');
-  // err.status = 404;
+  err.status = 404;
   next(err);
 });
 
