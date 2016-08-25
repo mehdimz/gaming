@@ -1,0 +1,69 @@
+mixin thumbnail(item)
+  .thumbnail
+    a.angled-img(href=item.url, title=item.fullname)
+      img(src=item.poster.sm, alt=item.fullname)
+      .badge.date-badge.bg-default.bg-transparent= item.name +' : '+item.subtitle
+      .badge.duration-badge.bg-default.bg-transparent بازی نامه
+
+
+
+
+.container-fluid
+  .row.mt-80.banner-box
+    .col-sm-8.col-md-9.banner-image
+      .side-block
+        h4.block-title داغ ترین ها
+        .row
+          .col-xs-12.col-sm-12.col-md-3.mt-10.small-img
+            .row
+              each item in data.bannerGames
+                .col-xs-4.col-sm-4.col-md-12
+                  +thumbnail(item)
+
+          .col-xs-12.col-sm-12.col-md-9.mt-10.big-img
+            .column.thumbnail
+              a.angled-img(href=data.todayClips[0].page)
+                figure.fixedratio-large(style="background-image:url('#{data.todayClips[0].poster.md}')")
+                .badge.duration-badge.bg-default.bg-transparent جدیدترین
+                .badge.date-badge.bg-default.bg-transparent= data.todayClips[0].title
+            .column.thumbnail
+              a.angled-img(href=data.news[1].page, title=data.news[1].title)
+                figure.fixedratio-normal(style="background-image:url('#{data.news[1].poster.medium}')")
+                .badge.date-badge.bg-default.bg-transparent= data.news[1].title
+                .badge.duration-badge.bg-default.bg-transparent مقاله
+
+
+
+
+
+    .col-xs-12.col-sm-4.col-md-3
+      .side-block.banner-news
+        h4.block-title تازه های بازی ها
+        .block-content
+          each item in data.news 
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href=item.page, title=item.title)
+                  .img
+                    img(src=item.poster.small, alt=item.title).img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href=item.page, title=item.title) 
+                    p.m-0= item.title
+                    span.date
+                      i.fa.fa-calendar
+                      time= moment(item.date).format('jD jMMMM jYYYY')
+          each item in data.news 
+            .row.you-play-side-news
+              .col-xs-3.col-sm-6.col-md-5
+                a.angled-img(href=item.page, title=item.title)
+                  .img
+                    img(src=item.poster.small, alt=item.title).img-responsive
+              .col-xs-3.col-sm-6.col-md-7.p-l-0
+                h5.m-0
+                  a(href=item.page, title=item.title) 
+                    p.m-0= item.title
+                    span.date
+                      i.fa.fa-calendar
+                      time= moment(item.date).format('jD jMMMM jYYYY')
+
