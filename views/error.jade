@@ -1,6 +1,11 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .container.text-center.mt-100
+    h1= message
+    h2
+      a.btn.btn-lg(href="/", title="صفحه اصلی") صفحه اصلی بازی ویژن
+
+    if error
+      h2= error.status
+      pre= error.stack
