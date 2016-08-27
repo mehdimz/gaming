@@ -4,10 +4,10 @@
       cursor: pointer;
     }
     .block-content{
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
     .you-play-side-news{
-      margin-bottom: 1.7rem;
+      margin-bottom: 1.25rem;
     }
     .block-title{
       &:after{
@@ -58,9 +58,9 @@
       -o-transition: .3s opacity ease;
       transition: .3s opacity ease;
       -webkit-backface-visibility: hidden;
-      opacity: .5;
+      opacity: .7;
       &:hover{
-        opacity: .7;
+        opacity: 1;
       }
     }
   }
