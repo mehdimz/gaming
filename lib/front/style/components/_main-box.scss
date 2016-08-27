@@ -58,9 +58,9 @@
       -o-transition: .3s opacity ease;
       transition: .3s opacity ease;
       -webkit-backface-visibility: hidden;
-      opacity: .5;
+      opacity: .7;
       &:hover{
-        opacity: .7;
+        opacity: 1;
       }
     }
   }
