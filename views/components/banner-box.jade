@@ -26,11 +26,13 @@ mixin thumbnail(item)
                 figure.fixedratio-large(style="background-image:url('#{data.todayClips[0].poster.md}')")
                 .badge.duration-badge.bg-default.bg-transparent جدیدترین
                 .badge.date-badge.bg-default.bg-transparent= data.todayClips[0].title
-            .column.thumbnail
-              a.angled-img(href=data.news[1].page, title=data.news[1].title)
-                figure.fixedratio-normal(style="background-image:url('#{data.news[1].poster.medium}')")
-                .badge.date-badge.bg-default.bg-transparent= data.news[1].title
-                .badge.duration-badge.bg-default.bg-transparent مقاله
+
+            if data.bannerNew
+              .column.thumbnail
+                a.angled-img(href=data.bannerNew.page, title=data.bannerNew.title)
+                  figure.fixedratio-normal(style="background-image:url('#{data.bannerNew.poster.medium}')")
+                  .badge.date-badge.bg-default.bg-transparent= data.bannerNew.title
+                  .badge.duration-badge.bg-default.bg-transparent مقاله
 
 
 

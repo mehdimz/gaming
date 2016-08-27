@@ -70,7 +70,7 @@ block content
                 .comment-avatar.pull-left
                   img(src='/images/avatar.png', alt='')
                 .comment-cont.clearfix
-                  a.comment-author.h4(href='#!')= comment._user.fullname
+                  a.comment-author.h4= comment._user.fullname
                   .date
                     i.fa.fa-calendar
                     span= moment(comment.date).fromNow()

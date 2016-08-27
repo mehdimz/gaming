@@ -11,6 +11,10 @@ form.form.mb-20(method="post", enctype="multipart/form-data", action="/admin/new
       .col-xs-8
         input(type="file", name="image", required=(!data.item))
   
+  for checktype in ['inBanner']
+    fieldset.form-group
+      label(for=checktype)= checktype
+      input(id=checktype, type="checkbox", checked=(data.item ? data.item[checktype] : false), name=checktype)
   
   button.btn.btn-primary(type="submit") ثبت
 
