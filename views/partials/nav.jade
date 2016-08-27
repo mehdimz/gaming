@@ -46,7 +46,7 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
 
 
 
-      ul.nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right       
         if !currentUser
           li
             a(href='/auth/signup', data-toggle='dropdown', role='button', aria-expanded='false')
@@ -82,7 +82,13 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                     a(href='/admin/news') تازه ها
                 li
                   a(href='/auth/logout') خروج
+        //- li
+        //-   a.search-toggle(href='/search')
+        //-     i.fa.fa-search
+
         li
-          a.search-toggle(href='/search')
-            i.fa.fa-search
+          form(action='/search').mt-15
+            .youplay-input
+              input(type='text', name='search', placeholder='جستجو...')       
+
 
