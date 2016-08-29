@@ -94,4 +94,12 @@
     background-size: cover;
     -moz-background-size: cover;
   }
+}
+
+@media (max-width:767px){
+  .thumbnail{
+    .date-badge{
+      font-size: 9px !important;
+    }
+  }  
 }  
