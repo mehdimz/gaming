@@ -1,29 +1,23 @@
 extends ../layout
 
 block content
-  section.content-wrap.full.youplay-login
-    .youplay-banner.banner-top
-      .image(style="background-image: url('/images/banner-bg.jpg')")
-      .container.align-center
-        .row
-          .col-xs-12.col-md-6
-            h1.text-xs.center New Video Clip
-            include ./form
-              
-              
-          .col-xs-12.col-md-6
-            table.table.table-bordered
-              each clip in items
-                tr
-                  td
-                    a(href="/videos/#{clip._id}")= clip.title
-                  td= clip._category ? clip._category.name : null 
-                  td
-                    a(href="/clips/#{clip._id}/tags")
-                      | +tags
-                  td
-                    a(href="/clips/#{clip._id}/edit")
-                      span.fa.fa-edit
-                  td
-                    a(href="/clips/delete/"+clip._id)
-                      span.fa.fa-trash
+  .container.mt-80
+    h1.text-xs.center New Video Clip
+    .p-20
+      include ./form
+      
+      
+    table.table.table-bordered
+      each clip in items
+        tr
+          td
+            a(href=clip.page)= clip.title
+          td= clip._category ? clip._category.name : null 
+          td
+            a(href="/clips/#{clip._id}/tags") +tags
+          td
+            a(href="/clips/#{clip._id}/edit")
+              span.fa.fa-edit
+          td
+            a(href="/clips/delete/"+clip._id)
+              span.fa.fa-trash

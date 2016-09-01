@@ -24,9 +24,10 @@ form(method="post", action="/clips#{item ? '/'+item._id: ''}", enctype="multipar
       .col-xs-8
         input(type="file", name="image", required=(!item))
   
-  fieldset.form-group
-    label تریلر
-    input(type="checkbox", name="isTrailer", checked=(item ? item.isTrailer : false))
+  for checktype in ['isTrailer', 'inBanner']
+    fieldset.form-group
+      label(for=checktype)= checktype
+      input(id=checktype, type="checkbox", checked=(item ? item[checktype] : false), name=checktype)
 
   button.btn.btn-primary.btn-block Submit
 
