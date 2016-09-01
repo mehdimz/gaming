@@ -35,14 +35,14 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
                   ul(role='menu').two-columns
                     each platform in platforms
                       li
-                        a(href='/genre/view')= platform.name
+                        a(href='/games/platform/'+platform.name)= platform.name
               li.dropdown.dropdown-submenu.pull-left
                 a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
                 .dropdown-menu(style='width: 380px;')
                   ul(role='menu').two-columns
                     each genre in genres
                       li
-                        a(href='/genre/view/#{genre._id}/#{genre.name}')= genre.name
+                        a(href='/games/genre/'+genre.name)= genre.name
 
 
 
