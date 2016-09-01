@@ -4,12 +4,24 @@ include ../../common/sideblock-videos
 include ../../common/news-sidebar
 
 block title
-  title بازی ها
-  meta(name='description', content='جدید ترین بازی ها')
-  meta(name='twitter:card', value='جدید ترین بازی ها')
-  meta(property='og:title', content='جدید ترین بازی ها')
-  meta(property='og:type', content='news')
-  meta(property='og:description', content='جدید ترین بازی ها')
+  if data.genre
+    title= 'بازی های ' + data.genre.name
+    meta(name='description', content='جدید ترین بازی های ' + data.genre.name)
+    meta(name='twitter:card', value='بازی های ' + data.genre.name)
+    meta(property='og:title', content='بازی های ' + data.genre.name)
+    meta(property='og:description', content='جدید ترین بازی های ' + data.genre.name)
+  else if data.platform
+    title= 'بازی های ' + data.platform.name
+    meta(name='description', content='جدید ترین بازی های ' + data.platform.name)
+    meta(name='twitter:card', value='بازی های ' + data.platform.name)
+    meta(property='og:title', content='بازی های ' + data.platform.name)
+    meta(property='og:description', content='جدید ترین بازی های ' + data.platform.name)
+  else
+    title= 'بازی ها'
+    meta(name='description', content='جدید ترین بازی ها')
+    meta(name='twitter:card', value='بازی ها')
+    meta(property='og:title', content='بازی ها')
+    meta(property='og:description', content='جدید ترین بازی ها')
 
 
 block content 

@@ -4,12 +4,24 @@ include ../../common/sideblock-videos
 include ../../common/news-sidebar
 
 block title
-  title ویدیوها
-  meta(name='description', content='جدید ترین ویدیوها بازی ها')
-  meta(name='twitter:card', value='جدید ترین ویدیوها بازی ها')
-  meta(property='og:title', content='جدید ترین ویدیوها بازی ها')
-  meta(property='og:type', content='news')
-  meta(property='og:description', content='جدید ترین ویدیوها بازی ها')
+  if data.genre
+    title= 'ویدیوهای ' + data.genre.name
+    meta(name='description', content='جدید ترین ویدیوهای ' + data.genre.name)
+    meta(name='twitter:card', value='ویدیوهای ' + data.genre.name)
+    meta(property='og:title', content='ویدیوهای ' + data.genre.name)
+    meta(property='og:description', content='جدید ترین ویدیوهای ' + data.genre.name)
+  else if data.platform
+    title= 'ویدیوهای ' + data.platform.name
+    meta(name='description', content='جدید ترین ویدیوهای ' + data.platform.name)
+    meta(name='twitter:card', value='ویدیوهای ' + data.platform.name)
+    meta(property='og:title', content='ویدیوهای ' + data.platform.name)
+    meta(property='og:description', content='جدید ترین ویدیوهای ' + data.platform.name)
+  else
+    title= 'ویدیوها'
+    meta(name='description', content='جدید ترین ویدیوها')
+    meta(name='twitter:card', value='ویدیوها')
+    meta(property='og:title', content='ویدیوها')
+    meta(property='og:description', content='جدید ترین ویدیوها')
 
 
 block content 

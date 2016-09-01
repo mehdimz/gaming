@@ -5,7 +5,7 @@ module.exports = function() {
   var server = gls.new('./bin/www');
   server.start();
 
-  gulp.watch(['lib/front/**/*.js','public/stylesheets/**/*.css', 'views/**/*.jade'], function(file) {
+  gulp.watch(['lib/front/**/*.js','public/stylesheets/**/*.css', 'views/**/*.pug'], function(file) {
     server.notify.apply(server, [file]);
   });
 
