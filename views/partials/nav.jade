@@ -15,34 +15,30 @@ nav.navbar-youplay.navbar.navbar-default.navbar-fixed-top
             span تازه ها
             span.label News
             
-        li
-          a(href='/videos', data-toggle='dropdown', role='button', aria-expanded='false')
-            span ویدیوها
-            span.label Videos
-            
-        li.dropdown.dropdown-hover
-          a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false')
-            | بازی ها 
-            span.caret
-            span.label Games
-          .dropdown-menu
-            ul(role='menu')
-              li
-                a(href='/games') بازی نامه ها            
-              li.dropdown.dropdown-submenu.pull-left
-                a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس پلتفرم
-                .dropdown-menu(style='width: 310px;')
-                  ul(role='menu').two-columns
-                    each platform in platforms
-                      li
-                        a(href='/games/platform/'+platform.name)= platform.name
-              li.dropdown.dropdown-submenu.pull-left
-                a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
-                .dropdown-menu(style='width: 380px;')
-                  ul(role='menu').two-columns
-                    each genre in genres
-                      li
-                        a(href='/games/genre/'+genre.name)= genre.name
+        each farsiTerm, navItem in {'games':'بازی ها', 'videos':'ویدیوها'}   
+          li.dropdown.dropdown-hover
+            a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false')
+              = farsiTerm
+              span.caret
+              span.label= navItem
+            .dropdown-menu
+              ul(role='menu')
+                li
+                  a(href='/#{navItem}')= farsiTerm            
+                li.dropdown.dropdown-submenu.pull-left
+                  a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس پلتفرم
+                  .dropdown-menu(style='width: 310px;')
+                    ul(role='menu').two-columns
+                      each platform in platforms
+                        li
+                          a(href='/#{navItem}/platform/'+platform.name)= platform.name
+                li.dropdown.dropdown-submenu.pull-left
+                  a.dropdown-toggle(data-toggle='dropdown', role='button', aria-expanded='false') بر اساس سبک  
+                  .dropdown-menu(style='width: 380px;')
+                    ul(role='menu').two-columns
+                      each genre in genres
+                        li
+                          a(href='/#{navItem}/genre/'+genre.name)= genre.name
 
 
 

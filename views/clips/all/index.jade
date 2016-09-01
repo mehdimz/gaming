@@ -13,9 +13,17 @@ block title
 
 
 block content 
-  .container.youplay-news
+  .container.mt-100
     .col-md-9
-      h1.mt-0 تازه ترین ویدیوها
+      h1.mt-0 
+        | تازه ترین ویدیوها
+        if data.genre
+          | ی
+          = data.genre.name
+
+        if data.platform
+          | ی
+          = data.platform.name
       each item in data.items 
         .news-one
           .row.vertical-gutter
