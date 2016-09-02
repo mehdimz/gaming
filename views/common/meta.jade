@@ -1,26 +1,35 @@
 mixin meta(item, itemModel)
   .meta
     .item
-      i.fa.fa-user.meta-icon
+      span.fa.fa-user.meta-icon.fa-fw
       span انتشار کننده 
       a.publisher= item._creator.fullname
     .item
-      i.fa.fa-calendar.meta-icon
+      span.fa.fa-calendar.meta-icon.fa-fw
       span تاریخ انتشار 
       a= moment(item.date).format('jD jMMMM jYYYY') 
-    if item._category
+    if item._category._genres
       .item
-        i.fa.fa-bookmark.meta-icon
+        span.fa.fa-bookmark.meta-icon.fa-fw
         span دسته
-        each genre in item._category._genres
-          a(href='/genre/view/#{genre._id}')= genre.name
-          | &nbsp
+        ul.list-inline
+          each genre in item._category._genres
+            li.list-inline-item
+              a(href='/#{itemModel}/genre/#{genre.name}' role="button")= genre.name 
+    if item._category._platforms
+      .item
+        span.fa.fa-bookmark.meta-icon.fa-fw
+        span پلتفرم
+        ul.list-inline
+          each platform in item._category._platforms
+            li.list-inline-item
+              a(href='/#{itemModel}/platform/#{platform.name}' role="button")= platform.name 
     .item
-      i.fa.fa-eye.meta-icon.fa-fw
+      span.fa.fa-eye.meta-icon.fa-fw
       span بازدید
       span= item.viewCount
     if item.thumbs
       .item
         a#thumb-up(data-item-id="#{item._id}", data-item-model=itemModel, role="button")
-          i.fa.fa-heart.fa-fw
+          span.fa.fa-heart.fa-fw
           span.count= item.thumbs.up
