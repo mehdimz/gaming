@@ -7,7 +7,20 @@ extends layout
 mixin extra-news
   .extra-news
     p.extra-news-title.h4 محل قرارگیری عنوان
-    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست 
+    p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
+
+mixin counter-games
+  .block-content
+    .row.youplay-side-news
+      .col-xs-3.col-sm-6.col-md-5
+        a.angled-img(href='store-product-1.html')
+          .img
+            img(src='/images/clips/250/575693c59f782c3e67cba54d.jpg', alt='')
+      .col-xs-9.col-sm-6.col-md-7
+        h4.ellipsis.mb-5
+          a(href='#', title='') world of warcraft : wrath of the lichking
+        .label.youplay-match-count.countdown(data-end='2017/08/30') 2017/08/30
+
 
 
 block content
@@ -40,14 +53,48 @@ block content
     a.btn.pull-right(href='/videos/more/trailers') بیشتر
   +video-carousel(data.trailers, 1)
 
-  if data.toBeReleasedGame
-    section.youplay-banner.youplay-banner-parallax.small
-      .image(style="background-image: url('#{data.toBeReleasedGame.poster.lg}');")
-      .info.container.align-center
+
+  //- if data.toBeReleasedGame
+  //-   section.youplay-banner.youplay-banner-parallax.small
+  //-     .image(style="background-image: url('#{data.toBeReleasedGame.poster.lg}');")
+  //-     .info.container.align-center
+  //-       div
+  //-         h2= data.toBeReleasedGame.name
+  //-         .countdown.h2(data-end=data.toBeReleasedGame.releasedate)
+  //-         a.btn.btn-lg(href=data.toBeReleasedGame.url) بازی نامه
+
+  section.youplay-banner.youplay-banner-parallax.small
+    .image(style="background-image: url('#{prefix}/images/banner-witcher-3.jpg');")
+    .row.testimonials.vertical-gutter
+      .info.align-center
         div
-          h2= data.toBeReleasedGame.name
-          .countdown.h2(data-end=data.toBeReleasedGame.releasedate)
-          a.btn.btn-lg(href=data.toBeReleasedGame.url) بازی نامه
+          h2.mt-40 تاریخ انتشار بازی ها
+          .container.row
+            .col-sm-4.mt-30
+              .side-block
+                h4.block-title XBOX Games
+                +counter-games
+                +counter-games
+                +counter-games
+
+            .col-sm-4.mt-30
+              .side-block
+                h4.block-title Playstation Games
+                +counter-games
+                +counter-games
+                +counter-games
+
+
+            .col-sm-4.mt-30
+              .side-block
+                h4.block-title PC GAMES
+                +counter-games
+                +counter-games
+                +counter-games
+
+
+
+
 
   h2.container.h1 تازه های بازی ها
   section.youplay-news.container
