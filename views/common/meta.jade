@@ -8,22 +8,23 @@ mixin meta(item, itemModel)
       span.fa.fa-calendar.meta-icon.fa-fw
       span تاریخ انتشار 
       a= moment(item.date).format('jD jMMMM jYYYY') 
-    if item._category._genres
-      .item
-        span.fa.fa-bookmark.meta-icon.fa-fw
-        span دسته
-        ul.list-inline
-          each genre in item._category._genres
-            li.list-inline-item
-              a(href='/#{itemModel}/genre/#{genre.name}' role="button")= genre.name 
-    if item._category._platforms
-      .item
-        span.fa.fa-bookmark.meta-icon.fa-fw
-        span پلتفرم
-        ul.list-inline
-          each platform in item._category._platforms
-            li.list-inline-item
-              a(href='/#{itemModel}/platform/#{platform.name}' role="button")= platform.name 
+    if item._category
+      if item._category._genres
+        .item
+          span.fa.fa-bookmark.meta-icon.fa-fw
+          span دسته
+          ul.list-inline
+            each genre in item._category._genres
+              li.list-inline-item
+                a(href='/#{itemModel}/genre/#{genre.name}' role="button")= genre.name 
+      if item._category._platforms
+        .item
+          span.fa.fa-bookmark.meta-icon.fa-fw
+          span پلتفرم
+          ul.list-inline
+            each platform in item._category._platforms
+              li.list-inline-item
+                a(href='/#{itemModel}/platform/#{platform.name}' role="button")= platform.name 
     .item
       span.fa.fa-eye.meta-icon.fa-fw
       span بازدید
