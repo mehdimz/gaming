@@ -25,7 +25,7 @@ block content
           .container
             h1.h1.align-left.mb-0= data.item.name
             h2.italic-h2= data.item.subtitle
-            
+
     .youplay-carousel.gallery-popup
       each img in data.item.additional_pictures
         a.angled-img(href='/images/additional/big/#{img}.jpg', title=data.item.fullname + ' gameplay image ')
@@ -91,24 +91,25 @@ block content
                     .message-description-name توضیحات
                     .message-excerpt= data.album.info
 
-          
+
           include ../common/social
-     
+
 
         //- +comment-section(item, 'games') 
       .col-md-3.mt-40
         +games-sidebar(data.cats, 'بازی های مشابه')
+        +news-sidebar('اخبار بازی', data.news)
         +news-sidebar('پر بازدیدترین اخبارها', data.popularNews)
 
         //- +genres-sidebar(data.genres)
-    //- if data.news.length
-    //-   h2.container اخبارهای بازی
-    //-     a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
-    //-   +video-carousel(data.clips)    
+        //- if data.news.length
+        //-   h2.container اخبارهای بازی
+        //-     a.btn.pull-right(href='/videos/more/most-viewed') بیشتر
+        //-   +video-carousel(data.clips)    
 
-    if data.otherVersions.length
-      h2.container دیگر نسخه های بازی
-      +carousel(data.otherVersions, 'Related')
+        if data.otherVersions.length
+          h2.container دیگر نسخه های بازی
+          +carousel(data.otherVersions, 'Related')
 
 block richSnippet
   !=JSON.stringify(data.item.richSnippet)

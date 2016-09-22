@@ -10,11 +10,16 @@ form.form.mb-20(method="post", enctype="multipart/form-data", action="/admin/new
         label IMAGE:
       .col-xs-8
         input(type="file", name="image", required=(!data.item))
-  
+
   for checktype in ['inBanner', 'inBannerSmall']
     fieldset.form-group
       label(for=checktype)= checktype
       input(id=checktype, type="checkbox", checked=(data.item ? data.item[checktype] : false), name=checktype)
-  
-  button.btn.btn-primary(type="submit") ثبت
 
+  fieldset.form-group
+    select.form-control(name="_category")
+      option(value="") Others
+      each cat in data.cats
+        option(value="#{cat._id}", selected=(data.item && data.item._category && data.item._category.toString() == cat._id.toString()) )= cat.name
+
+  button.btn.btn-primary(type="submit") ثبت
