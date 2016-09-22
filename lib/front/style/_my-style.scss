@@ -118,6 +118,7 @@ a {
 
 .ellipsis {
   font-size: 14px;
+  white-space: inherit;
 }
 
 .test {
@@ -170,6 +171,10 @@ ul.two-columns li a {
 
 .rs-youplay .slotholder>.slot .slotslide:after, .rs-youplay .slotholder>.tp-bgimg:after, .rs-youplay .tp-arr-iwrapper:after{
 	opacity:0;
+}
+
+.youplay-banner{
+	min-height:600px;
 }
 
 .youplay-banner .image{
@@ -242,7 +247,7 @@ h3.title-overflow{
 
 .testimonials blockquote{
 	position: relative;
-    background: rgba(255,255,255,.1);
+    background: rgba(34,23,61,0.8);
     min-height: 191px;
     margin-bottom: 75px;
     padding: 20px 30px;
@@ -272,7 +277,7 @@ h3.title-overflow{
     bottom: -10px;
     left: 50%;
     margin-left: -10px;
-    border-top: 10px solid rgba(255,255,255,.1);
+    border-top: 10px solid rgba(34,23,61,0.8);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
 }
