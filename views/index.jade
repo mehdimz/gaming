@@ -9,29 +9,29 @@ mixin extra-news
     p.extra-news-title.h4 محل قرارگیری عنوان
     p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
 
-mixin counter-games
+mixin counter-games(item)
   .block-content
     .row.youplay-side-news
       .col-xs-3.col-sm-6.col-md-5
-        a.angled-img(href='store-product-1.html')
+        a.angled-img(href=item.url)
           .img
-            img(src='/images/clips/250/575693c59f782c3e67cba54d.jpg', alt='')
+            img(src=item.poster.sm, alt=item.fullname)
       .col-xs-9.col-sm-6.col-md-7
         h4.ellipsis.mb-5
-          a(href='#', title='') world of warcraft : wrath of the lichking
-        .label.youplay-match-count.countdown(data-end='2017/08/30') 2017/08/30
+          a(href=item.url, title=item.fullname)= item.fullname
+        .label.youplay-match-count.countdown(data-end=item.releasedate)
 
 
 
 block content
 
- 
+
   include ./components/banner-box    
-  
+
   .carousel-box
     +carousel(data.cats)
     //- +extra-news 
-  
+
   .carousel-box
     h4.container-fluid.h2.mr-20.ml-20
       | پربازدیدها
@@ -70,27 +70,27 @@ block content
         div
           h2.mt-40 تاریخ انتشار بازی ها
           .container.row
-            .col-sm-4.mt-30
-              .side-block
-                h4.block-title XBOX Games
-                +counter-games
-                +counter-games
-                +counter-games
+            each plt in data.toBeReleasedGames
+              .col-sm-4.mt-30
+                .side-block
+                  h4.block-title= plt.platform.name
+                  each gm in plt.games
+                    +counter-games(gm)
 
-            .col-sm-4.mt-30
-              .side-block
-                h4.block-title Playstation Games
-                +counter-games
-                +counter-games
-                +counter-games
-
-
-            .col-sm-4.mt-30
-              .side-block
-                h4.block-title PC GAMES
-                +counter-games
-                +counter-games
-                +counter-games
+            //- .col-sm-4.mt-30
+            //-   .side-block
+            //-     h4.block-title Playstation Games
+            //-     +counter-games
+            //-     +counter-games
+            //-     +counter-games
+            //- 
+            //- 
+            //- .col-sm-4.mt-30
+            //-   .side-block
+            //-     h4.block-title PC GAMES
+            //-     +counter-games
+            //-     +counter-games
+            //-     +counter-games
 
 
 
@@ -116,7 +116,7 @@ block content
               .description
                 p= item.gist + ' ...'
               a.btn.read-more.pull-left(href=item.page, title=item.title) ادامه مطلب
-  
+
 
   section.youplay-banner.youplay-banner-parallax.small.mt-10.p-15
     .image(style="background-image: url('#{prefix}/images/banner-bg.jpg');") 
@@ -162,4 +162,3 @@ block content
   //-       i.fa.fa-html5
   //-       h3 طراحی سایت
   //-       small واکنش گرا و مدرن
-
