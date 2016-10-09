@@ -18,7 +18,7 @@ block content
         h2 ویدیو ها
         // Single Product Block
         each item in data.clips
-          a.angled-bg(href='/videos/#{item._id}')
+          a.angled-bg(href=item.page)
             .row
               .col-md-4.col-xs-4
                 .angled-img
