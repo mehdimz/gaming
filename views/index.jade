@@ -10,7 +10,7 @@ mixin extra-news
     p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
 
 mixin counter-games(item)
-  .block-content
+  .block-content.col-xs-3
     .row.youplay-side-news
       .col-xs-3.col-sm-6.col-md-5
         a.angled-img(href=item.url)
@@ -20,6 +20,10 @@ mixin counter-games(item)
         h4.ellipsis.mb-5
           a(href=item.url, title=item.fullname)= item.fullname
         .label.youplay-match-count.countdown(data-end=item.releasedate)
+        ul.list-inline
+          each platform in item._platforms
+            li.list-inline-item
+              a(href='/#{itemModel}/platform/#{platform.name}' role="button" title=platform.name)= platform.name 
 
 
 
@@ -70,12 +74,8 @@ block content
         div
           h2.mt-40 تاریخ انتشار بازی ها
           .container.row
-            each plt in data.toBeReleasedGames
-              .col-sm-4.mt-30
-                .side-block
-                  h4.block-title= plt.platform.name
-                  each gm in plt.games
-                    +counter-games(gm)
+            each gm in data.toBeReleasedGames
+              +counter-games(gm)
 
             //- .col-sm-4.mt-30
             //-   .side-block
