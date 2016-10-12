@@ -416,6 +416,42 @@ td.message-from strong{
 	font-size:14px;
 }
 
+/** images with no transform **/
+
+.angled-img .img-square {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: skew(0deg) !important;
+    -ms-transform: skew(0deg) !important;
+    -o-transform: skew(0deg) !important;
+    transform: skew(0deg) !important;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    background: #160962;
+    -webkit-backface-visibility: hidden;
+}
+
+.angled-img .img-square>img {
+    width: 100%;
+    -webkit-transform: skew(0deg) scale(1) !important;
+    -ms-transform: skew(0deg) scale(1) !important;
+    -o-transform: skew(0deg) scale(1) !important;
+    transform: skew(0deg) scale(1) !important;
+    -o-transition: .3s opacity ease;
+    transition: .3s opacity ease;
+    -webkit-backface-visibility: hidden;
+    opacity: .5;
+}
+
+.angled-img{
+	    shape-outside: inherit !important;
+}
+
+
+
+
 @media screen and (max-width:992px){
 	.testimonials h2{
 		position:relative !important;
