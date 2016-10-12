@@ -14,7 +14,7 @@ mixin counter-games(item)
     .row.youplay-side-news
       .col-xs-3.col-sm-6.col-md-5
         a.angled-img(href=item.url)
-          .img
+          .img-square
             img(src=item.poster.sm, alt=item.fullname)
       .col-xs-9.col-sm-6.col-md-7
         h4.ellipsis.mb-5
@@ -102,7 +102,7 @@ block content
       .news-one.row.vertical-gutter
         .col-md-3
           a.angled-img(href=item.page, title=item.title)
-            .img
+            .img-square
               img(src=item.poster.medium, alt=item.title)
         .col-md-9
           .clearfix
