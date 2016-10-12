@@ -98,7 +98,8 @@ block content
         //- +comment-section(item, 'games') 
       .col-md-3.mt-40
         +games-sidebar(data.cats, 'بازی های مشابه')
-        +news-sidebar('اخبار بازی', data.news)
+        if data.news.length
+          +news-sidebar('اخبار بازی', data.news)
         +news-sidebar('پر بازدیدترین اخبارها', data.popularNews)
 
         //- +genres-sidebar(data.genres)
