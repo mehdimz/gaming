@@ -10,20 +10,23 @@ mixin extra-news
     p.extra-news-content تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست تست
 
 mixin counter-games(item)
-  .block-content.col-xs-3
+  .block-content.col-xs-12.col-sm-6.col-md-4.col-lg-4
     .row.youplay-side-news
-      .col-xs-3.col-sm-6.col-md-5
-        a.angled-img(href=item.url)
-          .img-square
-            img(src=item.poster.sm, alt=item.fullname)
-      .col-xs-9.col-sm-6.col-md-7
-        h4.ellipsis.mb-5
-          a(href=item.url, title=item.fullname)= item.fullname
-        .label.youplay-match-count.countdown(data-end=item.releasedate)
-        ul.list-inline
-          each platform in item._platforms
-            li.list-inline-item
-              a(href='/#{itemModel}/platform/#{platform.name}' role="button" title=platform.name)= platform.name 
+      table.youplay-messages.table.table-hover
+        tr.message-unread
+          td       
+            .col-xs-6
+              a.angled-img
+                .img-square
+                  img(src=item.poster.sm, alt=item.fullname)
+            .col-xs-6
+              h4.ellipsis.mb-5
+                a(href=item.url, title=item.fullname)= item.fullname
+              .label.youplay-match-count.countdown(data-end=item.releasedate)
+              ul.list-inline
+                each platform in item._platforms
+                  li.list-inline-item
+                    a(href='/#{itemModel}/platform/#{platform.name}' role="button" title=platform.name)= platform.name 
 
 
 
@@ -76,7 +79,6 @@ block content
           .container.row
             each gm in data.toBeReleasedGames
               +counter-games(gm)
-
             //- .col-sm-4.mt-30
             //-   .side-block
             //-     h4.block-title Playstation Games
