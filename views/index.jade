@@ -14,7 +14,7 @@ mixin counter-games(item)
     .row.youplay-side-news
       table.youplay-messages.table.table-hover
         tr.message-unread
-          td       
+          td.padding-0-7rem       
             .col-xs-6
               a.angled-img
                 .img-square
@@ -23,7 +23,7 @@ mixin counter-games(item)
               h4.ellipsis.mb-5
                 a(href=item.url, title=item.fullname)= item.fullname
               .label.youplay-match-count.countdown(data-end=item.releasedate)
-              ul.list-inline
+              ul.list-inline.pr-0.mb-0
                 each platform in item._platforms
                   li.list-inline-item
                     a(href='/#{itemModel}/platform/#{platform.name}' role="button" title=platform.name)= platform.name 
