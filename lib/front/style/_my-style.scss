@@ -116,6 +116,14 @@ a {
   text-decoration: none;
 }
 
+.navbar-youplay{
+	min-height:80px;
+}
+
+.navbar-youplay.navbar-small .navbar-brand{
+	width:inherit;
+}
+
 .ellipsis {
   font-size: 14px;
   white-space: inherit;
@@ -395,6 +403,9 @@ td.message-from strong{
 
 .carousel-box .youplay-carousel{
 	margin-bottom:20px;
+}
+.navbar-youplay .navbar-brand{
+	width:inherit;
 }
 
 
